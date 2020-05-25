@@ -41,3 +41,28 @@ console.log(name);
 ```
 
 
+## JSON 对象
+### JSON.stringify(obj/arr)
+* js 对象或数组转换为 json 对象或数组（字符串）
+```js
+var obj = {
+    name : 'kobe',
+    age : 39
+};
+obj = JSON.stringify(obj);
+// 打印 string 
+console.log(typeof obj);
+```
+
+### JSON.parse(json)
+* json 对象或数组（字符串）转换为js 对象或数组
+```js
+var obj = {
+    name : 'kobe',
+    age : 39
+};
+obj = JSON.stringify(obj);
+console.log(typeof obj);
+obj = JSON.parse(obj);
+console.log(obj);
+```
