@@ -213,3 +213,35 @@ var arr2 = arr.filter(function (item, index) {
 // 打印 [6, 5, 6]
 console.log(arr2);
 ```
+
+
+## Function 扩展
+### Function.prototype.bind(obj)
+* 将函数内的this绑定为obj, 并将函数返回
+```js
+function fun(age) {
+    this.name = 'yain';
+    this.age = age;
+    console.log('fun被调用了');
+}
+var obj = {};
+fun.bind(obj, 21)();
+// 打印 yain 21
+console.log(obj.name, obj.age);
+```
+
+### 区别bind()与call()和apply()
+* 相同点
+    * 都能指定函数中的this
+* 不同点
+    * call() / apply()是立即调用函数，bind()是将函数返回
+    * call() 函数参数从直接从第二个参数开始，依次传入
+    * apply() 第二个参数必须是数组，要传入的函数参数放在数组里
+    * bind() 传参的方式和call()一样
+* bind() 常用在为回调函数绑定作用域，因为 bind() 函数不会立即执行
+```js
+var obj = {username: 'yain'};
+setTimeout(function() {
+    console.log(this);
+}.bind(obj), 1000);
+```
