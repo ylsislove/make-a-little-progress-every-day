@@ -164,3 +164,52 @@ obj.fullName = 'orange-yain';
 // 设置了set方法，会打印 orange-yain，否则打印 apple-yain
 console.log(obj.fullName);
 ```
+
+
+## Array 扩展
+### Array.prototype.indexOf(value)
+* 得到值在数组中的第一个下标
+```js
+var arr = [1, 4, 6, 2, 5, 6];
+// 打印 2
+console.log(arr.indexOf(6));
+```
+
+### Array.prototype.lastIndexOf(value)
+* 得到值在数组中的最后一个下标
+```js
+var arr = [1, 4, 6, 2, 5, 6];
+// 打印 5
+console.log(arr.lastIndexOf(6));
+```
+
+### Array.prototype.forEach(function(item, index){})
+* 遍历数组
+```js
+var arr = [1, 4, 6, 2, 5, 6];
+arr.forEach(function (item, index) {
+    console.log(item, index);
+});
+```
+
+### Array.prototype.map(function(item, index){})
+* 遍历数组返回一个新的数组，返回加工之后的值
+```js
+var arr = [1, 4, 6, 2, 5, 6];
+var arr1 = arr.map(function (item, index) {
+    return item + 10
+});
+// 打印 [11, 14, 16, 12, 15, 16]
+console.log(arr1);
+```
+
+### Array.prototype.filter(function(item, index){})
+* 遍历过滤出一个新的子数组
+```js
+var arr = [1, 4, 6, 2, 5, 6];
+var arr2 = arr.filter(function (item, index) {
+    return item > 4
+});
+// 打印 [6, 5, 6]
+console.log(arr2);
+```
