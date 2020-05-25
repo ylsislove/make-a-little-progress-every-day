@@ -46,7 +46,7 @@ console.log(name);
 * js 对象或数组转换为 json 对象或数组（字符串）
 ```js
 var obj = {
-    name : 'kobe',
+    name : 'yain',
     age : 39
 };
 obj = JSON.stringify(obj);
@@ -58,11 +58,109 @@ console.log(typeof obj);
 * json 对象或数组（字符串）转换为js 对象或数组
 ```js
 var obj = {
-    name : 'kobe',
+    name : 'yain',
     age : 39
 };
 obj = JSON.stringify(obj);
 console.log(typeof obj);
 obj = JSON.parse(obj);
 console.log(obj);
+```
+
+
+## Object 扩展
+ES5 给 Object 扩展了2个常用的静态方法
+
+### Object.create(prototype, [descriptors])
+#### 作用
+* 以指定对象为原型创建新的对象
+* 为新的对象指定新的属性, 并对属性进行描述
+    * value : 指定值
+    * writable : 标识当前属性值是否是可修改的, 默认为false
+    * configurable: 标识当前属性是否可以被删除 默认为false
+    * enumerable： 标识当前属性是否能用for in 枚举 默认为false
+
+#### 使用
+```js
+var obj = {name : 'yain', age : 21}
+var obj1 = {};
+obj1 = Object.create(obj, {
+    sex : {
+        value : '男',
+        writable : true,
+        configurable: true,
+        enumerable: true
+    }
+});
+// 打印 男
+console.log(obj1.sex);
+obj1.sex = '女';
+// writable : true，所以会打印 女
+console.log(obj1.sex);
+// enumerable: true，所以会打印 sex name age
+for (var item in obj1) {
+    console.log(item);
+}
+delete obj1.sex;
+// configurable: true，所以会打印 undefined
+console.log(obj1.sex);
+```
+
+### Object.defineProperties(object, descriptors)
+#### 作用
+* 为指定对象定义扩展多个属性
+* get ：用来获取当前属性值得回调函数
+* set ：修改当前属性值得触发的回调函数，并且实参即为修改后的值
+
+#### 使用
+```js
+var obj2 = {
+    firstName : 'apple',
+    lastName : 'yain'
+};
+Object.defineProperties(obj2, {
+    fullName : {
+        get : function () {
+            return this.firstName + '-' + this.lastName
+        },
+        set : function (data) {
+            var names = data.split('-');
+            this.firstName = names[0];
+            this.lastName = names[1];
+        }
+    }
+});
+// 打印 apple-yain
+console.log(obj2.fullName);
+obj2.firstName = 'banana';
+obj2.lastName = 'yain';
+// 打印 banana-yain
+console.log(obj2.fullName);
+obj2.fullName = 'orange-yain';
+// 设置了set方法，会打印 orange-yain，否则打印 banana-yain
+console.log(obj2.fullName);
+```
+
+#### 补充
+* 对象本身的两个方法
+    * get propertyName(){} 用来得到当前属性值的回调函数
+    * set propertyName(){} 用来监视当前属性值变化的回调函数
+```js
+var obj = {
+    firstName : 'apple',
+    lastName : 'yain',
+    get fullName(){
+        return this.firstName + '-' + this.lastName;
+    },
+    set fullName(data){
+        var names = data.split('-');
+        this.firstName = names[0];
+        this.lastName = names[1];
+    }
+};
+// 打印 apple-yain
+console.log(obj.fullName);
+obj.fullName = 'orange-yain';
+// 设置了set方法，会打印 orange-yain，否则打印 apple-yain
+console.log(obj.fullName);
 ```
