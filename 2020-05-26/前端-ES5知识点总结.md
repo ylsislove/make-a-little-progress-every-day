@@ -1,5 +1,32 @@
 # 前端-ES5知识点总结
 
+  - [严格模式](#%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F)
+    - [概念](#%E6%A6%82%E5%BF%B5)
+    - [目的](#%E7%9B%AE%E7%9A%84)
+    - [使用](#%E4%BD%BF%E7%94%A8)
+    - [作用](#%E4%BD%9C%E7%94%A8)
+  - [JSON 对象](#json-%E5%AF%B9%E8%B1%A1)
+    - [JSON.stringify(obj/arr)](#jsonstringifyobjarr)
+    - [JSON.parse(json)](#jsonparsejson)
+  - [Object 扩展](#object-%E6%89%A9%E5%B1%95)
+    - [Object.create(prototype, [descriptors])](#objectcreateprototype-descriptors)
+      - [作用](#%E4%BD%9C%E7%94%A8-1)
+      - [使用](#%E4%BD%BF%E7%94%A8-1)
+    - [Object.defineProperties(object, descriptors)](#objectdefinepropertiesobject-descriptors)
+      - [作用](#%E4%BD%9C%E7%94%A8-2)
+      - [使用](#%E4%BD%BF%E7%94%A8-2)
+      - [补充](#%E8%A1%A5%E5%85%85)
+  - [Array 扩展](#array-%E6%89%A9%E5%B1%95)
+    - [Array.prototype.indexOf(value)](#arrayprototypeindexofvalue)
+    - [Array.prototype.lastIndexOf(value)](#arrayprototypelastindexofvalue)
+    - [Array.prototype.forEach(function(item, index){})](#arrayprototypeforeachfunctionitem-index)
+    - [Array.prototype.map(function(item, index){})](#arrayprototypemapfunctionitem-index)
+    - [Array.prototype.filter(function(item, index){})](#arrayprototypefilterfunctionitem-index)
+  - [Function 扩展](#function-%E6%89%A9%E5%B1%95)
+    - [Function.prototype.bind(obj)](#functionprototypebindobj)
+    - [区别bind()与call()和apply()](#%E5%8C%BA%E5%88%ABbind%E4%B8%8Ecall%E5%92%8Capply)
+
+
 ## 严格模式
 ### 概念
 * 除了正常运行模式(混杂模式)，ES5添加了第二种运行模式："严格模式"（strict mode）
