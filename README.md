@@ -19,3 +19,4 @@
 本项目的部分知识点总结来自
 * [每天 30 秒系列之前端面试](https://hacpai.com/article/1544793046274)
 * [CS-Notes](https://github.com/CyC2018/CS-Notes)
+* [Maaaxter English](https://www.youtube.com/channel/UCO8GewbsHFFmJn4kLLq1WXQ)
