@@ -93,3 +93,30 @@ console.log('我叫：' + obj.name + ', 我的年龄是：' + obj.age);
 console.log(`我叫：${obj.name}, 我的年龄是：${obj.age}`);
 ```
 
+
+## 简化的对象写法
+* 省略同名的属性值
+* 省略方法的function
+```js
+let name = 'yain';
+let age = 21;
+// 普通的写法
+let obj = {
+    name : name,
+    age : age,
+    getName : function () {
+        return this.name;
+    }
+};
+console.log(obj);
+//简化的写法
+let obj1 = {
+    name,
+    age,
+    getName(){
+        return this.name;
+    }
+};
+console.log(obj1);
+console.log(obj1.getName());
+```
