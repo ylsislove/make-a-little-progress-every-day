@@ -1,5 +1,15 @@
 # 前端-ES6知识点总结（一）
 
+  - [let 和 const 关键字](#let-%E5%92%8C-const-%E5%85%B3%E9%94%AE%E5%AD%97)
+    - [let 关键字](#let-%E5%85%B3%E9%94%AE%E5%AD%97)
+    - [const 关键字](#const-%E5%85%B3%E9%94%AE%E5%AD%97)
+  - [变量的解构赋值](#%E5%8F%98%E9%87%8F%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC)
+    - [对象的解构赋值](#%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC)
+    - [数组的解构赋值](#%E6%95%B0%E7%BB%84%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC)
+  - [模板字符串](#%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2)
+  - [简化的对象写法](#%E7%AE%80%E5%8C%96%E7%9A%84%E5%AF%B9%E8%B1%A1%E5%86%99%E6%B3%95)
+  - [箭头函数](#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0)
+
 ## let 和 const 关键字
 ### let 关键字
 * 作用
@@ -16,7 +26,7 @@
 // console.log(age);
 let age = 12;
 // 不能重复声明
-//let age = 13;
+// let age = 13;
 console.log(age);
 let btns = document.getElementsByTagName('button');
 // let 关键字使块级作用域成为可能
@@ -109,7 +119,7 @@ let obj = {
     }
 };
 console.log(obj);
-//简化的写法
+// 简化的写法
 let obj1 = {
     name,
     age,
