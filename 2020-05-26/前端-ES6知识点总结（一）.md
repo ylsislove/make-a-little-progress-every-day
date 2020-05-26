@@ -1,4 +1,4 @@
-# 前端-ES6知识点总结
+# 前端-ES6知识点总结（一）
 
 ## let 和 const 关键字
 ### let 关键字
@@ -120,3 +120,94 @@ let obj1 = {
 console.log(obj1);
 console.log(obj1.getName());
 ```
+
+
+## 箭头函数
+* 作用
+    * 定义匿名函数
+* 基本语法
+    * 没有参数：() => console.log('xxxx')
+    * 一个参数：i => i+2
+    * 大于一个参数：(i,j) => i+j
+    * 函数体不用大括号：默认返回结果
+    * 函数体如果有多个语句, 需要用{}包围，若有需要返回的内容，需要手动返回
+* 特点
+    * 语法更加简介
+    * 箭头函数没有自己的 this，箭头函数的 this 不是调用的时候决定的，而是在定义的时候处在的对象就是它的 this
+    * 扩展理解：箭头函数的 this 看外层的是否有函数，如果有，外层函数的this就是内部箭头函数的 this，如果没有，则 this 是window
+* 应用场景
+    * 多用来定义回调函数
+```js
+// 函数的普通定义方式
+let fun = function () {
+    console.log('fun()');
+};
+// 打印 fun()
+fun();
+
+// 没有形参，并且函数体只有一条语句
+let fun1 = () => console.log('fun1()');
+// 打印 fun1() undefined
+console.log(fun1());
+
+// 一个形参，并且函数体只有一条语句
+let fun2 = x => x;
+// 函数体没有使用大括号，默认返回结果。打印 5
+console.log(fun2(5));
+
+// 形参是一个以上
+let fun3 = (x, y) => x + y;
+// 打印 20
+console.log(fun3(5, 15));
+
+// 函数体有多条语句
+let fun4 = (x, y) => {
+    return x + y;
+};
+// 打印 10
+console.log(fun4(4, 6));
+
+// 打印 定时函数：window
+setTimeout(() => {
+    console.log("定时函数：", this);
+},1000)
+
+let btn = document.getElementById('btn');
+// 普通方式定义的函数，this 是在调用时决定的
+btn.onclick = function () {
+    // 打印 btn
+    console.log(this);
+};
+
+// 箭头函数，this 是在定义时的环境决定的
+let btn2 = document.getElementById('btn2');
+btn2.onclick = () => {
+    // 打印 window
+    console.log(this);
+};
+
+let btn3 = document.getElementById('btn3');
+let obj = {
+    name : 'yain',
+    age : 21,
+    getName : () => {
+        btn3.onclick = () => {
+            // 打印 window
+            console.log(this);
+        };
+    }
+};
+obj.getName();
+
+function Person() {
+    this.obj = {
+        showThis : () => {
+            // 打印 Person{...}
+            console.log(this);
+        }
+    }
+}
+let fun5 = new Person();
+fun5.obj.showThis();
+```
+
