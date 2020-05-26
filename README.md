@@ -10,7 +10,7 @@
 ## 📝 后记
 
 <div align="center">
-	<a href="http://www.yaindream.com/"> 我的博客 </a> / <a href="https://hacpai.com/article/1590330557287"> 我的简历 </a> / <a href="https://github.com/ylsislove"> 我的GitHub </a>
+	<a href="http://www.yaindream.com/"> 我的博客 </a> / <a href="./resume.md"> 我的简历 </a> / <a href="https://github.com/ylsislove"> 我的GitHub </a>
 </div>
 
 
