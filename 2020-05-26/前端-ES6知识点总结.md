@@ -80,3 +80,16 @@ let [, b, c] = arr;
 console.log(b, c);
 ```
 
+
+## 模板字符串
+* 简化字符串的拼接
+* 模板字符串必须用``包含（Tab键上方的那个键）
+* 变量的变化部分使用${xxx}定义
+```js
+let obj = { name : 'yain', age : 21 };
+// 传统的拼接写法
+console.log('我叫：' + obj.name + ', 我的年龄是：' + obj.age);
+// 模板字符串写法
+console.log(`我叫：${obj.name}, 我的年龄是：${obj.age}`);
+```
+
