@@ -42,3 +42,41 @@ console.log(sex);
 // sex = '女';   
 console.log(sex);
 ```
+
+
+## 变量的解构赋值
+### 对象的解构赋值
+* 概念
+    * 从对象中提取数据, 并赋值给变量(多个)，根据key赋值
+* 使用
+    * let {n, a} = {n:'tom', a:12}
+* 用途
+    * 给多个形参赋值
+```js
+let obj = {name : 'yain', age : 21};
+let {age} = obj;
+console.log(age);
+// 不用解构赋值
+function person(p) {
+    console.log(p.name, p.age);
+}
+person(obj);
+// 使用解构赋值，其实等价于 {name, age} = obj
+function person1({name, age}) {
+    console.log(name, age);
+}
+person1(obj);
+```
+
+### 数组的解构赋值
+* 概念
+    * 从数组中提取数据, 并赋值给变量(多个)，根据下标赋值
+* 使用
+    * let [a, b] = [1, '2'];
+```js
+let arr = ['abc', 23, true];
+let [, b, c] = arr;
+// 打印 23 true
+console.log(b, c);
+```
+
