@@ -1,5 +1,11 @@
 # 前端-ES6知识点总结（二）
 
+  - [三点运算符](#%E4%B8%89%E7%82%B9%E8%BF%90%E7%AE%97%E7%AC%A6)
+  - [形参默认值](#%E5%BD%A2%E5%8F%82%E9%BB%98%E8%AE%A4%E5%80%BC)
+  - [Promise 对象](#promise-%E5%AF%B9%E8%B1%A1)
+  - [Promise 应用案例](#promise-%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B)
+  - [Symbol](#symbol)
+
 ## 三点运算符
 用来取代 arguments ，但比 arguments 灵活，只能放在形参的最后
 ```js
@@ -136,4 +142,30 @@ getNews('http://localhost:3000/news?id=2')
             alert(error);
         })
 ```
+
+
+## Symbol
+* 概念
+    * ES6 中的添加了一种原始数据类型 symbol (已有的原始数据类型：String, Number, boolean, null, undefined, 对象)
+* 特点
+    * Symbol 属性对应的值是唯一的，解决命名冲突问题
+    * Symbol 值不能与其他数据进行计算，包括同字符串拼串
+    * for in, for of 遍历时不会遍历 symbol 属性
+* 使用
+    * 调用 Symbol 函数得到 symbol 值
+    ```js
+    let symbol = Symbol();
+    let obj = {};
+    obj[symbol] = 'hello';
+    ```
+    * 传参标识
+    ```js
+    let symbol = Symbol('one');
+    let symbol2 = Symbol('two');
+    // 打印 Symbol(one)
+    console.log(symbol);
+    // 打印 Symbol(two)
+    console.log(symbol2);
+    ```
+    * 内置 Symbol 值。除了定义自己使用的 Symbol 值以外，ES6 还提供了11个内置的 Symbol 值，指向对象内部使用的方法
 
