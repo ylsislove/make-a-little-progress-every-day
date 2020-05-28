@@ -60,3 +60,53 @@ let arr2 = [1, ...arr, 6];
 // 打印 [1, 2, 3, 4, 5, 6]
 console.log(arr2);
 ```
+
+## Generator 函数
+* 概念
+    * ES6 提供的解决异步编程的方案之一
+    * Generator 函数是一个状态机，内部封装了不同状态的数据，用来生成遍历器对象
+    * 也称为可暂停函数(惰性求值)，yield 可暂停，next 方法可启动。每次返回的是 yield 后的表达式结果
+* 特点
+    1. function 与函数名之间有一个星号
+    2. 内部用 yield 表达式来定义不同的状态
+    ```js
+    // 例如
+    function* generatorExample(){
+        let result = yield 'hello';  // 状态值为 hello
+        yield 'generator'; // 状态值为 generator
+    }
+    ```
+    3. generator 函数返回的是指针对象（刚刚介绍的iterator），而**不会执行函数内部逻辑**
+    4. 调用 next 方法函数内部逻辑开始执行，遇到 yield 表达式停止，返回 `{value: yield后的表达式结果/undefined, done: false/true}` 
+    5. 再次调用 next 方法会从上一次停止时的 yield 处开始，直到最后
+    6. yield 语句返回结果通常为 undefined， 当调用 next 方法时传参内容会作为启动时 yield 语句的返回值
+```js
+// 小试牛刀
+function* generatorTest() {
+    console.log('函数开始执行');
+    yield 'hello';
+    console.log('函数暂停后再次启动');
+    let result = yield 'generator';
+    // 这里会打印从外部 next 函数传进来的值
+    // 打印 我被传进去了
+    console.log(result);
+    console.log('函数执行完毕');
+}
+// 生成遍历器对象
+let Gt = generatorTest();
+// 打印 generatorTest 对象
+console.log(Gt);
+// 执行函数，遇到yield后即暂停
+// 函数执行,遇到yield暂停
+let result = Gt.next();
+// 打印 {value: "hello", done: false}
+console.log(result);
+// 函数再次启动
+result = Gt.next(); 
+// 打印 {value: 'generator', done: false}
+console.log(result); 
+result = Gt.next('我被传进去了');
+// 表示函数内部状态已经遍历完毕
+// 打印 {value: undefined, done: true}
+console.log(result); 
+```
