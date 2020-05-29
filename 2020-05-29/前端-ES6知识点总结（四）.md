@@ -1,4 +1,4 @@
-# 前端-ES6知识点总结（三）
+# 前端-ES6知识点总结（四）
 
   - [iterator 接口机制](#iterator-%E6%8E%A5%E5%8F%A3%E6%9C%BA%E5%88%B6)
   - [Generator 函数](#generator-%E5%87%BD%E6%95%B0)
