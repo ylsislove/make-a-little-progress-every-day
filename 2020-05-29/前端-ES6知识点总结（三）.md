@@ -132,3 +132,34 @@ let obj = [...myIterable];
 // 打印 Array(3)
 console.log(obj);
 ```
+
+## Generator 应用案例
+之前介绍 Promise 的时候，介绍过如何用 Promise 封装处理 ajax 请求。这里可以用 Generator 函数来实现一下。
+* 需求
+    1. 发送ajax请求获取新闻内容
+    2. 新闻内容获取成功后再次发送请求，获取对应的新闻评论内容
+    3. 新闻内容获取失败则不需要再次发送请求
+```js
+// 发送 get 请求
+function getNews(url) {
+    $.get(url, function (data) {
+        console.log(data);
+        let commentsUrl = data.commentsUrl;
+        let url = 'http://localhost:3000' + commentsUrl;
+        // 当获取新闻内容成功，发送请求获取对应的评论内容
+        // 调用next传参会作为上次暂停是yield的返回值
+        sx.next(url);
+    })
+}
+// 声明一个 Generator 函数，里面有两个状态，获取新闻内容的状态和获取评论的状态
+function* sendXml() {
+    // url为next传参进来的数据
+    let url = yield getNews('http://localhost:3000/news?id=2');
+    yield getNews(url);
+}
+
+// 得到迭代器对象
+let sx = sendXml();
+// 发送请求获取新闻内容
+sx.next();
+```
