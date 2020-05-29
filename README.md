@@ -19,6 +19,7 @@
 * [英语-为什么要给珠峰测身高](./2020-05-29/英语-为什么要给珠峰测身高.md)
 ### [2020-05-30](./2020-05-30/README.md)
 * [图像处理-ORB_FAST特征关键点检测](./2020-05-30/图像处理-ORB_FAST特征关键点检测.md)
+* [图像处理-BRIEF特征描述子匹配](./2020-05-30/图像处理-BRIEF特征描述子匹配.md)
 
 
 ## 📝 后记
@@ -33,3 +34,5 @@
 * [每天 30 秒系列之前端面试](https://hacpai.com/article/1544793046274)
 * [CS-Notes](https://github.com/CyC2018/CS-Notes)
 * [Maaaxter English](https://www.youtube.com/channel/UCO8GewbsHFFmJn4kLLq1WXQ)
+* [微信公众号-LearnAndRecord](https://mp.weixin.qq.com/s/N7L5tUm_lGvZbgaOOWZuvQ)
+* [知识星球-OpenCV研习社](https://mp.weixin.qq.com/s/61kCgN5hQoXZSBzdP4Ufhw)
