@@ -163,3 +163,80 @@ let sx = sendXml();
 // 发送请求获取新闻内容
 sx.next();
 ```
+
+## async 函数
+* 概念
+    * 真正意义上去解决异步回调的问题，同步流程表达异步操作
+* 本质
+    * Generator的语法糖
+* 语法
+    ```js
+    async function foo(){
+        await 异步操作;
+        await 异步操作；
+    }
+    ```
+* 特点
+    * 不需要像 Generator 去调用next方法，遇到 await 等待，当前的异步操作完成就往下执行
+    * 返回的总是 Promise 对象，可以用 then 方法进行下一步操作
+    * async 取代 Generator 函数的星号 *，await 取代 Generator 的 yield
+    * 语意更为明确
+```js
+// 一个异步任务
+async function timeout(ms) {
+    return new Promise(resolve => {
+        setTimeout(resolve, ms);
+    });
+}
+// 使用 async 函数去执行
+// 遇到 await 等待，执行完毕后自动执行下一步的操作
+async function asyncPrint(value, ms) {
+    console.time('运算时间：')
+    await timeout(ms);
+    console.timeEnd('运算时间：')
+    console.log(value);
+}
+// 打印 Promise {<pending>}
+console.log(asyncPrint('hello async', 2000));
+
+// 如果 promise 的状态是失败，则不会执行下面的操作
+async function awaitTest() {
+    let result = await Promise.resolve('执行成功');
+    // 打印 执行成功
+	console.log(result);
+	// 控制台爆红，打印 Uncaught (in promise) 执行失败
+    let result2 = await Promise.reject('执行失败');
+    // 执行不了
+    console.log(result2);
+    let result3 = await Promise.resolve('还想执行一次');
+    console.log(result3);
+}
+awaitTest();
+```
+
+## async 应用案例
+依旧是那个获取新闻内容和评论的案例
+* 需求
+    1. 发送ajax请求获取新闻内容
+    2. 新闻内容获取成功后再次发送请求，获取对应的新闻评论内容
+    3. 新闻内容获取失败则不需要再次发送请求
+```js
+// 案例演示
+async function sendXml(url) {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url,
+            type: 'GET',
+            success: data =>  resolve(data),
+            error: error => reject(error)
+        })
+    });
+}
+async function getNews(url) {
+    let data = await sendXml(url);
+    console.log(data);
+    data = await sendXml('http://localhost:3000' + data.commentsUrl);
+    console.log(data);
+}
+getNews('http://localhost:3000/news?id=2')
+```
