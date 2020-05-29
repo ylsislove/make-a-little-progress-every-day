@@ -228,15 +228,20 @@ async function sendXml(url) {
             url,
             type: 'GET',
             success: data =>  resolve(data),
-            error: error => reject(error)
+            error: error => resolve(false)
         })
     });
 }
 async function getNews(url) {
-    let data = await sendXml(url);
-    console.log(data);
-    data = await sendXml('http://localhost:3000' + data.commentsUrl);
-    console.log(data);
+    let result = await sendXml(url);
+    console.log(result);
+    if (!result) {
+        alert('暂时没有新闻内容');
+        return;
+    }
+    result = await sendXml('http://localhost:3000' + result.commentsUrl);
+    console.log(result);
 }
-getNews('http://localhost:3000/news?id=2')
+getNews('http://localhost:3000/news?id=2');
+// getNews('http://localhost:30001/news?id=2');
 ```
