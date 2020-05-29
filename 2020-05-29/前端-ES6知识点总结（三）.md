@@ -1,5 +1,13 @@
 # 前端-ES6知识点总结（三）
 
+  - [iterator 接口机制](#iterator-%E6%8E%A5%E5%8F%A3%E6%9C%BA%E5%88%B6)
+  - [Generator 函数](#generator-%E5%87%BD%E6%95%B0)
+  - [对象的 Symbol.iterator 属性](#%E5%AF%B9%E8%B1%A1%E7%9A%84-symboliterator-%E5%B1%9E%E6%80%A7)
+  - [Generator 应用案例](#generator-%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B)
+  - [async 函数](#async-%E5%87%BD%E6%95%B0)
+  - [async 应用案例](#async-%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B)
+  - [Class 机制](#class-%E6%9C%BA%E5%88%B6)
+
 ## iterator 接口机制
 * 概念
     * iterator是一种接口机制，为各种不同的数据结构提供统一的访问机制
@@ -244,4 +252,47 @@ async function getNews(url) {
 }
 getNews('http://localhost:3000/news?id=2');
 // getNews('http://localhost:30001/news?id=2');
+```
+
+## Class 机制
+* 特点
+    * 通过 class 定义类 / 实现类的继承
+    * 在类中通过 constructor 定义构造方法
+    * 通过 new 来创建类的实例
+    * 通过 extends 来实现类的继承
+    * 通过 super 调用父类的构造方法
+    * 重写从父类中继承的一般方法
+    * 如果之前有了解过 C++ 或 Java 的话，就很好理解这个Class了
+```js
+class Person {
+    // 调用类的构造方法
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+
+    }
+    // 定义一般的方法
+    show(){
+        console.log(this.name, this.age);
+    }
+}
+let person = new Person('yain', 21);
+// 打印 yain 21
+person.show();
+
+// 定义一个子类
+class sonPerson extends Person{
+    constructor(name, age, salary) {
+        // 调用父类的构造方法
+        super(name, age);
+        this.salary = salary;
+    }
+    // 重写父类的方法
+    show(){
+        console.log(this.name, this.age, this.salary);
+    }
+}
+let son = new sonPerson('apple', 22, 10000);
+// 打印 apple 22 10000
+son.show();
 ```
