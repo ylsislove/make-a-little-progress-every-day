@@ -23,12 +23,17 @@
 * [技巧-如何免费使用GitHub作为图床](./2020-05-30/技巧-如何免费使用GitHub作为图床.md)
 * [英语-格局用英语怎么说](./2020-05-30/英语-格局用英语怎么说.md)
 
+## 🏘️ 知识汇总
+* [英语汇总](./英语汇总.md)
+* [前端系列](./前端系列.md)
+* [图像处理](./图像处理.md)
+* [技巧篇](./技巧篇.md)
 
 
 ## 📝 后记
 
 <div align="center">
-	<a href="http://www.yaindream.com/"> 我的博客 </a> / <a href="./resume.md"> 我的简历 </a> / <a href="https://github.com/ylsislove"> 我的GitHub </a>
+	<a href="http://www.yaindream.com/"> 我的博客 </a> / <a href="./resume.md"> 我的简历 </a> / <a href="https://space.bilibili.com/106491836"> 我的bilibili </a>
 </div>
 
 
