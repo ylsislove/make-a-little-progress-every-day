@@ -147,7 +147,8 @@ div {
 
 我们可以看到上面有两个 css 文件，但是我们文件中只使用了 index.css 文件，这个就是创作人员的声明，对于 user.css 就是我们即将需要操作的 user 声明。
 
-![css选择器-层叠](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/css选择器-层叠.gif)
+![css选择器-层叠样式表](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/css选择器-层叠样式表.gif)
+
 
 1. 从上面的操作中可以看到，在没有应用 user.css 的时候，页面上的文字大小为 16px，但是当我们将 user.css 的样式应用之后，可以看到当前页面的样式变为 10px。这里的原因就是上面给的优先级顺序决定的。
 2. 接着，对于非重要声明来说，按照特殊性排序。特殊性越高的规则，权重越大
