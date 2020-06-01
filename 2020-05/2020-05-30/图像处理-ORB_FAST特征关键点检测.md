@@ -8,7 +8,7 @@
 ## 原理介绍
 ORB - (Oriented Fast and Rotated BRIEF) 算法是基于 FAST 特征检测与 BRIEF 特征描述子匹配实现，相比 BRIEF 算法中依靠随机方式获取而值点对，ORB 通过 FAST 方法，FAST 方式寻找候选特征点方式是假设灰度图像像素点 A 周围的像素存在连续大于或者小于 A 的灰度值，选择任意一个像素点 P，假设半径为 3，周围 16 个像素表示如下
 
-![ORB_FAST特征关键点检测](https://cdn.jsdelivr.net/gh/ylsislove/make-a-little-progress-every-day/2020-05-30/ORB_FAST特征关键点检测.png)
+![ORB_FAST特征关键点检测](https://cdn.jsdelivr.net/gh/ylsislove/make-a-little-progress-every-day/2020-05/2020-05-30/ORB_FAST特征关键点检测.png)
 
 ## 相关API
 ```c++
@@ -66,4 +66,4 @@ cv.destroyAllWindows()
 ```
 
 ## 结果展示
-![orb_result](https://cdn.jsdelivr.net/gh/ylsislove/make-a-little-progress-every-day/2020-05-30/orb_result.png)
+![orb_result](https://cdn.jsdelivr.net/gh/ylsislove/make-a-little-progress-every-day/2020-05/2020-05-30/orb_result.png)
