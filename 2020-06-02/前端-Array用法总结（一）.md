@@ -1,5 +1,10 @@
 # 前端-Array用法总结（一）
 
+  - [all](#all)
+  - [allEqual](#allequal)
+  - [any](#any)
+  - [arrayToCSV](#arraytocsv)
+
 ## all
 * 描述
     * 当提供的断言函数对集合中的所有元素都返回 `true` 时，就返回  `true`，否则返回 `false`
