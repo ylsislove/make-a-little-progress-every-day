@@ -15,6 +15,7 @@ from    PIL import Image
 import  torch
 from    torchvision import transforms
 import  numpy as np
+from    matplotlib import pyplot as plt
 
 # 创建自己的类：MyDataset,这个类是继承的torch.utils.data.Dataset
 class MyDataset(torch.utils.data.Dataset): 
@@ -63,6 +64,14 @@ def main():
 
     x, label = iter(train_loader).next()
     print('x:', x.shape, 'label:', label.shape)
+
+    # 显示一张图片
+    img = x[0]
+    img = img.numpy()
+    img = np.transpose(img, (1, 2, 0))
+    plt.imshow(img)
+    plt.show()
+
 
 
 if __name__ == "__main__":
