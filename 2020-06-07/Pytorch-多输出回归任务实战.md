@@ -287,3 +287,6 @@ if __name__ == '__main__':
 ```
 
 ## 初步训练结果
+![初步训练结果](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20200607221756.png)
+
+效果并不是让人特别满意，后面再继续优化吧
