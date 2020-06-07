@@ -30,6 +30,7 @@
 
 ### 2020-06-07
 * [Pytorch-多输出回归任务实战](./2020-06-07/Pytorch-多输出回归任务实战.md)
+* [Pytorch-Dropout用法](./2020-06-07/Pytorch-Dropout用法.md)
 
 
 ## 🏘️ 知识汇总
