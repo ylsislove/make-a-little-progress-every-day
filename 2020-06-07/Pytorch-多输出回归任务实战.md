@@ -4,8 +4,7 @@
 1. 创建自己的类 MyDataset，继承自 torch.utils.data.Dataset，以便可以读取我们自己的数据集
 2. 在Resnet50的基础上，更改最后一层全连接层，添加 RelU 激活函数，Dropout，输出纬度更改为 [batchsz, 3]，并将dim=1进行Softmax操作。
 3. 如果使用 GPU 设备，注意 model, loss_func, 和数据都要转移到 GPU 上，可以使用 cuda() 函数或 to(device)。
-4. 对 label 使用了一个小 trick。原数据 label 为[a, b, c], a, b, c < 1 && a + b + c = 1。经过测试后发现数值过小的 label 很容易出现梯度弥散的现象。所以将原数据 label 扩大 100 倍，同时将 Softmax 输出的结果也扩大 100，然后再计算 loss。
-6. pytorch 的 dropout 的参数和 tf 的参数刚好相反
+4. pytorch 的 dropout 的参数和 tf 的参数刚好相反
 5. 使用如下方式保存和加载模型：
 ```python
 # save
@@ -51,7 +50,7 @@ import  time
 def read_data(batchsz=32):
 
     # 加载训练数据
-    train_data = mydataset.MyDataset('./data/train2.txt', transform=transforms.Compose([
+    train_data = mydataset.MyDataset('./data/train.txt', transform=transforms.Compose([
         # 数据增强：随机水平翻转
         transforms.RandomHorizontalFlip(),
         # 数据增强：随机垂直翻转
@@ -65,7 +64,7 @@ def read_data(batchsz=32):
     train_loader = DataLoader(train_data, batch_size=batchsz, shuffle=True)
 
     # 加载测试数据
-    test_data = mydataset.MyDataset('./data/test2.txt', transform=transforms.Compose([
+    test_data = mydataset.MyDataset('./data/test.txt', transform=transforms.Compose([
         # 数据增强：随机水平翻转
         transforms.RandomHorizontalFlip(),
         # 数据增强：随机垂直翻转
@@ -98,7 +97,6 @@ def load_model(model_path):
         nn.Linear(fc_inputs, 256),
         nn.ReLU(),
         nn.BatchNorm2d(256),
-        nn.AdaptiveAvgPool2d((1, 1)),
         # 注意 pytorch 的 dropout 的参数和 tf 的参数刚好相反
         nn.Dropout(0.3),
         nn.Linear(256, 3),
@@ -172,10 +170,6 @@ def train_and_valid(model, optimizer, loss_func, device, record=[], best_mae=100
             # 送入模型得到结果 [batch, 3]
             logits = model(x)
             
-            # 扩大百倍
-            t = torch.full([x.size(0), 3], 100.0).to(device)
-            logits = logits * t
-            
             # 计算loss
             loss = loss_func(logits, label)
             
@@ -205,10 +199,6 @@ def train_and_valid(model, optimizer, loss_func, device, record=[], best_mae=100
                 
                 # 送入模型得到结果 [batch, 3]
                 logits = model(x)
-                
-                # 扩大百倍
-                t = torch.full([x.size(0), 3], 100.0).to(device)
-                logits = logits * t
                 
                 # 计算loss
                 loss = loss_func(logits, label)
@@ -287,6 +277,6 @@ if __name__ == '__main__':
 ```
 
 ## 初步训练结果
-![初步训练结果](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20200607221756.png)
+![初步训练结果](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20200608135845.png)
 
 效果并不是让人特别满意，后面再继续优化吧
