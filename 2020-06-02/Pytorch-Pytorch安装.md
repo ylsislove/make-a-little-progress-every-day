@@ -1,4 +1,4 @@
-# 技巧-Pytorch安装
+# Pytorch-Pytorch安装
 
 1. 进入官网 [https://pytorch.org/](https://pytorch.org/)
 
