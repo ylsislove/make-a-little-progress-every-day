@@ -96,7 +96,7 @@ def load_model(model_path):
     model.fc = nn.Sequential(
         nn.Linear(fc_inputs, 256),
         nn.ReLU(),
-        nn.BatchNorm2d(256),
+        nn.BatchNorm1d(256),
         # 注意 pytorch 的 dropout 的参数和 tf 的参数刚好相反
         nn.Dropout(0.3),
         nn.Linear(256, 3),

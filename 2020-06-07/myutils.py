@@ -29,7 +29,7 @@ def show_loss_and_mae(_record):
     plt.legend(['Train Loss', 'Valid Loss'])
     plt.xlabel('Epoch Number')
     plt.ylabel('Loss')
-    plt.ylim(0, 0.3)
+    # plt.ylim(0, 0.3)
     plt.savefig('loss.png')
     plt.show()
     
@@ -37,7 +37,7 @@ def show_loss_and_mae(_record):
     plt.legend(['Train MAE', 'Valid MAE'])
     plt.xlabel('Epoch Number')
     plt.ylabel('MAE')
-    plt.ylim(0, 0.5)
+    # plt.ylim(0, 0.5)
     plt.savefig('mae.png')
     plt.show()
 
