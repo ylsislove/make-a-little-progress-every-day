@@ -58,6 +58,7 @@
 
 ### 2020-06-11
 * [Zookooper-Zookeeper概述](./2020-06-11/Zookooper-Zookeeper概述.md)
+* [Zookeeper-本地模式安装部署](./2020-06-11/Zookeeper-本地模式安装部署.md)
 
 
 
