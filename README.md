@@ -57,8 +57,9 @@
 * [Pytorch-多输出回归任务实战（二）](./2020-06-10/Pytorch-多输出回归任务实战（二）.md)
 
 ### 2020-06-11
-* [Zookooper-Zookeeper概述](./2020-06-11/Zookooper-Zookeeper概述.md)
+* [Zookeeper-Zookeeper概述](./2020-06-11/Zookeeper-Zookeeper概述.md)
 * [Zookeeper-本地模式安装部署](./2020-06-11/Zookeeper-本地模式安装部署.md)
+* [Zookeeper-分布式安装部署](./2020-06-11/Zookeeper-分布式安装部署.md)
 
 
 

@@ -1,5 +1,11 @@
 # Zookeeper-本地模式安装部署
 
+  - [环境](#%E7%8E%AF%E5%A2%83)
+  - [安装步骤](#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4)
+  - [修改配置](#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE)
+  - [配置参数解读](#%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%A7%A3%E8%AF%BB)
+  - [操作Zookeeper](#%E6%93%8D%E4%BD%9Czookeeper)
+
 ## 环境
 * CentOS / 7.3 x86_64 (64bit)
 * Java 1.8.0_144
@@ -45,7 +51,6 @@ Zookeeper 中的配置文件 zoo.cfg 中参数含义如下：
 
 5. clientPort =2181：客户端连接端口<br>
 监听客户端连接的端口。
-
 
 
 ## 操作Zookeeper
