@@ -63,6 +63,7 @@
 
 ### 2020-06-12
 * [Zookeeper-客户端命令行操作](./2020-06-12/Zookeeper-客户端命令行操作.md)
+* [HBase-HBase安装部署](./2020-06-12/HBase-HBase安装部署.md)
 
 
 
