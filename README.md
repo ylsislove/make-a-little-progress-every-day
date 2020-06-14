@@ -70,6 +70,7 @@
 
 ### 2020-06-14
 * [HBase-API操作之DDL](./2020-06-14/HBase-API操作之DDL.md)
+* [HBase-API操作之DML](./2020-06-14/HBase-API操作之DML.md)
 
 
 
