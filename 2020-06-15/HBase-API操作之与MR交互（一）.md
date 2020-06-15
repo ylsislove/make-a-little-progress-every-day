@@ -1,5 +1,9 @@
 # HBase-API操作之与MR交互（一）
 
+  - [准备工作](#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C)
+  - [官方案例一：统计 Student 表中有多少行数据](#%E5%AE%98%E6%96%B9%E6%A1%88%E4%BE%8B%E4%B8%80%E7%BB%9F%E8%AE%A1-student-%E8%A1%A8%E4%B8%AD%E6%9C%89%E5%A4%9A%E5%B0%91%E8%A1%8C%E6%95%B0%E6%8D%AE)
+  - [官方案例二：使用 MapReduce 将本地数据导入到 HBase](#%E5%AE%98%E6%96%B9%E6%A1%88%E4%BE%8B%E4%BA%8C%E4%BD%BF%E7%94%A8-mapreduce-%E5%B0%86%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E5%88%B0-hbase)
+
 ## 准备工作
 1. 查看 HBase 的 MapReduce 任务执行时的 ClassPath
     ```bash
@@ -55,4 +59,33 @@
 
 运行结果
 ![运行结果](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20200615020701.png)
+
+
+## 官方案例二：使用 MapReduce 将本地数据导入到 HBase
+
+1. 在本地创建一个 tsv 格式的文件：fruit.tsv。分隔符必须是 `\t`
+    ```
+    1001    Apple   Red 
+    1002    Pear    Yellow 
+    1003    Pineapple       Yellow
+    ```
+
+2. 将文件上传到 hdfs 里
+    ```bash
+    [root@hadoop02 hbase-1.3.1]# hadoop fs -put fruit.tsv /
+    ```
+
+3. 创建 Hbase 表
+    ```
+    hbase(main):002:0> create 'fruit','info'
+    ```
+
+4. 执行 MapReduce 命令，将 fruit.tsv 文件导入到 HBase 的 fruit 表中
+    ```bash
+    /opt/module/hadoop-2.7.2/bin/yarn jar lib/hbase-server-1.3.1.jar importtsv -Dimporttsv.columns=HBASE_ROW_KEY,info:name,info:color fruit hdfs://hadoop02:9000/fruit.tsv
+    ```
+
+5. 运行结果
+![运行结果](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20200615182153.png)
+![运行结果](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20200615182311.png)
 
