@@ -72,6 +72,8 @@
 * [HBase-API操作之DDL](./2020-06-14/HBase-API操作之DDL.md)
 * [HBase-API操作之DML](./2020-06-14/HBase-API操作之DML.md)
 
+### 2020-06-15
+* [HBase-API操作之与MR交互（一）](./2020-06-15/HBase-API操作之与MR交互（一）.md)
 
 
 ## 📝 后记
