@@ -1,6 +1,16 @@
 # Spark-Spark初体验
 
-## Spark 安装地址
+  - [Spark 下载地址](#spark-%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80)
+  - [Spark 的重要角色](#spark-%E7%9A%84%E9%87%8D%E8%A6%81%E8%A7%92%E8%89%B2)
+    - [Driver 驱动器](#driver-%E9%A9%B1%E5%8A%A8%E5%99%A8)
+    - [Executor 执行器](#executor-%E6%89%A7%E8%A1%8C%E5%99%A8)
+  - [Local 模式](#local-%E6%A8%A1%E5%BC%8F)
+    - [概述](#%E6%A6%82%E8%BF%B0)
+    - [安装使用](#%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8)
+    - [spark shell 运行 WordCount 程序](#spark-shell-%E8%BF%90%E8%A1%8C-wordcount-%E7%A8%8B%E5%BA%8F)
+
+
+## Spark 下载地址
 1. 官网地址 [http://spark.apache.org/](http://spark.apache.org/)
 2. 文档查看地址 [https://spark.apache.org/docs/2.1.1/](https://spark.apache.org/docs/2.1.1/)
 3. 下载地址 [https://spark.apache.org/downloads.html](https://spark.apache.org/downloads.html)
@@ -68,3 +78,42 @@ Local 模式就是运行在一台计算机上的模式，通常就是用于在�
     ![运行结果](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20200616185910.png)
 
     该官方案例通过蒙特卡洛算法求解 PI 
+
+### spark shell 运行 WordCount 程序
+1. 准备文件
+    ```bash
+    [root@hadoop02 spark-2.1.1-bin-hadoop2.7]# mkdir input
+    ```
+
+    在 input 目录下创建两个文件 1.txt 和 2.txt，在文件中随意输入一些单词
+
+    ```
+    hello world
+    hello yain
+    hello spark
+    ```
+
+2. 启动 spark shell
+    ```bash
+    [root@hadoop02 spark-2.1.1-bin-hadoop2.7]# bin/spark-shell
+    ```
+    ![启动成功](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20200616193746.png)
+
+    可以登录 `http://hadoop02:4040` 查看 web 界面
+
+3. 运行 WordCount 程序
+    ```
+    scala> sc.textFile("input").flatMap(_.split(" ")).map((_, 1)).reduceByKey(_ + _).collect
+    ```
+
+4. 运行结果
+    ```
+    res2: Array[(String, Int)] = Array((hello,3), (world,1), (spark,1), (yain,1))
+    ```
+
+5. WordCount 程序分析
+    * textFile("input")：读取本地文件 input 文件夹数据
+    * flatMap(_.split(" "))：压平操作，按照空格分割符将一行数据映射成一个个单词
+    * map((_,1))：对每一个元素操作，将单词映射为元组
+    * reduceByKey(_+_)：按照key将值进行聚合，相加
+    * collect：将数据收集到Driver端展示
