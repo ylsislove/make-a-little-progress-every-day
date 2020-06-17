@@ -264,7 +264,7 @@ object Spark_GroupBy {
 需求：创建一个 RDD，按照元素模以 2 的值是否为 0 进行分组
 
 代码
-```
+```scala
 package com.yaindream.bigdata.spark
 
 import org.apache.spark.{SparkConf, SparkContext}
@@ -279,10 +279,10 @@ object Spark_Filter {
     // 设定 spark 计算框架的运行（部署）环境
     val config = new SparkConf().setMaster("local").setAppName("filter")
 
-    // 创建 filter 上下文对象
+    // 创建 spark 上下文对象
     val sc = new SparkContext(config)
 
-    // groupBy 算子
+    // filter 算子
     val listRDD = sc.makeRDD(1 to 10)
 
     val filterRDD = listRDD.filter(x => x % 2 == 0)
