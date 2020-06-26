@@ -4,9 +4,9 @@
 1. 创建一个 GitHub 仓库作为图床仓库，上传提交图片到仓库中
 2. 在要使用 GitHub 图床图片的地方将链接换为 `https://cdn.jsdelivr.net/gh/{user}/{repo}/图片路径 `
 
-举个 🌰：比如我的 github 仓库 `make-a-little-progress-every-day` 里 `2020-05-30` 目录下的图片原始访问路径为 [https://raw.githubusercontent.com/ylsislove/make-a-little-progress-every-day/master/2020-05-30/orb_result.png](https://raw.githubusercontent.com/ylsislove/make-a-little-progress-every-day/master/2020-05-30/orb_result.png) 访问起来贼慢
+举个 🌰：比如我的 github 仓库 `make-a-little-progress-every-day` 里 `2020-05-30` 目录下的图片原始访问路径为 [https://raw.githubusercontent.com/ylsislove/make-a-little-progress-every-day/master/2020-05/2020-05-30/orb_result.png](https://raw.githubusercontent.com/ylsislove/make-a-little-progress-every-day/master/2020-05-30/orb_result.png) 访问起来贼慢
 
-但是使用 jsDelivr 加速后的地址为：[https://cdn.jsdelivr.net/gh/ylsislove/make-a-little-progress-every-day/2020-05-30/orb_result.png](https://cdn.jsdelivr.net/gh/ylsislove/make-a-little-progress-every-day/2020-05-30/orb_result.png) 访问速度飞起，享受 jsDelivr 提供的全球 CDN 加速
+但是使用 jsDelivr 加速后的地址为：[https://cdn.jsdelivr.net/gh/ylsislove/make-a-little-progress-every-day/2020-05/2020-05-30/orb_result.png](https://cdn.jsdelivr.net/gh/ylsislove/make-a-little-progress-every-day/2020-05-30/orb_result.png) 访问速度飞起，享受 jsDelivr 提供的全球 CDN 加速
 
 ![aa](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20200530225930.png)
 
