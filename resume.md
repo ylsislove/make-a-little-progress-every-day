@@ -25,11 +25,6 @@
 3. 收获：独立完成了从数据采集到结果展示的整个业务流程，巩固了所学知识，得到了导师很高的评价。
 4. 项目地址：[基于卷积神经网络的城市感知评估](https://github.com/ylsislove/Urban-Perception-Assessment-Based-on-CNN)
 
-#### 国航托运行李费用计算器（2020年5月 ~ 2020年5月）
-1. 负责：实现一个用户界面友好的托运行李费用计算器，并完成白盒测试。
-2. 收获：巩固了软件测试的知识。并对Jenkins和Webpack有了一定的了解。
-3. 项目地址：[国航托运行李费用计算器](https://github.com/ylsislove/BaggageCalculator)
-
 
 ### 校内经历
 #### AR-GIS（2020年3月 ~ 2020年5月）
