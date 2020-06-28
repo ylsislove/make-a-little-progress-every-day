@@ -254,7 +254,12 @@
 
 
 ## devserver
-1. 修改配置文件
+1. 下载 webpack-dev-server
+    ```bash
+    npm i webpack-dev-server-D
+    ```
+
+2. 修改配置文件
     ```js
     const { resolve } = require('path');
     const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -304,7 +309,7 @@
     };
     ```
 
-2. 运行指令：npx webpack-dev-server
+3. 运行指令：npx webpack-dev-server
 
 
 ## 开发环境配置汇总
