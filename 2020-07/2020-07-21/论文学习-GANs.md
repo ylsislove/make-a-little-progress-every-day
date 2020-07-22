@@ -17,7 +17,7 @@ $$\min_G\max_DV(D,G)=\mathbb{E_{x\sim p_{data}(x)}}[logD(x)]+\mathbb{E_{z\sim p_
 ---
 算法 1. 生成对抗网络的 minibatch 随机梯度下降训练。判别器的训练步数，$k$，是一个超参数。在我们的试验中使用 $k=1$，使消耗最小。
 
-![算法1](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20200721233456.png)
+![算法1](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20200722205004.png)
 
 ---
 
