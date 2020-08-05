@@ -1,7 +1,6 @@
 # make a little progress every day
 学无止境，督促自己学习。每天进步一点点，水滴石穿-贵在坚持。
 
-
 ## 🏘️ 知识汇总
 * [基础学科](./基础学科.md)
 * [英语汇总](./英语汇总.md)
@@ -12,6 +11,47 @@
 * [修炼之Pytorch](./修炼之Pytorch.md)
 * [资源~](./资源.md)
 * [论文~](./论文/README.md)
+
+
+<table>
+    <tr>
+        <th>基础学科</th>
+        <th>英语汇总</th>
+        <th>前端系列</th>
+        <th>图像处理</th>
+    <tr>
+    <tr>
+        <td><a href='./基础学科.md'>✏️</a></td>
+        <td>✏️</td>
+        <td>✏️</td>
+        <td>✏️</td>
+    <tr>
+    <tr>
+        <th>机器学习</th>
+        <th>大数据</th>
+        <th>技巧篇</th>
+        <th>清风明月</th>
+    <tr>
+    <tr>
+        <td>✏️</td>
+        <td>✏️</td>
+        <td>✏️</td>
+        <td>✏️</td>
+    <tr>
+    <tr>
+        <th></th>
+        <th>论文</th>
+        <th>资源</th>
+        <th></th>
+    <tr>
+    <tr>
+        <td></td>
+        <td>✏️</td>
+        <td>✏️</td>
+        <td></td>
+    <tr>
+</table>
+
 
 
 ## 🎨 学习清单
