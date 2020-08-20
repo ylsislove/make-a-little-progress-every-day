@@ -2,7 +2,7 @@
 
 具体描述对象词的时候用什么词，取决于这个对象词是什么。所谓的对象词，就是数字的直接指代词。这个词，很多时候可以由数字的单位决定。
 
-## 情况一：出现 `tonne`，`kilogramme` 这样的单位（一般是强调总量的时候），往往用 `amount`，`quantity` 这样的词。
+### 情况一：出现 `tonne`，`kilogramme` 这样的单位（一般是强调总量的时候），往往用 `amount`，`quantity` 这样的词。
 
 例子：
 
@@ -15,7 +15,7 @@
 | 能源的消耗量 | the amount of energy consumed |
 | 时间的量 | the amount of time spent in ... |
 
-## 情况二：出现可数名词的复数形式（一般是强调个数的时候），往往用 `number`。
+### 情况二：出现可数名词的复数形式（一般是强调个数的时候），往往用 `number`。
 
 例子：
 
@@ -26,7 +26,7 @@
 
 注意：`number` 和 `amount` 一般是不能替换的，替换就会扣分。
 
-## 情况三：出现 “%” 的时候（如果强调的是百分比的分子），往往用 `proportion`，`percentage`。
+### 情况三：出现 “%” 的时候（如果强调的是百分比的分子），往往用 `proportion`，`percentage`。
 
 例子：
 
@@ -39,7 +39,7 @@
 | 分子是物，后面也往往有后置定语。 |
 | 如 the proportion of water used for farming (农业用水的百分比) |
 
-## 情况四：出现 “%” 的时候（如果强调的是变化的速率，或者一些习惯的说法），用 `rate`。
+### 情况四：出现 “%” 的时候（如果强调的是变化的速率，或者一些习惯的说法），用 `rate`。
 
 例子：
 
@@ -52,7 +52,7 @@
 
 这些单词一般不能用 proportion，percentage 替换，除非考生真的知道这个数字是怎么算出来的。如就业率（employment rate）实际上是 the proportion of people who are in the workforce。
 
-## 情况五：有时候，上面这些都用不到，要直接用题目给出的词。
+### 情况五：有时候，上面这些都用不到，要直接用题目给出的词。
 
 例子：
 
