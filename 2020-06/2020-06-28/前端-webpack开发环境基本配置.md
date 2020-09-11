@@ -256,7 +256,7 @@
 ## devserver
 1. 下载 webpack-dev-server
     ```bash
-    npm i webpack-dev-server-D
+    npm i webpack-dev-server -D
     ```
 
 2. 修改配置文件
