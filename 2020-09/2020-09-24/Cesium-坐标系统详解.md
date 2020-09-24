@@ -80,12 +80,12 @@ Cartographic.fromCartesian
 ### 弧度（Cartographic）和经纬度（Degrees）
 经纬度转弧度
 ```js
-Cesium.CesiumMath.toRadians(degrees) 
+Cesium.Math.toRadians(degrees) 
 ```
 
 弧度转经纬度
 ```js
-Cesium.CesiumMath.toDegrees(radians) 
+Cesium.Math.toDegrees(radians) 
 ```
 
 ### 屏幕坐标（Cartesian2）和世界坐标（Cartesian3）相互转换
