@@ -3,7 +3,7 @@
   - [Cesium中几个重要的坐标对象](#cesium%E4%B8%AD%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E7%9A%84%E5%9D%90%E6%A0%87%E5%AF%B9%E8%B1%A1)
     - [世界坐标（Cartesian3：笛卡尔空间直角坐标系）](#%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87cartesian3%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A9%BA%E9%97%B4%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB)
     - [经纬度坐标（Degrees）](#%E7%BB%8F%E7%BA%AC%E5%BA%A6%E5%9D%90%E6%A0%87degrees)
-    - [弧度（Cartographic）](#%E5%BC%A7%E5%BA%A6cartographic)
+    - [地理坐标（Cartographic）](#%E5%9C%B0%E7%90%86%E5%9D%90%E6%A0%87cartographic)
   - [相互转换](#%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2)
     - [经纬度（Degrees）转换为世界坐标（Cartesian3）](#%E7%BB%8F%E7%BA%AC%E5%BA%A6degrees%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87cartesian3)
     - [世界坐标（Cartesian3）转换为经纬度（Degrees）](#%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87cartesian3%E8%BD%AC%E6%8D%A2%E4%B8%BA%E7%BB%8F%E7%BA%AC%E5%BA%A6degrees)
@@ -32,18 +32,18 @@ Cesuim中没有具体的经纬度对象，要得到经纬度首先需要计算�
 ![经纬度坐标](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20200924110248.jpg)
 
 
-### 弧度（Cartographic）
+### 地理坐标（Cartographic）
 ```js
 new Cesium.Cartographic(longitude, latitude, height)
 ```
 
-这里的参数也叫做，longitude，latitude，即经度和纬度。
-
-但是是用弧度表示的经纬度，经纬度其实就是角度，可以看上面的解释。弧度即角度对应弧长是半径的倍数。
+这里的地理坐标是用弧度表示的经纬度坐标，弧度即角度对应弧长是半径的倍数。
 
 角度转弧度 π / 180 × 角度
 
-弧度变角度 180 / π × 弧度
+弧度转角度 180 / π × 弧度
+
+除直接用公式转换之外，也可以直接用 `Cesium.Math.toRadians()` 和 `Cesium.Math.toDegrees()` API 进行转换。
 
 ![弧度](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20200924110516.png)
 
