@@ -15,3 +15,15 @@
 | --- | --- |
 | dependencies | 这些包都是你的应用程序在生产环境中所需要的 |
 | devDependencies | 这些包只是在开发和测试中需要的 |
+
+**devDependencies** 的理解：
+
+我们在开发一个前端项目的时候，需要使用到 webpack 或者 gulp 来构建我们的开发和本地运行环境，这时我们就要安装到 devDependencies 里。webpack 或者 gulp 是用来打包压缩代码的工具，在项目实际运行的时候用不到，所以把 webpack 或者 gulp 放到 devDependencies 中就行了。
+
+**dependencies** 的理解：
+
+我们在项目中用到了 element-ui 或者 mint-ui，在生产环境中运行项目，当然也需要 element-ui 或者 mint-ui，所以我们把 element-ui 或者 mint-ui 安装到 dependencies 中。
+
+
+更详细的解释可看
+> https://www.cnblogs.com/ysk123/p/11655502.html
