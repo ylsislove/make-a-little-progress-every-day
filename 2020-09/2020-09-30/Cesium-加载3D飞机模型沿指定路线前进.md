@@ -79,6 +79,7 @@ var czml = [
 var airModel;
 viewer.dataSources.add(Cesium.CzmlDataSource.load(czml)).then(function (ds) {
     airModel = ds.entities.getById("path");
+    // 设置模型可以随路径方向转向
     airModel.orientation = new Cesium.VelocityOrientationProperty(airModel.position);
     airModel.model.alignedAxis = new Cesium.VelocityVectorProperty(airModel.position, true)
 });
