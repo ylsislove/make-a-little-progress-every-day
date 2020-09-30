@@ -5,7 +5,7 @@
 
 ## Cesium
 ### 官方教程
-* [Cesium-Cartesian3相关API翻译](./2020-09/2020-09-30/Cesium-Cartesian3相关API翻译)
+* [Cesium-Cartesian3相关API翻译](./2020-09/2020-09-30/Cesium-Cartesian3相关API翻译.md)
 * [Cesium官方教程9-粒子系统](./2020-09/2020-09-27/Cesium官方教程9-粒子系统.md)
 
 ### 学习笔记
@@ -20,3 +20,4 @@
 * [Cesium-GeoJson数据的显示和隐藏](./2020-09/2020-09-27/Cesium-GeoJson数据的显示和隐藏.md)
 * [Cesium-如何用鼠标绘制贴地点线面](./2020-09/2020-09-29/Cesium-如何用鼠标绘制贴地点线面.md)
 * [Cesium-键盘控制3D飞机模型的移动](./2020-09/2020-09-29/Cesium-键盘控制3D飞机模型的移动.md)
+* [Cesium-加载3D飞机模型沿指定路线前进](./2020-09/2020-09-30/Cesium-加载3D飞机模型沿指定路线前进.md)
