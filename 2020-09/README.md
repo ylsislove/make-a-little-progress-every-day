@@ -51,3 +51,4 @@
 ### 2020-09-30
 * [Cesium-Cartesian3相关API翻译](./2020-09-30/Cesium-Cartesian3相关API翻译.md)
 * [Cesium-加载3D飞机模型沿指定路线前进](./2020-09-30/Cesium-加载3D飞机模型沿指定路线前进.md)
+* [Cesium-基于CZML模型的转向问题](./2020-09-30/Cesium-基于CZML模型的转向问题.md)
