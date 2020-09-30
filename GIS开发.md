@@ -5,6 +5,7 @@
 
 ## Cesium
 ### 官方教程
+* [Cesium-Cartesian3相关API翻译](./2020-09/2020-09-30/Cesium-Cartesian3相关API翻译)
 * [Cesium官方教程9-粒子系统](./2020-09/2020-09-27/Cesium官方教程9-粒子系统.md)
 
 ### 学习笔记
