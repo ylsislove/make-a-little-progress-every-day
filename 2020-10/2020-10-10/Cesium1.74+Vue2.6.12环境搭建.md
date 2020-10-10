@@ -5,7 +5,7 @@
   - [项目代码结构介绍](#%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D)
   - [安装 Cesium 环境](#%E5%AE%89%E8%A3%85-cesium-%E7%8E%AF%E5%A2%83)
   - [设置 webpack 配置项，使其支持 cesium](#%E8%AE%BE%E7%BD%AE-webpack-%E9%85%8D%E7%BD%AE%E9%A1%B9%E4%BD%BF%E5%85%B6%E6%94%AF%E6%8C%81-cesium)
-  - [编写Vue组件](#%E7%BC%96%E5%86%99vue%E7%BB%84%E4%BB%B6)
+  - [编写 Vue 组件](#%E7%BC%96%E5%86%99-vue-%E7%BB%84%E4%BB%B6)
   - [禁用 ESLint 代码检查](#%E7%A6%81%E7%94%A8-eslint-%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5)
   - [npm run dev 运行项目](#npm-run-dev-%E8%BF%90%E8%A1%8C%E9%A1%B9%E7%9B%AE)
 
@@ -199,7 +199,7 @@ module: {
 
 到此基本配置完成
 
-## 编写Vue组件
+## 编写 Vue 组件
 
 环境配好了，那到底有没有问题呢，就用 Cesium 来测试一下吧
 
