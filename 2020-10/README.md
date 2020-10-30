@@ -27,3 +27,4 @@
 
 ### 2020-10-30
 * [Cesium-通过Shader添加雨雪天气效果](./2020-10-30/Cesium-通过Shader添加雨雪天气效果.md)
+* [Cesium-通过Shader添加圆形扩散效果](./2020-10-30/Cesium-通过Shader添加圆形扩散效果.md)
