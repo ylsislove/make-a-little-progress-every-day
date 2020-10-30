@@ -24,3 +24,6 @@
 
 ### 2020-10-29
 * [Cesium源码剖析-Post Processing之物体描边（Silhouette）](./2020-10-29/Cesium源码剖析-PostProcessing之物体描边（Silhouette）.md)
+
+### 2020-10-30
+* [Cesium-通过Shader添加雨雪天气效果](./2020-10-30/Cesium-通过Shader添加雨雪天气效果.md)
