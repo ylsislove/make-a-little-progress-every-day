@@ -26,6 +26,7 @@
 
 #### 高级
 * [Cesium1.74+Vue2.6.12环境搭建](./2020-10/2020-10-10/Cesium1.74+Vue2.6.12环境搭建.md)
+* [Cesium-Geometry and Appearances 几何图形和外观](./2020-11/2020-11-03/Cesium-GeometryAndAppearances几何图形和外观.md)
 * [Cesium-通过Shader添加雨雪天气效果](./2020-10/2020-10-30/Cesium-通过Shader添加雨雪天气效果.md)
 * [Cesium-通过Shader添加圆形扩散效果](./2020-10/2020-10-30/Cesium-通过Shader添加圆形扩散效果.md)
 
