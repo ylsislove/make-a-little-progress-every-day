@@ -149,6 +149,7 @@ export default {
         false
       );
       imgElement.onload = function() {
+        // mat with channels stored in RGBA order.
         let src = cv.imread(imgElement);
         let gray = new cv.Mat();
         // 官方文档链接：https://docs.opencv.org/4.5.0/db/d64/tutorial_js_colorspaces.html
