@@ -32,3 +32,4 @@
 
 ### 2020-11-12
 * [英语-11月12日打卡](./2020-11-12/英语-11月12日打卡.md)
+* [OpenCV4（6）-LookUpTable（LUT）查找表（C++，Python，JS）](./2020-11-12/OpenCV4（6）-LookUpTable（LUT）查找表（C++，Python，JS）.md)
