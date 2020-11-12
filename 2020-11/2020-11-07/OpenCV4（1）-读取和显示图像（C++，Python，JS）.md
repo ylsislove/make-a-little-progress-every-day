@@ -113,6 +113,7 @@ export default {
         false
       );
       imgElement.onload = function() {
+        // 官方文档链接：https://docs.opencv.org/4.5.0/df/d24/tutorial_js_image_display.html
         let mat = cv.imread(imgElement);
         cv.imshow("canvasOutput", mat);
         mat.delete();
@@ -125,3 +126,5 @@ export default {
 <style lang="scss" scoped>
 </style>
 ```
+
+官方文档链接：[https://docs.opencv.org/4.5.0/df/d24/tutorial_js_image_display.html](https://docs.opencv.org/4.5.0/df/d24/tutorial_js_image_display.html)
