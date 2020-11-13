@@ -5,6 +5,6 @@ package-lock.json
 index.*
 user.*
 
-temporary/
+# temporary/
 
 *.drawio.png
