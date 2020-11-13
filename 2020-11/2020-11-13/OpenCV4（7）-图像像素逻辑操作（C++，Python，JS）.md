@@ -19,6 +19,8 @@
 
 针对输入图像, 图像取反操作，二值图像分析中经常用
 
+![像素操作之逻辑操作](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20201114000313.png)
+
 ## C++代码
 ```c++
 #ifndef DAY07
