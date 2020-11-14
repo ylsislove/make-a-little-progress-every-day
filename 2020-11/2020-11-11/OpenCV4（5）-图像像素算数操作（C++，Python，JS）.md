@@ -1,4 +1,4 @@
-# OpenCV4（5）-图像像素算数操作（C++，Python，JS）.md
+# OpenCV4（5）-图像像素算数操作（C++，Python，JS）
 
   - [环境](#%E7%8E%AF%E5%A2%83)
   - [知识点](#%E7%9F%A5%E8%AF%86%E7%82%B9)
