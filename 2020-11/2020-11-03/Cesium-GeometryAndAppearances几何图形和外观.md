@@ -390,4 +390,8 @@ var geometry3 = new Ceisum.RectangleGeometry({
 - [Primitive](https://cesiumjs.org/Cesium/Build/Documentation/Primitive.html)
 - [GeometryInstance](https://cesiumjs.org/Cesium/Build/Documentation/GeometryInstance.html)
 
-更多材料请访问：[Fabric](https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric) 更多未来计划，请访问：[Geometry and Appearances Roadmap](https://github.com/AnalyticalGraphicsInc/cesium/issues/766)
+更多资料请访问：[Cesium官方教程8-- 几何体和外观效果](https://www.jianshu.com/p/fc0252e63204)
+
+更多材料请访问：[Fabric](https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric) 
+
+更多未来计划，请访问：[Geometry and Appearances Roadmap](https://github.com/AnalyticalGraphicsInc/cesium/issues/766)
