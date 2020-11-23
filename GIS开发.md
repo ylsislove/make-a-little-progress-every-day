@@ -7,6 +7,7 @@
 ### 官方教程
 * [Cesium-Cartesian3相关API翻译](./2020-09/2020-09-30/Cesium-Cartesian3相关API翻译.md)
 * [Cesium官方教程9-粒子系统](./2020-09/2020-09-27/Cesium官方教程9-粒子系统.md)
+* [Cesium-Geometry and Appearances 几何图形和外观](./2020-11/2020-11-03/Cesium-GeometryAndAppearances几何图形和外观.md)
 
 ### 学习笔记
 #### 初级
@@ -26,7 +27,6 @@
 
 #### 高级
 * [Cesium1.74+Vue2.6.12环境搭建](./2020-10/2020-10-10/Cesium1.74+Vue2.6.12环境搭建.md)
-* [Cesium-Geometry and Appearances 几何图形和外观](./2020-11/2020-11-03/Cesium-GeometryAndAppearances几何图形和外观.md)
 * [Cesium-通过Shader添加雨雪天气效果](./2020-10/2020-10-30/Cesium-通过Shader添加雨雪天气效果.md)
 * [Cesium-通过Shader添加圆形扩散效果](./2020-10/2020-10-30/Cesium-通过Shader添加圆形扩散效果.md)
 
