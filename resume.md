@@ -4,13 +4,11 @@
 * 专业：软件工程 大四 本科
 * 联系方式：916491013@qq.com（邮箱） wy18295752242（微信）
 
-
 ###  技能清单
 * IT技能：熟悉JavaScript，了解Java、C#和Python。熟悉常用的数据结构和算法，了解计算机网络，MySQL数据库等。熟悉Git开发流程。
 * 人际交往：乐于帮助他人，善于沟通，良好的团队协作开发能力。
 * 学习能力：较强的自我学习能力，发现和解决问题的能力。
 * 正在学习：Cesium、OpenLayers
-
 
 ### 项目经历
 #### 基于卷积神经网络的城市感知评估（2019年10月 ~ 2020年1月）
@@ -22,7 +20,6 @@
 3. 收获：独立完成了从数据采集到结果展示的整个业务流程，巩固了所学知识，得到了导师很高的评价。
 4. 项目地址：[基于卷积神经网络的城市感知评估](https://github.com/ylsislove/Urban-Perception-Assessment-Based-on-CNN)
 
-
 ### 校内经历
 #### AR-GIS（2020年3月 ~ 2020年5月）
 基于云计算的AR空间分析与可视化。使用CityEngine进行城市建模，通过Unity3D开发UWP程序，并部署在Hololens上，实现城市空间分析及可视化。
@@ -33,17 +30,14 @@
 1. 负责：基于OpenCV完成对目标的检测；实现PID算法对无人机进行精准控制。
 2. 难点：由于抖动导致无人机底部摄像头拍摄图片模糊的问题；目标的反光问题也对图像检测造成较大干扰。
 3. 收获：基本掌握了基于OpenCV实现图像处理。
-4. 项目地址：[无人机室内救援挑战赛](https://github.com/ylsislove/challengeMatch))
-
+4. 项目地址：[无人机室内救援挑战赛](https://github.com/ylsislove/challengeMatch)
 
 ### 技术文章
 - [如何用Qt绘制一颗好看的二叉树](https://blog.csdn.net/Apple_Coco/article/details/83501851)
 - [灰度图像压缩 DP算法 位运算详解](https://blog.csdn.net/Apple_Coco/article/details/89078798)
 
-
 ### 求职意向
 北京、上海、杭州等，可商讨。
-
 
 ###  致谢
 感谢您花时间阅读我的简历，期待有机会在您公司实习。
