@@ -81,3 +81,106 @@ void day16() {
 
 #endif // !DAY16
 ```
+
+## JS代码
+```js
+onOpenCvReady() {
+
+  // 官方文档链接：https://docs.opencv.org/4.5.0/de/d06/tutorial_js_basic_ops.html
+  // 官方文档链接：https://docs.opencv.org/4.5.0/db/d64/tutorial_js_colorspaces.html
+  const cv = window.cv
+
+  const src = this.createMat(cv, 'source', { name: 'imageSrcRaw' })
+
+  // 转化到 HSV 色彩空间
+  const hsv = this.createMat(cv, 'empty')
+  cv.cvtColor(src, hsv, cv.COLOR_RGB2HSV)
+
+  // 获取背景蒙版，即绿幕部分为白，前景人物部分为黑
+  const mask = this.createMat(cv, 'empty')
+  const low = this.createMat(cv, 'options', {
+    rows: src.rows,
+    cols: src.cols,
+    type: cv.CV_8UC3,
+    initValue: [35, 43, 46, 255]
+  })
+  const high = this.createMat(cv, 'options', {
+    rows: src.rows,
+    cols: src.cols,
+    type: cv.CV_8UC3,
+    initValue: [77, 255, 255, 255]
+  })
+  cv.inRange(hsv, low, high, mask)
+
+  // 蒙版取非，即前景人物部分为白色
+  const mask_not = this.createMat(cv, 'empty')
+  cv.bitwise_not(mask, mask_not)
+
+  // 利用蒙版，将人物部分抠出
+  const people = this.createMat(cv, 'empty')
+  cv.bitwise_and(src, src, people, mask_not)
+
+  // 取一张背景图，并截取与mask相同尺寸的部分
+  const scene = this.createMat(cv, 'source', { name: 'imageSrcRaw2' })
+  if (scene.cols < people.cols || scene.rows < people.rows) {
+    this.$message.error('背景图的尺寸必须大于等于输入图像的尺寸')
+    // 销毁所有 mat
+    this.destoryAllMats()
+    return
+  }
+  const rect = new cv.Rect(0, 0, people.cols, people.rows)
+  let dstScene = this.createMat(cv, 'empty')
+  dstScene = scene.roi(rect)
+
+  // 利用蒙版，在背景图中扣掉待填充的人物蒙版部分
+  const sceneBackground = this.createMat(cv, 'empty')
+  cv.bitwise_and(dstScene, dstScene, sceneBackground, mask)
+
+  // 或操作，将人物融入背景图中
+  const finalImage = this.createMat(cv, 'empty')
+  cv.bitwise_or(sceneBackground, people, finalImage)
+
+  // 显示图像
+  cv.imshow('canvasOutput', finalImage)
+
+  // 销毁所有 mat
+  this.destoryAllMats()
+},
+createMat(cv, type, ops) {
+  switch (type) {
+    case 'source':
+      if (ops && ops.name) {
+        const mat = cv.imread(ops.name)
+        this.mats.push(mat)
+        return mat
+      }
+      break
+    case 'empty': {
+      const mat = new cv.Mat()
+      this.mats.push(mat)
+      return mat
+    }
+    case 'options':
+      if (ops && ops.rows && ops.cols && ops.type && ops.initValue) {
+        const mat = new cv.Mat(ops.rows, ops.cols, ops.type, ops.initValue)
+        this.mats.push(mat)
+        return mat
+      }
+      break
+    default:
+      break
+  }
+},
+destoryAllMats() {
+  let i = 0
+  this.mats.forEach(item => {
+    item.delete()
+    i++
+  })
+  this.mats = []
+  console.log('销毁图象数：', i)
+}
+```
+
+## 结果展示
+[![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20201208143707.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20201208143707.png)
