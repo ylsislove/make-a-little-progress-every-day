@@ -106,66 +106,23 @@ cv.destroyAllWindows()
 
 ## JS代码
 ```js
-<template>
-  <div>
-    <p>保存图像与色彩空间的转换</p>
-    <p id="status">OpenCV.js is loading...</p>
-    <div class="inputoutput">
-      <img id="imageSrc" alt="No Image" />
-      <div class="caption">imageSrc <input type="file" id="fileInput" name="file" /></div>
-    </div>
-    <div class="inputoutput">
-      <canvas id="canvasOutput"></canvas>
-      <div class="caption">canvasOutput</div>
-    </div>
-  </div>
-</template>
-
-<script>
-export default {
-  name: "day02",
-  mounted() {
-    this.init();
-  },
-  methods: {
-    init() {
-      setTimeout(() => {
-        if (window.cv) {
-          this.onOpenCvReady(window.cv);
-        } else {
-          this.init();
-        }
-      }, 500);
-    },
-    onOpenCvReady(cv) {
-      document.getElementById("status").innerHTML = "OpenCV.js is ready.";
-      let imgElement = document.getElementById("imageSrc");
-      let inputElement = document.getElementById("fileInput");
-      inputElement.addEventListener(
-        "change",
-        e => {
-          imgElement.src = URL.createObjectURL(e.target.files[0]);
-        },
-        false
-      );
-      imgElement.onload = function() {
-        // mat with channels stored in RGBA order.
-        let src = cv.imread(imgElement);
-        let gray = new cv.Mat();
-        // 官方文档链接：https://docs.opencv.org/4.5.0/db/d64/tutorial_js_colorspaces.html
-        cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY, 0);
-        cv.imshow("canvasOutput", gray);
-        // opencv.js不支持imwrite方法
-        src.delete();
-        gray.delete();
-      };
-    }
-  }
-};
-</script>
-
-<style lang="scss" scoped>
-</style>
+// 官方文档链接：https://docs.opencv.org/4.5.0/db/d64/tutorial_js_colorspaces.html
+const cv = window.cv
+ 
+// 读取图像
+const src = cv.imread('imageSrcRaw')
+ 
+// 转换为灰度图
+const gray = new cv.Mat()
+cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY, 0)
+ 
+// 显示图像
+cv.imshow('canvasOutput', gray)
+// opencv.js不支持imwrite方法
+ 
+// 销毁所有 mat 释放内存
+src.delete()
+gray.delete()
 ```
 
 注意事项：

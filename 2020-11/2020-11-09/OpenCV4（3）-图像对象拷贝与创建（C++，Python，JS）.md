@@ -113,111 +113,103 @@ cv.destroyAllWindows()
 
 ## JS代码
 ```js
-<template>
-  <div>
-    <p>图像对象拷贝与创建</p>
-    <p id="status">OpenCV.js is loading...</p>
-    <div class="inputoutput">
-      <img id="imageSrc" alt="No Image" />
-      <div class="caption">imageSrc <input type="file" id="fileInput" name="file" /></div>
-    </div>
-    <div class="inputoutput">
-      <canvas id="canvasOutput"></canvas>
-      <div class="caption">canvasOutput</div>
-    </div>
-  </div>
-</template>
-
-<script>
-export default {
-  name: "day03",
-  mounted() {
-    this.init();
-  },
-  methods: {
-    init() {
-      setTimeout(() => {
-        if (window.cv) {
-          this.onOpenCvReady(window.cv);
-        } else {
-          this.init();
-        }
-      }, 500);
-    },
-    onOpenCvReady(cv) {
-      document.getElementById("status").innerHTML = "OpenCV.js is ready.";
-      let imgElement = document.getElementById("imageSrc");
-      let inputElement = document.getElementById("fileInput");
-      inputElement.addEventListener(
-        "change",
-        e => {
-          imgElement.src = URL.createObjectURL(e.target.files[0]);
-        },
-        false
-      );
-      imgElement.onload = function() {
-        let src = cv.imread(imgElement);
-
-        // 获取图像数据
-        // 图像数据有图像的属性、类型、行数、列数、大小、深度、通道
-        console.log("img size :", src.size());
-        console.log("img type :", src.type());
-        console.log("img cols :", src.cols);
-        console.log("img rows :", src.rows);
-        console.log("img depth:", src.depth());
-        console.log("img channels:", src.channels());
-        // img size : {width: 512, height: 562}
-        // img type : 24
-        // img cols : 512
-        // img rows : 562
-        // img depth: 0
-        // img channels: 4
-
-        // 图像对象的克隆 clone
-        let dst = src.clone();
-
-        // 图像对象的克隆 clone
-        let dst2 = new cv.Mat();
-        src.copyTo(dst2);
-
-        //使用4个构造函数构造矩阵
-        let rows = 512;
-        let cols = 512;
-        let type = cv.CV_8UC4;
-        //创建默认矩阵
-        let mat1 = new cv.Mat();
-        //创建有行、列、类型的矩阵
-        let mat2 = new cv.Mat(rows, cols, type);
-        //创建有行、列、类型、初始化值得矩阵（R G B A）
-        let mat3 = new cv.Mat(rows, cols, type, [255, 0, 0, 127]);
-
-        //创建全零矩阵
-        let mat4 = cv.Mat.zeros(rows, cols, type);
-        //创建全 1 矩阵
-        let mat5 = cv.Mat.ones(rows, cols, type);
-        //创建单位矩阵
-        let mat6 = cv.Mat.eye(rows, cols, type);
-
-        // 显示
-        cv.imshow("canvasOutput", mat3);
-
-        src.delete();
-        dst.delete();
-        dst2.delete();
-        mat1.delete();
-        mat2.delete();
-        mat3.delete();
-        mat4.delete();
-        mat5.delete();
-        mat6.delete();
-      };
+data() {
+  return {
+    num2type: {
+      1: 'CV_8SC1',
+      9: 'CV_8SC2',
+      17: 'CV_8SC3',
+      25: 'CV_8SC4',
+      0: 'CV_8UC1',
+      8: 'CV_8UC2',
+      16: 'CV_8UC3',
+      24: 'CV_8UC4',
+      3: 'CV_16SC1',
+      11: 'CV_16SC2',
+      19: 'CV_16SC3',
+      27: 'CV_16SC4',
+      2: 'CV_16UC1',
+      10: 'CV_16UC2',
+      18: 'CV_16UC3',
+      26: 'CV_16UC4',
+      5: 'CV_32FC1',
+      13: 'CV_32FC2',
+      21: 'CV_32FC3',
+      29: 'CV_32FC4',
+      4: 'CV_32SC1',
+      12: 'CV_32SC2',
+      20: 'CV_32SC3',
+      28: 'CV_32SC4',
+      6: 'CV_64FC1',
+      14: 'CV_64FC2',
+      22: 'CV_64FC3',
+      30: 'CV_64FC4'
     }
   }
-};
-</script>
-
-<style lang="scss" scoped>
-</style>
+},
+methods: {
+  onOpenCvReady() {
+    if (!this.value) {
+      this.$message.error('请选择一种创建类型')
+      return
+    }
+ 
+    // 官方文档链接：https://docs.opencv.org/4.5.0/de/d06/tutorial_js_basic_ops.html
+    const cv = window.cv
+ 
+    // 读取图像
+    const src = cv.imread('imageSrcRaw')
+ 
+    // 拷贝 克隆 创建图像
+    let dst = null
+    switch (this.value) {
+      case 1:
+        dst = src.clone()
+        break
+      case 2:
+        dst = new cv.Mat()
+        src.copyTo(dst)
+        break
+      case 3:
+        dst = new cv.Mat()
+        break
+      case 4:
+        dst = new cv.Mat(512, 512, cv.CV_8UC4)
+        break
+      case 5:
+        dst = new cv.Mat(512, 512, cv.CV_8UC4, [255, 0, 0, 127])
+        break
+      case 6:
+        dst = cv.Mat.zeros(512, 512, cv.CV_8UC4)
+        break
+      case 7:
+        dst = cv.Mat.ones(512, 512, cv.CV_8UC4)
+        break
+      case 8:
+        dst = cv.Mat.eye(512, 512, cv.CV_8UC4)
+        break
+    }
+ 
+    // 显示图像
+    if (dst) cv.imshow('canvasOutput', dst)
+ 
+    // 销毁所有 mat 释放内存
+    src.delete()
+    if (dst) dst.delete()
+  },
+  showImgInfo() {
+    const img = window.cv.imread('imageSrcRaw')
+    let content = ''
+    content += 'img type: ' + this.num2type[img.type()] + ' '
+    content += 'img cols: ' + img.cols + ' '
+    content += 'img rows: ' + img.rows + ' '
+    content += 'img depth: ' + img.depth() + ' '
+    content += 'img channels: ' + img.channels() + ' '
+    this.$alert(content, '图像属性', {
+      confirmButtonText: '确定'
+    })
+  }
+}
 ```
 
 官方文档链接：[https://docs.opencv.org/4.5.0/de/d06/tutorial_js_basic_ops.html](https://docs.opencv.org/4.5.0/de/d06/tutorial_js_basic_ops.html)

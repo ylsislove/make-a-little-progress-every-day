@@ -70,61 +70,16 @@ cv.destroyAllWindows()
 
 ## JS代码
 ```js
-<template>
-  <div>
-    <h2>Hello OpenCV.js</h2>
-    <p id="status">OpenCV.js is loading...</p>
-    <div class="inputoutput">
-      <img id="imageSrc" alt="No Image" />
-      <div class="caption">imageSrc <input type="file" id="fileInput" name="file" /></div>
-    </div>
-    <div class="inputoutput">
-      <canvas id="canvasOutput"></canvas>
-      <div class="caption">canvasOutput</div>
-    </div>
-  </div>
-</template>
-
-<script>
-export default {
-  name: "day01",
-  mounted() {
-    this.init();
-  },
-  methods: {
-    init() {
-      setTimeout(() => {
-        if (window.cv) {
-          this.onOpenCvReady(window.cv);
-        } else {
-          this.init();
-        }
-      }, 500);
-    },
-    onOpenCvReady(cv) {
-      document.getElementById("status").innerHTML = "OpenCV.js is ready.";
-      let imgElement = document.getElementById("imageSrc");
-      let inputElement = document.getElementById("fileInput");
-      inputElement.addEventListener(
-        "change",
-        e => {
-          imgElement.src = URL.createObjectURL(e.target.files[0]);
-        },
-        false
-      );
-      imgElement.onload = function() {
-        // 官方文档链接：https://docs.opencv.org/4.5.0/df/d24/tutorial_js_image_display.html
-        let mat = cv.imread(imgElement);
-        cv.imshow("canvasOutput", mat);
-        mat.delete();
-      };
-    }
-  }
-};
-</script>
-
-<style lang="scss" scoped>
-</style>
+const cv = window.cv
+ 
+// 读取图像
+const mat = cv.imread('imageSrc')
+ 
+// 显示图像
+cv.imshow('canvasOutput', mat)
+ 
+// 销毁所有 mat 释放内存
+mat.delete()
 ```
 
 官方文档链接：[https://docs.opencv.org/4.5.0/df/d24/tutorial_js_image_display.html](https://docs.opencv.org/4.5.0/df/d24/tutorial_js_image_display.html)
