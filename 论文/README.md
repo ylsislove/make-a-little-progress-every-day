@@ -11,6 +11,9 @@ You can download all top-100 papers with [this](./original/fetch_papers.py) and 
 ### feature / dream
 * [A volumetric display for visual, tactile and audio presentation using acoustic trapping](./papers/A%20volumetric%20display%20for%20visual,%20tactile%20and%20audio%20presentation%20using%20acoustic%20trapping.md) [[pdf]](https://www.nature.com/articles/s41586-019-1739-5)
 
+### VR / AR / MR
+* [From urban planning and emergency training to Pokémon Go: applications of virtual reality GIS (VRGIS) and augmented reality GIS (ARGIS) in personal, public and environmental health](./papers/From%20urban%20planning%20and%20emergency%20training%20to%20Pokémon%20Go,%20applications%20of%20virtual%20reality%20GIS%20(VRGIS)%20and%20augmented%20reality%20GIS%20(ARGIS)%20in%20personal,%20public%20and%20environmental%20health.md) [[pdf]](https://link.springer.com/article/10.1186/s12942-017-0081-0)
+
 ### Unsupervised / Generative Models
 * [Generative adversarial nets (2014), I. Goodfellow et al.](./papers/Generative%20adversarial%20nets.md) [[pdf]](http://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf)
 
