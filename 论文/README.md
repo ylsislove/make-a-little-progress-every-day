@@ -20,3 +20,4 @@ You can download all top-100 papers with [this](./original/fetch_papers.py) and 
 
 ### Cellular Automata
 * [Simulating urban land use change by integrating a convolutional neural network with vector-based cellular automata](./papers/Simulating%20urban%20land%20use%20change%20by%20integrating%20a%20convolutional%20neural%20network%20with%20vector-based%20cellular%20automata.md) [[pdf]](http://systemcall.gitee.io/oss/paper/2020_ZhaiYQ_IJGIS_CNN-VCA.pdf)
+* [Mixed-cell cellular automata: A new approach for simulating the spatiotemporal dynamics of mixed land use structures](./papers/Mixed-cell%20cellular%20automata,%20A%20new%20approach%20for%20simulating%20the%20spatiotemporal%20dynamics%20of%20mixed%20land%20use%20structures.md) [[pdf]](http://systemcall.gitee.io/oss/paper/2020_LiangX_LUP_MCCA.pdf) [[link]](https://www.sciencedirect.com/science/article/pii/S0169204620314432)
