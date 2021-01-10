@@ -1,6 +1,4 @@
-# 耦合卷积神经网络与矢量元胞自动机的城市土地利用变化模拟
-
-Simulating urban land use change by integrating a convolutional neural network with vector-based cellular automata
+# Simulating urban land use change by integrating a convolutional neural network with vector-based cellular automata
 
 耦合卷积神经网络与矢量元胞自动机的城市土地利用变化模拟
 

@@ -18,5 +18,5 @@ You can download all top-100 papers with [this](./original/fetch_papers.py) and 
 ### Unsupervised / Generative Models
 * [Generative adversarial nets (2014), I. Goodfellow et al.](./papers/Generative%20adversarial%20nets.md) [[pdf]](http://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf)
 
-### 元胞自动机
-* [耦合卷积神经网络与矢量元胞自动机的城市土地利用变化模拟](./papers/耦合卷积神经网络与矢量元胞自动机的城市土地利用变化模拟.md) [[pdf]](http://systemcall.gitee.io/oss/paper/2020_ZhaiYQ_IJGIS_CNN-VCA.pdf)
+### Cellular Automata
+* [Simulating urban land use change by integrating a convolutional neural network with vector-based cellular automata](./papers/Simulating%20urban%20land%20use%20change%20by%20integrating%20a%20convolutional%20neural%20network%20with%20vector-based%20cellular%20automata.md) [[pdf]](http://systemcall.gitee.io/oss/paper/2020_ZhaiYQ_IJGIS_CNN-VCA.pdf)
