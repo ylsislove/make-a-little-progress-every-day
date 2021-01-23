@@ -41,3 +41,5 @@
 
 ###  致谢
 感谢您花时间阅读我的简历，期待有机会在您公司实习。
+
+[![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210123224911.jpg)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210123224911.jpg)
