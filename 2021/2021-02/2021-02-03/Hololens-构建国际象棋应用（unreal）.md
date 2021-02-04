@@ -429,3 +429,85 @@ Unreal 中的 AR 会话无法自行发生。要使用会话，需要借助 ARSes
 可以在[文档](https://microsoft.github.io/MixedReality-UXTools-Unreal/Docs/InputSimulation.html)中找到有关 MRTK UX Tools 插件中提供的模拟手功能的详细信息。
 
 现在，你的虚拟手可以与对象交互，接下来可以继续学习下一个教程，并添加用户界面和事件。
+
+## UI 和函数
+在上一节中，向棋盘的 Pawn 和操控器组件添加了手势交互 Actor，使它们具有交互性。 在本部分中，你将继续使用混合现实工具包 UX Tools 插件，使用蓝图中的新函数和 Actor 引用构建象棋应用。 本部分结束时，你就可以打包混合现实应用，并将其部署到设备或仿真器中。
+
+### 目标
+- 添加交互式按钮
+- 创建用于重置棋子位置的函数
+- 连接按钮，以在按下时触发此函数
+
+### 创建重置函数
+第一个任务是创建一个函数蓝图，来将象棋棋子重置到场景中的原始位置。
+1. 打开“WhiteKing”，选择“我的蓝图”中“函数”部分旁的“+”图标，将其命名为“ResetLocation”。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205002834.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205002834.png)
+
+2. 从蓝图网格拖动并释放“重置位置”的执行箭头，以创建“SetActorRelativeTransform”节点。
+    - 此函数可设置 Actor 相对于其父级的变形（位置、旋转和缩放）。将使用此函数来重置棋盘上国王的位置，即使棋盘已从其原始位置移动也无妨。
+
+3. 在事件图表中右击，选择“创建变化”，然后将其“位置”更改为“X = -26”、“Y = 4”和“Z = 0”。
+    - 将其“返回值”连接到“SetActorRelativeTransform”中的“新相对变换”引脚。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205003414.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205003414.png)
+
+编译并保存项目，然后返回到主窗口。
+
+### 添加按钮
+正确设置此函数后，接下来的任务是创建一个按钮，以在按它时触发函数。
+
+1. 单击“添加新项”>“蓝图类”，展开“所有类”部分，然后搜索“UxtPressableButtonActor”。
+    - 将其命名为“ResetButton”，然后双击以打开蓝图。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205003644.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205003644.png)
+
+2. 确保在“组件”面板中选择了“ResetButton(自身)” 。在“细节”面板中，导航到“按钮”部分。将默认“按钮标签”更改为“Reset”，展开“按钮图标画笔”部分，然后按“打开图标画笔编辑器”按钮。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205003935.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205003935.png)
+
+    图标画笔编辑器随即打开，你可以使用该编辑器为按钮选择新图标。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205004027.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205004027.png)
+
+    为配置按钮，还有很多其他的设置可以进行调整。若要了解有关 UXT 可按按钮组件的详细信息，请参阅[文档](https://microsoft.github.io/MixedReality-UXTools-Unreal/Docs/PressableButton.html)。
+
+3. 单击“组件”面板中的“ButtonComponent(UxtPressableButton)(继承)”，将“细节”面板向下滚动到“事件”部分。
+    - 单击“按钮按下时”旁的绿色 + 按钮，向事件图表添加事件，按下按钮时将调用该事件。
+
+此时，需要调用“WhiteKing”的“重置位置”函数，这需要在关卡中引用“WhiteKing”Actor。
+
+4. 在“我的蓝图”面板中，导航到“变量”部分，然后单击 + 按钮，将变量命名为“WhiteKing”。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205004334.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205004334.png)
+
+    - 在“详细信息”面板中，选择“变量类型”旁的下拉列表，搜索“WhiteKing”，然后选择“对象引用”。
+    - 选中“实例可编辑”旁的框，这使得可从主关卡设置变量。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205004617.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205004617.png)
+
+5. 将 WhiteKing 变量从“我的蓝图 > 变量”拖放到“‘重置’按钮事件图表”中，然后选择“获取 WhiteKing”。
+
+### 触发函数
+剩下的就是，在按下按钮时，正式触发重置函数。
+
+1. 拖动“WhiteKing”输出引脚并释放以放置新节点。 选择“Reset Location”函数。 最后，将传出执行引脚从“按钮按下时”拖放到“重置位置”上的传入执行引脚。编译和保存 ResetButton 蓝图，然后返回到主窗口。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205004834.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205004834.png)
+
+2. 将“ResetButton”拖到视口中，并将其位置设置为“X = 50”、“Y = -25”和“Z = 10”。 将其旋转设置为“Z = 180”。在“默认值”下，将 WhiteKing 变量的值设置为“WhiteKing”。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205005047.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205005047.png)
+
+运行应用，将象棋棋子移动到新位置，然后按 HoloLens 2 样式按钮来查看重置逻辑正在运行！
+
+现在，你有了一个混合现实应用，其中包含可交互的棋子和棋盘，以及一个功能齐全的按钮，该按钮可重置棋子的位置。可以在 [GitHub](https://github.com/microsoft/MixedReality-Unreal-Samples/tree/master/ChessApp) 存储库中找到目前完成的该应用程序。请随意阅读本教程以外的内容并设置其余的棋子，以便按下“重置”按钮时重置整个棋盘。
+
+[![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205005208.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205005208.png)
+
+你可以继续学习本教程的最后一部分，你将了解如何将应用打包并部署到设备或仿真器。
+
+> 此时，在将应用程序部署到设备或仿真器之前，应使用建议的 [Unreal 性能设置](https://docs.microsoft.com/zh-cn/windows/mixed-reality/develop/unreal/performance-recommendations-for-unreal)来更新项目。
+
+## 打包和部署
+待更
