@@ -255,3 +255,149 @@
 - 使用 Unreal Engine 的 AR 设置
 - 使用 ARSessionConfig 数据资产
 - 设置 Pawn 和游戏模式
+
+### 添加会话资产
+Unreal 中的 AR 会话无法自行发生。要使用会话，需要借助 ARSessionConfig 数据资产，这就是接下来的任务：
+1. 单击“内容浏览器”中的“添加/导入 > 其他 > 数据资产”。 请确保自己处于根 Content 文件夹级别。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204212158.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204212158.png)
+
+    - 选择“ARSessionConfig”，单击“选择”，然后将资产命名为“ARSessionConfig”。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204212325.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204212325.png)
+
+2. 双击“ARSessionConfig”将其打开，保留所有默认设置，点击“保存”。 返回到主窗口。
+
+完成此操作后，下一步是确保在关卡加载时 AR 会话会启动，而在关卡结束时 AR 会话会停止。幸运的是，Unreal 具有叫做“关卡蓝图”的特殊蓝图，它用作关卡范围的全局事件图。在关卡蓝图中连接 ARSessionConfig 资产，可确保游戏开始时 AR 会话将立即触发。
+
+1. 从编辑器工具栏中单击“蓝图 > 打开关卡蓝图”：
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204212520.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204212520.png)
+
+2. 将执行节点（向左箭头图标）拖离“事件开始运行”，随后放开，然后搜索“启动 AR 会话”节点并按 Enter。
+    - 单击“会话配置”下的“选择资产”下拉列表，然后选择“ARSessionConfig”资产。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204212839.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204212839.png)
+
+3. 右键单击事件图表中的任意位置，然后创建一个新的 Event EndPlay 节点。 拖动执行脚本，随后放开，然后搜索“停止 AR 会话”节点并按 Enter。 如果在关卡结束时 AR 会话仍在运行，那么在流式传输到头戴显示设备时，如果你重启应用，某些功能可能会停止工作。
+    - 点击“编译”和保存”，然后返回到主窗口。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204213028.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204213028.png)
+
+### 创建 Pawn
+此时，项目仍需要一个玩家对象。 在 Unreal 中，Pawn 表示游戏中的用户，但在本例中它将代表 HoloLens 2。
+1. 在 Content 根文件夹中单击“添加新项 > 蓝图类”，展开底部的“所有类”部分。
+
+    - 搜索“DefaultPawn”，单击“选择”，将其命名为“MRPawn”，然后双击资产打开它。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204213247.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204213247.png)
+
+2. 从“组件”面板中单击“添加组件”>“摄像机组件”，然后将其命名为“Camera”。确保“相机”组件是根 (CollisionComponent) 的直接子级。这样，玩家相机就能随 HoloLens 2 设备一起移动。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204213404.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204213404.png)
+
+    > 默认情况下，Pawn 具有网格和碰撞组件。 在大多数 Unreal 项目中，Pawn 都是可与其他组件碰撞的固体。 在混合现实中 Pawn 与用户相同，因此需要能够在不发生碰撞的情况下传递全息影像。
+
+3. 从“组件”面板中选择“CollisionComponent”，向下滚动到“细节”面板的“碰撞”部分。
+    - 单击“碰撞预设”下拉列表，将值更改为“NoCollision”。
+    - 对“MeshComponent”执行同样的操作
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204213603.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204213603.png)
+
+4. 编译并保存蓝图。
+
+从此处完成操作后，返回到主窗口。
+
+### 创建游戏模式
+混合现实设置的最后一个部分是游戏模式。 游戏模式决定着游戏或体验的诸多设置，其中包括要使用的默认 Pawn。
+1. 在“内容”文件夹中单击“添加/导入”>“蓝图类”，然后选择“游戏模式基础”作为父类 。 将其命名为“MRGameMode”并双击以打开。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204213827.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204213827.png)
+
+2. 转到“细节”面板中的“类”部分，将“默认 Pawn 类”更改为“MRPawn”。
+    - 点击“编译”和保存”，然后返回到主窗口。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204213927.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204213927.png)
+
+3. 选择“编辑 > 项目设置”，然后从左侧列表单击“地图和模式”。
+    - 展开“默认模式”，将“默认游戏模式”更改为“MRGameMode”。
+    - 展开“默认地图”，将“EditorStartupMap”和“GameDefaultMap”都设置为“main”。 当你关闭并重新打开编辑器或玩游戏时，现在将默认选择主地图。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204215917.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204215917.png)
+
+针对混合现实全面设置此项目后，你可以继续学习下一章节，开始将用户输入添加到场景中。
+
+## 添加交互性
+在上一个教程中，你添加了 ARSession、Pawn 和游戏模式，以完成针对象棋应用的混合现实设置。本部分重点介绍如何使用开放源代码的混合现实工具包 UX Tools 插件，它提供了使场景具有交互性的工具。本部分结束时，棋子将按照用户输入移动。
+
+### 目标
+- 从 GitHub 安装混合现实 UX Tools 插件
+- 将手势交互 Actor 添加到指尖
+- 创建操控器并将其添加到场景中的对象
+- 使用输入模拟来验证项目
+
+### 下载混合现实 UX Tools 插件
+在开始使用用户输入之前，需要将插件添加到项目。
+1. 在 GitHub 上的混合现实 UX Tools [发布页](https://github.com/microsoft/MixedReality-UXTools-Unreal/releases)上，导航到适用于 Unreal 的 UX Tools v0.11.0 版本并下载 UXTools.0.11.0.zip。 解压缩文件。
+   
+   > 笔者注：官方文档上所使用的是 UX Tools v0.10.0，对应 UE 版本是 4.25。经笔者实践后，UE 4.26 应该使用 UXTools.0.11.0.zip。
+
+2. 在项目的根文件夹中，创建一个名为“Plugins”的新文件夹。 将解压缩的 UXTools 插件复制到此文件夹中，然后重新启动 Unreal 编辑器。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204225813.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204225813.png)
+
+3. UXTools 插件具有一个“内容”文件夹（带有组件子文件夹，包括“按钮”、“输入模拟”和“指针”），以及一个包含额外代码的“C++ 类”文件夹。
+
+    > 如果在“内容浏览器”中看不到“UXTools 内容”部分，请单击“视图选项”>“显示插件内容” 。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204231042.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204231042.png)
+
+    可以在混合现实 UX Tools [GitHub](https://aka.ms/uxt-unreal) 存储库中找到其他插件文档。
+
+    安装插件后，便可以开始使用它所提供的工具，从手势交互 Actor 开始。
+
+### 生成手势交互 Actor
+与 UX 元素的手势交互是使用手势交互 Actor 完成的，这些手势交互 Actor 为近距和远距交互创建并驱动指针和视觉对象。
+- 近距交互 - 缩放食指和拇指之间的元素或使用指尖戳元素。
+- 远距交互 - 将虚拟手的光线指向元素并同时按住食指和拇指。
+
+在我们的示例中，将手势交互 Actor 添加到 MRPawn 可达到以下目的：
+- 将光标添加到 Pawn 的食指指尖。
+- 提供可通过 Pawn 操纵的精确手势输入事件。
+- 通过从虚拟手的手掌延伸出的手部光线允许远距交互输入事件。
+
+建议在继续之前通读介绍手动交互的[文档](https://microsoft.github.io/MixedReality-UXTools-Unreal/Docs/HandInteraction.html)。
+
+准备就绪后，打开“MRPawn”蓝图，然后转到“事件图”。
+1. 将执行引脚从“事件开始运行”拖离然后释放，以放置一个新节点。
+    - 选择“从类生成Actor”，单击“类”引脚旁边的下拉列表，并搜索“UXT 手势交互 Actor”。
+
+2. 生成第二个“UXT 手势交互 Actor”，这次会将手势设置为“向右”。事件开始时，将会在每只手上生成 UXT 手势交互 Actor。
+
+事件图应与以下屏幕截图匹配：
+
+[![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204233134.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204233134.png)
+
+两个 UXT 手势交互 Actor 均需要所有者和初始变形位置。 在这种情况下，初始变形并不重要，因为 UX Tools 插件中包含手势交互 Actor，后者可见后便立即跳转到虚拟手。 但是，SpawnActor 函数需要使用变形输入来避免编译器错误，因此你将使用默认值。
+
+1. 从“Spwan Transform”引脚拖拽，然后释放，即可放置一个新节点。
+    - 搜索“创建变化”节点，然后将“返回值”拖到另一个手势的“Spwan Transform”，以便连接两个 SpawnActor 节点 。
+
+2. 选择两个 SpawnActor 节点底部的“向下箭头”，以显示“Owner”引脚。
+    - 从“Owner”引脚拖拽，然后释放，即可放置一个新节点。
+    - 搜索“self”并选择“获得一个对自身的引用”。
+    - 在 Self 对象引用节点和另一个手势交互 Actor 的“Own”引脚之间创建连线。
+
+3. 最后，同时选中两个手势交互 Actor 的“在抓取目标上显示近光标”框框。当食指靠近时，光标应出现在抓取目标上，这样就可以看到手指相对于目标的位置。
+    - 编译并保存后返回到主窗口。
+
+确保连接与以下屏幕截图匹配，但可随意拖动节点以使蓝图更具可读性。
+
+[![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204235038.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204235038.png)
+
+可以在 [UX Tools 文档](https://microsoft.github.io/MixedReality-UXTools-Unreal/Docs/HandInteraction.html)中找到有关手动交互 Actor 的详细信息。
+
+现在，项目中的虚拟手可以选择对象，但仍无法对其进行操纵。测试应用之前的最后一个任务是将操控器组件添加到场景中的 Actor。
+
+### 附加操控器
+待更
