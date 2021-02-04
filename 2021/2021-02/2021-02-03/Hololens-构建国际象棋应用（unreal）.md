@@ -134,4 +134,124 @@
 资产只需执行这些操作。接下来的一组任务是使用蓝图创建应用程序的构建基块。
 
 ### 添加蓝图
-待更
+1. 在“内容浏览器”中选择“添加/导入”>“新建文件夹”，然后将其命名为“Blueprints” 。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204203048.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204203048.png)
+
+    > 如果你不熟悉蓝图，这些蓝图为特殊资产，它们提供基于节点的接口来创建新类型的 Actor 和脚本级别事件。
+
+2. 双击“Blueprints”文件夹，然后右键单击并选择“蓝图类”。
+    - 选择“Actor”并将蓝图命名为“Board”。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204203237.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204203237.png)
+
+    新的棋盘蓝图现在显示在“Blueprints”文件夹中，如以下屏幕截图中所示 。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204203326.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204203326.png)
+
+    你已经准备好开始向创建的对象添加材质。
+
+### 使用材质
+你创建的对象默认为灰色，这看上去太过普通。向对象添加材质和网格是本章节中的最后一组任务。
+1. 双击“棋盘”以打开蓝图编辑器。
+2. 从“组件”面板中选择“添加组件”>“场景组件”，并将其命名为“Root” 。 请注意，“Root”在下面的屏幕截图中显示为 DefaultSceneRoot 的子项：
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204203543.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204203543.png)
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204203701.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204203701.png)
+
+3. 单击“Root”并将其拖到 DefaultSceneRoot 中，以替换它并在视口中消除球面。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204203741.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204203741.png)
+
+4. 从“组件”面板中选择“添加组件”>“静态网格体组件”，并将其命名为“SM_Board”。它将在“Root”下显示为子对象。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204203901.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204203901.png)
+
+5. 选择“SM_Board”，向下滚动到“细节”面板的“静态网格体”部分，并从下拉列表中选择“棋盘”。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204204052.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204204052.png)
+
+6. 继续在“细节”面板中，展开“材质”部分，然后从下拉列表中选择“新建资产”>“材质”。
+
+    - 将材质命名为“M_ChessBoard”，并将其保存到“ChessAssets”文件夹中。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204204158.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204204158.png)
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204204314.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204204314.png)
+
+7. 双击“M_ChessBoard”材质映像以打开材质编辑器。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204204402.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204204402.png)
+
+8. 在材质编辑器中，单击右键并搜索“纹理示例”。
+    - 在“细节”面板中展开“材质表达式纹理Base”部分，然后将“纹理”设置为“ChessBoard_Albedo”。
+    - 将“RGB”输出引脚拖至“M_ChessBoard”的“基础颜色”引脚上。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204204506.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204204506.png)
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204204901.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204204901.png)
+
+9. 再重复上述步骤 4 次以再创建四个具有以下设置的“纹理示例”节点：
+    - 将“纹理”设置为“ChessBoard_AO”，将“RGB”链接到“环境光遮挡”引脚。
+    - 将“纹理”设置为“ChessBoard_Metal”，将“RGB”链接到“Metallic”引脚。
+    - 将“纹理”设置为“ChessBoard_Normal”，将“RGB”链接到“Normal”引脚。
+    - 将“纹理”设置为“ChessBoard_Rough”，将“RGB”链接到“粗糙度”引脚。
+    - 单击“保存”。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204205525.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204205525.png)
+
+    在继续之前，请确保材质设置看起来类似于以上屏幕截图。
+
+### 填充场景
+如果返回到“棋盘”蓝图，将会看到已应用刚创建的材质。只需设置场景即可！首先，更改以下属性，以确保在场景中放置棋盘时，它的大小和角度正确：
+1. 将“比例”设置为“(0.05, 0.05, 0.05)”并将“Z旋转”设置为“90”。
+    - 单击顶部工具栏中的“编译”，然后单击“保存”并返回到主窗口。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204205924.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204205924.png)
+
+2. 在右侧世界大纲视图中，右键单击“Cube”>“编辑”>“删除”并将“棋盘”从“内容浏览器”拖至视口中。
+    - 将“位置”设置为“X = 80”、“Y = 0”和“Z = -20”。
+
+3. 点击“运行”按钮，查看你所处关卡中的新棋盘。 按 Esc 返回到编辑器。
+
+现在，你将按照与棋盘相同的步骤创建棋子：
+1. 转到“蓝图”文件夹，右键单击并选择“蓝图类”，然后选择“Actor”。将 Actor 命名为“WhiteKing”。
+
+2. 双击“WhiteKing”以在蓝图编辑器中将其打开，选择“添加组件”>“场景组件”，并将其命名为“Root”。
+    - 将“Root”拖放到 DefaultSceneRoot 中来替换它。
+
+3. 单击“添加组件”>“静态网格体组件”，并将其命名为“SM_King”。
+    - 在“细节”面板中，将“静态网格”设置为“Chess_King”，并将“材质”设置为名为“M_ChessWhite”的新材质。
+
+4. 在材质编辑器中打开“M_ChessWhite”，并将以下“纹理示例”节点连接到以下各项：
+    - 将“纹理”设置为“ChessWhite_Albedo”并将“RGB”链接到“基本颜色”引脚 。
+    - 将“纹理”设置为“ChessWhite_AO”，将“RGB”链接到“环境遮蔽”引脚。
+    - 将“纹理”设置为“ChessWhite_Metal”，将“RGB”链接到“金属”引脚。
+    - 将“纹理”设置为“ChessWhite_Normal”，将“RGB”链接到“正常”引脚。
+    - 将“纹理”设置为“ChessWhite_Rough”，将“RGB”链接到“粗糙度”引脚。
+    - 单击“保存”。
+
+在继续之前，“M_ChessKing”材质应与下图类似。
+
+[![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204210841.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204210841.png)
+
+即将完成，只需将新棋子添加到场景中即可：
+1. 打开“WhiteKing”蓝图，并将“比例”更改为“(0.05, 0.05, 0.05)”，将“Z旋转”更改为“90”。
+    - 编译并保存蓝图，然后返回到主窗口。
+
+2. 将“WhiteKing”拖到视口中，切换到“世界大纲视图”面板，将“WhiteKing”拖到“棋盘”上，使其成为子对象。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204211109.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210204211109.png)
+
+3. 在“详细信息”面板中的“变换”下，将 WhiteKing 的“位置”设置为“X = -26”、“Y = 4”、“Z = 0” 。
+
+完成！ 选择“运行”以查看正在运行中的已填充关卡，并在准备好退出时按 Esc。 只是创建一个简单项目就涉及了很多内容，你现在可以进入本系列的下一部分：设置混合现实。
+
+## Mixed Reality 设置
+在上一个章节中设置了象棋应用项目。本部分将逐步介绍如何设置此应用，来进行混合现实开发，这意味着要添加 AR 会话。 此任务将使用 ARSessionConfig 数据资产，其中包含有用的 AR 设置，如空间映射和遮挡。可以在 Unreal 的文档中找到有关 ARSessionConfig 资产和 UARSessionConfig 类的更多详细信息。
+
+### 目标
+- 使用 Unreal Engine 的 AR 设置
+- 使用 ARSessionConfig 数据资产
+- 设置 Pawn 和游戏模式
