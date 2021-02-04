@@ -1,5 +1,39 @@
 # Hololens-构建国际象棋应用（unreal）
 
+  - [前言](#%E5%89%8D%E8%A8%80)
+  - [入门](#%E5%85%A5%E9%97%A8)
+    - [必备知识](#%E5%BF%85%E5%A4%87%E7%9F%A5%E8%AF%86)
+    - [安装 Visual Studio 2019](#%E5%AE%89%E8%A3%85-visual-studio-2019)
+  - [初始化你的项目](#%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BD%A0%E7%9A%84%E9%A1%B9%E7%9B%AE)
+    - [目标](#%E7%9B%AE%E6%A0%87)
+    - [创建新的 Unreal 项目](#%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84-unreal-%E9%A1%B9%E7%9B%AE)
+    - [启用所需插件](#%E5%90%AF%E7%94%A8%E6%89%80%E9%9C%80%E6%8F%92%E4%BB%B6)
+    - [创建关卡](#%E5%88%9B%E5%BB%BA%E5%85%B3%E5%8D%A1)
+    - [导入资产](#%E5%AF%BC%E5%85%A5%E8%B5%84%E4%BA%A7)
+    - [添加蓝图](#%E6%B7%BB%E5%8A%A0%E8%93%9D%E5%9B%BE)
+    - [使用材质](#%E4%BD%BF%E7%94%A8%E6%9D%90%E8%B4%A8)
+    - [填充场景](#%E5%A1%AB%E5%85%85%E5%9C%BA%E6%99%AF)
+  - [Mixed Reality 设置](#mixed-reality-%E8%AE%BE%E7%BD%AE)
+    - [目标](#%E7%9B%AE%E6%A0%87-1)
+    - [添加会话资产](#%E6%B7%BB%E5%8A%A0%E4%BC%9A%E8%AF%9D%E8%B5%84%E4%BA%A7)
+    - [创建 Pawn](#%E5%88%9B%E5%BB%BA-pawn)
+    - [创建游戏模式](#%E5%88%9B%E5%BB%BA%E6%B8%B8%E6%88%8F%E6%A8%A1%E5%BC%8F)
+  - [添加交互性](#%E6%B7%BB%E5%8A%A0%E4%BA%A4%E4%BA%92%E6%80%A7)
+    - [目标](#%E7%9B%AE%E6%A0%87-2)
+    - [下载混合现实 UX Tools 插件](#%E4%B8%8B%E8%BD%BD%E6%B7%B7%E5%90%88%E7%8E%B0%E5%AE%9E-ux-tools-%E6%8F%92%E4%BB%B6)
+    - [生成手势交互 Actor](#%E7%94%9F%E6%88%90%E6%89%8B%E5%8A%BF%E4%BA%A4%E4%BA%92-actor)
+    - [附加操控器](#%E9%99%84%E5%8A%A0%E6%93%8D%E6%8E%A7%E5%99%A8)
+    - [测试场景](#%E6%B5%8B%E8%AF%95%E5%9C%BA%E6%99%AF)
+  - [UI 和函数](#ui-%E5%92%8C%E5%87%BD%E6%95%B0)
+    - [目标](#%E7%9B%AE%E6%A0%87-3)
+    - [创建重置函数](#%E5%88%9B%E5%BB%BA%E9%87%8D%E7%BD%AE%E5%87%BD%E6%95%B0)
+    - [添加按钮](#%E6%B7%BB%E5%8A%A0%E6%8C%89%E9%92%AE)
+    - [触发函数](#%E8%A7%A6%E5%8F%91%E5%87%BD%E6%95%B0)
+  - [打包和部署](#%E6%89%93%E5%8C%85%E5%92%8C%E9%83%A8%E7%BD%B2)
+    - [目标](#%E7%9B%AE%E6%A0%87-4)
+    - [[仅设备] 流式传输](#%E4%BB%85%E8%AE%BE%E5%A4%87-%E6%B5%81%E5%BC%8F%E4%BC%A0%E8%BE%93)
+    - [通过设备门户打包和部署应用](#%E9%80%9A%E8%BF%87%E8%AE%BE%E5%A4%87%E9%97%A8%E6%88%B7%E6%89%93%E5%8C%85%E5%92%8C%E9%83%A8%E7%BD%B2%E5%BA%94%E7%94%A8)
+
 ## 前言
 本文取自微软 Hololens [官方开发文档](https://docs.microsoft.com/zh-cn/windows/mixed-reality/)，笔者实践后，将其中过时的步骤和图片进行更新，并在此记录下来，希望能对其他热衷于 Hololens 开发的小伙伴们有所帮助~
 
@@ -510,4 +544,67 @@ Unreal 中的 AR 会话无法自行发生。要使用会话，需要借助 ARSes
 > 此时，在将应用程序部署到设备或仿真器之前，应使用建议的 [Unreal 性能设置](https://docs.microsoft.com/zh-cn/windows/mixed-reality/develop/unreal/performance-recommendations-for-unreal)来更新项目。
 
 ## 打包和部署
-待更
+在上一个教程中，你添加了一个简单的按钮，来将象棋棋子重置到原始位置。这是最后一个部分，介绍了如何将此应用准备就绪，以在 HoloLens 2 或仿真器中运行它。 如果你有 HoloLens 2，则可以从计算机进行流式传输，或者打包应用，以便直接在设备上运行。如果没有设备，则打包应用，以便在仿真器上运行它。本部分结束时，你将拥有一个已部署的混合现实应用，你可以通过交互和 UI 充分利用它。
+
+### 目标
+- [仅设备] 通过全息应用远程处理流式传输到 HoloLens 2
+- 打包应用并将其部署到 HoloLens 2 设备或仿真器
+
+### [仅设备] 流式传输
+[全息远程处理](https://docs.microsoft.com/zh-cn/windows/mixed-reality/add-holographic-remoting)是指将数据从电脑或独立 UWP 设备流式传输到 HoloLens 2，而非切换通道。远程处理主机应用从 HoloLens 接收输入数据流，在虚拟沉浸式视图中呈现内容，并通过 Wi-Fi 将内容帧流式传输回 HoloLens。通过流式处理，可以将远程沉浸式视图添加到现有的台式电脑软件中，并可访问更多系统资源。
+
+如果要将此方法用于该象棋应用，需要完成以下事项：
+1. 在 HoloLens 2 上从 Microsoft Store 安装并运行“全息远程处理播放器”。请注意应用中显示的 IP 地址。
+    - 转到“编辑”>“项目设置”，确保 Windows“默认 RHI”设置为“默认值”或“D3D11”：
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205005813.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205005813.png)
+
+2. 返回到 Unreal 编辑器，转到“编辑”>“项目设置”，然后选中“全息远程处理”部分中的“启用远程处理”。
+
+3. 重启编辑器，然后输入设备的 IP 地址（如全息远程处理播放器应用中所示），然后单击“连接”。
+
+连接后，单击“开始”按钮右侧的下拉箭头，然后选择“VR 预览”。此应用将在“VR 预览”窗口中运行，该窗口将流式传输到 HoloLens 头戴显示设备。
+
+### 通过设备门户打包和部署应用
+
+> 如果这是你第一次为 HoloLens 打包 Unreal 应用，则需要从 Epic Launcher 下载支持文件。详情参考第一部分：初始化你的项目
+
+1. 转到“编辑”>“项目设置”。
+    - 在“项目 > 描述 > 关于 > 项目命名”下，添加项目名称。
+    - 在“项目 > 描述 > 发行商 > 公司识别名”下，添加“CN=YourCompanyName”。
+    - 在“项目 > 描述 > 设置”下，选择“以 VR 启动”。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205010400.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205010400.png)
+
+    > 如果将这些字段中的任一字段留空，那么当你在步骤 3 中尝试生成新证书时将遇到错误。
+
+    > 不选择“在 VR 中启动”将导致应用程序尝试在平板中启动
+
+2. 在“平台 > 全息透镜”下，选择“Build for Hololens Emulation” 或 “Build for Hololens Device”。
+
+3. 单击“打包”部分（在“签名证书”旁）中的“生成新内容” 。
+
+    > 如果使用的是已生成的证书，证书的发布者名称则必须与应用程序的发布者名称相同。 否则，会导致“找不到签名密钥。 无法对应用进行数字签名。” error。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205010744.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205010744.png)
+
+4. 当系统提示你创建私钥密码时，出于测试目的，请单击“None”。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205010818.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205010818.png)
+
+5. 关闭项目设置，转到“文件”>“包项目”并选择“HoloLens”。
+
+    - 创建新文件夹 Package 以保存包，并单击“选择文件夹”。
+
+6. 打包应用后，请打开 [Windows 设备门户](https://docs.microsoft.com/zh-cn/windows/mixed-reality/using-the-windows-device-portal)，转到“视图 > 应用”，并找到“部署应用”部分。
+
+7. 单击“浏览...”，转到“ChessApp.appxbundle”文件，然后单击“打开”。
+    - 如果这是你第一次在设备上安装应用，请选中“允许我选择框架包”旁的复选框。
+    - 在下一个对话框中，包含相应的 VCLibs 和 appx 文件（arm64 用于设备，而 x64 用于仿真器）。在保存包的文件夹中，可以从 HoloLens 下找到相应文件。
+
+8. 单击“安装”
+    - 安装完成后，带上Hololens，在“所有应用”，点击新安装的应用来运行它，或者直接从 Windows 设备门户启动应用。
+
+9. 愉快的玩耍~
+
+恭喜！ 你的 HoloLens 混合现实应用程序已完成，并且可随时运行。但是，这一体验过程并未就此结束。MRTK 有许多独立功能，你可以将其添加到项目中，其中包括空间映射、凝视和语音输入甚至 QR 码。有关这些功能的详细信息，请参阅 [Unreal 开发概述](https://docs.microsoft.com/zh-cn/windows/mixed-reality/unreal-development-overview)。
