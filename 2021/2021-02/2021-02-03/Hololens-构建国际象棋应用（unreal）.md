@@ -400,4 +400,32 @@ Unreal 中的 AR 会话无法自行发生。要使用会话，需要借助 ARSes
 现在，项目中的虚拟手可以选择对象，但仍无法对其进行操纵。测试应用之前的最后一个任务是将操控器组件添加到场景中的 Actor。
 
 ### 附加操控器
-待更
+操控器是一个响应精确手动输入的组件，可进行抓取、旋转和平移。 将操控器的变形应用到 Actor 变形可允许进行直接 Actor 操纵。
+
+1. 在“组件”面板中，打开“棋盘”蓝图，单击“添加组件”并搜索“UXT 通用操控器”。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205001032.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205001032.png)
+
+2. 展开“细节”面板中的“通用操控器”部分。可以在其中设置单手操纵或双手操纵、旋转模式和平滑模式。可以随意选择所需的模式，然后编译和保存棋盘。
+
+    [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205001508.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205001508.png)
+
+3. 对 WhiteKing Actor 重复以上步骤。
+
+可以在[文档](https://microsoft.github.io/MixedReality-UXTools-Unreal/Docs/Manipulator.html)中找到有关混合现实 UX Tools 插件中提供的操控器组件的详细信息。
+
+### 测试场景
+好消息！你已准备好使用其新的虚拟手和用户输入来测试应用。在主窗口中按“运行”，应该会看到两个网格手，且从每个手掌延伸出手部光线。可以按如下所示控制手势及其交互：
+- 按住“左 Alt”键以控制左手，按住“左 Shift”键以控制右手。
+- 移动鼠标来移动手，并滚动鼠标滚轮，向前或向后移动手 。
+- 使用鼠标左键进行缩放，使用鼠标中键执行戳操作。
+
+> 如果你有多个头戴显示设备插入电脑，则输入模拟可能无法正常工作。 如果遇到问题，请尝试拔下其他头戴显示设备。
+
+[![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205002000.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210205002000.png)
+
+请尝试使用模拟手来拿起、移动和放下白棋国王并操纵棋盘！ 试验近距交互和远距交互 - 请注意，当手足够靠近可直接抓住棋盘和国王时，食指指尖上的手指光标会取代手部光线。
+
+可以在[文档](https://microsoft.github.io/MixedReality-UXTools-Unreal/Docs/InputSimulation.html)中找到有关 MRTK UX Tools 插件中提供的模拟手功能的详细信息。
+
+现在，你的虚拟手可以与对象交互，接下来可以继续学习下一个教程，并添加用户界面和事件。
