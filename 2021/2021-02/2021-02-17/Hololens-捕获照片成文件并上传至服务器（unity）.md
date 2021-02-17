@@ -1,4 +1,4 @@
-# Hololens-捕获照片到磁盘（unity）
+# Hololens-捕获照片成文件并上传至服务器（unity）
 
 ## 环境
 * Windows 10
@@ -38,8 +38,6 @@ public class MyPhotoCapture : MonoBehaviour
             }
         }
 
-        SceneManager.Instance.SetCameraStatus("Ready");
-
         //StartCapture();
     }
 
@@ -48,13 +46,11 @@ public class MyPhotoCapture : MonoBehaviour
         if (!captureIsActive)
         {
             captureIsActive = true;
-            SceneManager.Instance.SetCameraStatus("Capturing Image");
             PhotoCapture.CreateAsync(false, OnPhotoCaptureCreated);
         }
         else
         {
             captureIsActive = false;
-            SceneManager.Instance.SetCameraStatus("Ready");
         }
     }
 
@@ -75,7 +71,6 @@ public class MyPhotoCapture : MonoBehaviour
         };
 
         captureObject.StartPhotoModeAsync(cameraParams, OnPhotoModeStarted);
-
     }
 
     private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
@@ -84,10 +79,7 @@ public class MyPhotoCapture : MonoBehaviour
         {
             string filename = string.Format(@"CapturedImage_{0}.jpg", DateTime.Now.ToString("yyyyMMddHHmmss"));
             filePath = Path.Combine(Application.persistentDataPath, filename);
-            Debug.Log(filename);
-            Debug.Log(filePath);
             photoCaptureObject.TakePhotoAsync(filePath, PhotoCaptureFileOutputFormat.JPG, OnCapturedPhotoToDisk);
-            //photoCaptureObject.TakePhotoAsync(OnCapturedPhotoToMemory);
         }
         else
         {
@@ -110,12 +102,79 @@ public class MyPhotoCapture : MonoBehaviour
 
     void OnStoppedPhotoMode(PhotoCapture.PhotoCaptureResult result)
     {
-        Debug.Log("销毁");
         photoCaptureObject.Dispose();
         photoCaptureObject = null;
 
-        SceneManager.Instance.SetCameraStatus("Uploading Image");
+        captureIsActive = false;
         StartCoroutine(CustomVisionAnalyser.Instance.AnalyseLastImageCaptured(filePath));
+    }
+}
+```
+
+```c#
+using System.Collections;
+using System.IO;
+using UnityEngine;
+using UnityEngine.Networking;
+
+public class CustomVisionAnalyser : MonoBehaviour
+{
+
+    public static CustomVisionAnalyser Instance;
+    private string predictionEndpoint = "http://192.168.0.103:5000/upload";
+
+    /// <summary>
+    /// Byte array of the image to submit for analysis
+    /// </summary>
+    [HideInInspector] public byte[] imageBytes;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    /// <summary>
+    /// Call the Computer Vision Service to submit the image.
+    /// </summary>
+    public IEnumerator AnalyseLastImageCaptured(string imagePath)
+    {
+        WWWForm webForm = new WWWForm();
+
+        // Gets a byte array out of the saved image
+        imageBytes = GetImageAsByteArray(imagePath);
+
+        // 将图片byte数组添加进表单
+        webForm.AddBinaryData("file", imageBytes, "photo.jpg");
+
+        // 将图片上传到服务器
+        using (UnityWebRequest unityWebRequest = UnityWebRequest.Post(predictionEndpoint, webForm))
+        {
+            // The download handler will help receiving the analysis from Azure
+            unityWebRequest.downloadHandler = new DownloadHandlerBuffer();
+
+            // Send the request
+            yield return unityWebRequest.SendWebRequest();
+
+            if (unityWebRequest.isHttpError || unityWebRequest.isNetworkError)
+            {
+                Debug.Log(unityWebRequest.error);
+            }
+            else
+            {
+                string response = unityWebRequest.downloadHandler.text;
+                Debug.Log(response);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Returns the contents of the specified image file as a byte array.
+    /// </summary>
+    static byte[] GetImageAsByteArray(string imageFilePath)
+    {
+        FileStream fileStream = new FileStream(imageFilePath, FileMode.Open, FileAccess.Read);
+        BinaryReader binaryReader = new BinaryReader(fileStream);
+        return binaryReader.ReadBytes((int)fileStream.Length);
     }
 }
 ```
