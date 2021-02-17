@@ -1,6 +1,7 @@
 # Hololens-捕获照片成文件并上传至服务器（unity）
 
 ## 环境
+* Hololen2
 * Windows 10
 * Unity 2019.4.19f1c1
 * Visual Studio 2019

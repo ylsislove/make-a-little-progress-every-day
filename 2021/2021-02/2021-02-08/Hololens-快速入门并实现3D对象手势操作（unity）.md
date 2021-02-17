@@ -8,6 +8,7 @@
   - [结果展示](#%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA)
 
 ## 环境
+* Hololen2
 * Windows 10
 * Unity 2019.4.19f1c1
 * Visual Studio 2019
