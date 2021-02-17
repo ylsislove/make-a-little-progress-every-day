@@ -8,7 +8,7 @@
 * MRTK 2.5.4
 
 ## 相关代码
-```c#
+```csharp
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,21 +24,6 @@ public class MyPhotoCapture : MonoBehaviour
 
     private void Start()
     {
-        // Clean up the LocalState folder of this application from all photos stored
-        DirectoryInfo info = new DirectoryInfo(Application.persistentDataPath);
-        var fileInfo = info.GetFiles();
-        foreach (var file in fileInfo)
-        {
-            try
-            {
-                file.Delete();
-            }
-            catch (Exception)
-            {
-                Debug.LogFormat("Cannot delete file: ", file.Name);
-            }
-        }
-
         //StartCapture();
     }
 
@@ -109,7 +94,7 @@ public class MyPhotoCapture : MonoBehaviour
 }
 ```
 
-```c#
+```csharp
 using System.Collections;
 using System.IO;
 using UnityEngine;
