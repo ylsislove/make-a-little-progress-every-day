@@ -49,3 +49,4 @@
 
 ### 2021-02-18
 * [Hololens-捕获照片到内存并上传至服务器（unity）](./2021-02-18/Hololens-捕获照片到内存并上传至服务器（unity）.md)
+* [Hololens-获取经纬度位置信息（unity）](./2021-02-18/Hololens-获取经纬度位置信息（unity）.md)
