@@ -12,10 +12,8 @@
 
 ## 📃 学习清单
 ### [2021 学习清单](./2021/README.md)
-#### 2021-03-03
-* [英语-3月3日打卡](./2021/2021-03/2021-03-03/英语-3月3日打卡.md)
-* [技巧-CentOS开发环境配置](./2021/2021-03/2021-03-03/技巧-CentOS开发环境配置.md)
-* [Hololens2-全息远程播放器使用（Holographic Remoting Player）](./2021/2021-03/2021-03-03/Hololens2-全息远程播放器使用（Holographic%20Remoting%20Player）.md)
+#### 2021-03-04
+* [Hololens2-运行研究模式官方案例（SensorVisualization）](./2021/2021-03/2021-03-04/Hololens2-运行研究模式官方案例（SensorVisualization）.md)
 
 ### [2020 学习清单](./2020/README.md)
 * [2020年个人总结](./2020/2020年个人总结.md)
