@@ -3,7 +3,7 @@
 参考：[Hololens2初入——调用深度相机和前置摄像头的Demo](https://blog.csdn.net/scy261983626/article/details/108685000)
 
 可能碰到的问题：
-1. 生产解决方案失败：The max version tested value must not be less than the min version value.
+1. 生成解决方案失败：The max version tested value must not be less than the min version value.
 
     原因：自己安装 VS2019 时指定的 Win SDK 版本是 10.0.18362.0，而 SensorVisualization 这个官方 Demo 里配置的 Win SDK 版本是 19041.1.191206，所以就会导致那个报错。
 
