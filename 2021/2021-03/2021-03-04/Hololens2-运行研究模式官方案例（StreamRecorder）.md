@@ -48,3 +48,7 @@
     再次运行这个脚本，终于不报错了，完美解决！
 
     进一步思考，这个问题或许是由于我使用的是 USB 连接的 Hololens 设备门户，如果用 WiFi 连接可能就不会引起这个错误。后面有时间再验证吧~
+
+数据后期处理截图：
+
+[![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210305013947.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210305013947.png)
