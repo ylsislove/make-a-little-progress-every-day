@@ -7,6 +7,7 @@
   - [生成DLL文件](#%E7%94%9F%E6%88%90dll%E6%96%87%E4%BB%B6)
   - [Unity调用DLL](#unity%E8%B0%83%E7%94%A8dll)
   - [部署到Hololens上](#%E9%83%A8%E7%BD%B2%E5%88%B0hololens%E4%B8%8A)
+  - [参考](#参考)
 
 ## 前言
 [上一篇](./../2021-03-05/Hololens2-Unity项目整合Hololens2研究模式.md)尝试将 Hololens2 的研究模式与 Unity 项目进行了整合。归根结底，就是将研究模式的相关 API（C++）构建成 DLL 文件，才能实现在 Unity（C#）中进行调用。这篇就介绍一下如何自己创建一个最简单的 DLL 文件，实现在 Unity 中的调用。
@@ -145,3 +146,6 @@ C# 需要将结构体转为指针进行调用。为了能看到运行结果，�
 因为 Windows 机器不能运行 ARM64 的程序，所以只能把 Unity 项目构建部署到 Hololens 上运行即可~
 
 部署相关操作看之前的文章吧，这里不在赘述了。接下来来好好的捣鼓捣鼓 Hololens 的研究模式吧~
+
+## 参考
+[Unity3D中调用C++动态链接库(dll)-两种方式(Managed Plugins 和 Native Plugins)](https://blog.csdn.net/kuaxianpan2004/article/details/86160840)
