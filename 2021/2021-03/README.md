@@ -29,3 +29,6 @@
 ### 2021-03-05
 * [英语-3月5日打卡](./2021-03-05/英语-3月5日打卡.md)
 * [Hololens2-Unity项目整合Hololens2研究模式](./2021-03-05/Hololens2-Unity项目整合Hololens2研究模式.md)
+
+### 2021-03-06
+* [Hololens2-VS2019创建DLL项目供Unity调用](./2021-03-06/Hololens2-VS2019创建DLL项目供Unity调用.md)
