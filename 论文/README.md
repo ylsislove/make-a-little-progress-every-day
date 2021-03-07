@@ -12,6 +12,7 @@ You can download all top-100 papers with [this](./original/fetch_papers.py) and 
 * [A volumetric display for visual, tactile and audio presentation using acoustic trapping](./papers/A%20volumetric%20display%20for%20visual,%20tactile%20and%20audio%20presentation%20using%20acoustic%20trapping.md) [[pdf]](https://www.nature.com/articles/s41586-019-1739-5)
 
 ### VR / AR / MR
+* [HoloLens 2 Research Mode as a Tool for Computer Vision Research](./papers/HoloLens%202%20Research%20Mode%20as%20a%20Tool%20for%20Computer%20Vision%20Research.md) [[pdf]](https://arxiv.org/pdf/2008.11239.pdf)
 * [From urban planning and emergency training to Pokémon Go: applications of virtual reality GIS (VRGIS) and augmented reality GIS (ARGIS) in personal, public and environmental health](./papers/From%20urban%20planning%20and%20emergency%20training%20to%20Pokémon%20Go,%20applications%20of%20virtual%20reality%20GIS%20(VRGIS)%20and%20augmented%20reality%20GIS%20(ARGIS)%20in%20personal,%20public%20and%20environmental%20health.md) [[pdf]](https://link.springer.com/article/10.1186/s12942-017-0081-0)
 * [Workflow and tools to track and visualize behavioural data from a Virtual Reality environment using a lightweight GIS](./papers/Workflow%20and%20tools%20to%20track%20and%20visualize%20behavioural%20data%20from%20a%20Virtual%20Reality%20environment%20using%20a%20lightweight%20GIS.md) [[pdf]](https://www.sciencedirect.com/science/article/pii/S2352711018300931)
 
