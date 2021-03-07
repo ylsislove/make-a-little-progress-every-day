@@ -1,8 +1,5 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+# Hololens2-研究模式API文档翻译
 
-- [Hololens2-研究模式API文档翻译](#hololens2-%E7%A0%94%E7%A9%B6%E6%A8%A1%E5%BC%8Fapi%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91)
   - [综述](#%E7%BB%BC%E8%BF%B0)
   - [大纲](#%E5%A4%A7%E7%BA%B2)
   - [主传感器读取循环](#%E4%B8%BB%E4%BC%A0%E6%84%9F%E5%99%A8%E8%AF%BB%E5%8F%96%E5%BE%AA%E7%8E%AF)
@@ -25,10 +22,6 @@
     - [传感器接口](#%E4%BC%A0%E6%84%9F%E5%99%A8%E6%8E%A5%E5%8F%A3)
     - [传感器帧](#%E4%BC%A0%E6%84%9F%E5%99%A8%E5%B8%A7-1)
     - [同意接口](#%E5%90%8C%E6%84%8F%E6%8E%A5%E5%8F%A3)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# Hololens2-研究模式API文档翻译
 
 ## 综述
 第一代 HoloLens 引入了研究模式，研究不用于部署访问设备上的关键传感器的应用程序。HoloLens2 的研究模式保留了 HoloLens1 的功能，增加了对额外流的访问。同样，对于第一个版本，可以从以下输入中收集数据:
