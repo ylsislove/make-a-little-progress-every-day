@@ -1,6 +1,6 @@
 # Hololens2-MixedReality-WebRTC的使用问题
 
-很可惜，目前 [MixedReality-WebRTC](https://github.com/microsoft/MixedReality-WebRTC/tree/master) 和 [https://github.com/microsoft/HoloLens2ForCV](https://github.com/microsoft/HoloLens2ForCV) 不能同时在一个 Unity 项目使用。因为 MixedReality-WebRTC 只支持 ARM 构建，而 HoloLens2 的研究模式只能在 ARM64 下构建：[ARM Support](https://github.com/microsoft/HoloLens2ForCV/issues/22)。GitHub 关于这些问题的讨论如下：
+很可惜，目前 [MixedReality-WebRTC](https://github.com/microsoft/MixedReality-WebRTC/tree/master) 和 [HoloLens2ForCV](https://github.com/microsoft/HoloLens2ForCV) 不能同时在一个 Unity 项目使用。因为 MixedReality-WebRTC 只支持 ARM 构建，而 HoloLens2 的研究模式只能在 ARM64 下构建：[ARM Support](https://github.com/microsoft/HoloLens2ForCV/issues/22)。GitHub 关于这些问题的讨论如下：
 
 ## mrwebrtc could not be found on HL2 / Unable to load DLL 'mrwebrtc'
 关于此问题的相关讨论
