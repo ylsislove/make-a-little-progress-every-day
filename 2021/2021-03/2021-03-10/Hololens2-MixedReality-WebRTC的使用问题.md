@@ -9,7 +9,7 @@
 * [Unity3D + Hololens 2: Unable to load DLL 'mrwebrtc.dll': The specified module could not be found](https://github.com/microsoft/MixedReality-WebRTC/issues/591)
 * [now working on ARM64 build](https://github.com/microsoft/MixedReality-WebRTC/issues/235)
 
-这里提供了对 ARM64 支持的概述和路线图的相关讨论
+这里提供了 MixedReality-WebRTC 对 ARM64 支持的概述和路线图的相关讨论
 * [ARM64 support progress](https://github.com/microsoft/MixedReality-WebRTC/issues/414)
 
 持续关注，希望未来能有更多的进度。
