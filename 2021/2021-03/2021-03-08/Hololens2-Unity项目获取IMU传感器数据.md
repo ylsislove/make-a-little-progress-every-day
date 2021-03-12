@@ -3,6 +3,13 @@
 ## 前言
 在仔细捣鼓了 HoloLens2 研究模式的 API 文档后，借鉴了官方案例 [SensorVisualization](https://github.com/microsoft/HoloLens2ForCV/tree/main/Samples/SensorVisualization) 和这位哥们的代码 [HoloLens2-Unity-ResearchModeStreamer](https://github.com/cgsaxner/HoloLens2-Unity-ResearchModeStreamer)，终于成功的把传感器 IMU 相关的 API 构建成了 DLL，可以在 Unity 项目中进行调用，获取到高帧率的 IMU 数据。
 
+## 环境
+* Windows 10 教育版 18363.1379
+* Unity 2019.4.20f1c1
+* VS2019 16.8.6
+* WIN SDK 10.0.18362.0
+* Hololens2 内部预览版本 10.0.20301.1000
+
 ## 使用指南
 1. 下载本仓库：[HoloLens2-ResearchMode-UnityPlugin](https://github.com/ylsislove/HoloLens2-ResearchMode-UnityPlugin)
 2. 在 Visual Studio 中打开 `HL2RmUnityPlugin`
