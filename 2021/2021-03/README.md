@@ -58,3 +58,6 @@
 
 ### 2021-03-12
 * [Pytorch-nn.Softmax函数详解](./2021-03-12/Pytorch-nn.Softmax函数详解.md)
+
+### 2021-03-13
+* [golang-理解Golang中defer的使用](./2021-03-13/golang-理解Golang中defer的使用.md)
