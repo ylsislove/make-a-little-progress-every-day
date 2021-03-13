@@ -57,6 +57,7 @@
 * [Pytorch-常用的交叉熵损失函数CrossEntropyLoss详解](./2021-03-11/Pytorch-常用的交叉熵损失函数CrossEntropyLoss详解.md)
 
 ### 2021-03-12
+* [英语-3月12日打卡](./2021-03-12/英语-3月12日打卡.md)
 * [Pytorch-nn.Softmax函数详解](./2021-03-12/Pytorch-nn.Softmax函数详解.md)
 
 ### 2021-03-13
