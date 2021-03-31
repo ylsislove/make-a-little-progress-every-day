@@ -12,6 +12,9 @@
 这里提供了 MixedReality-WebRTC 对 ARM64 支持的概述和路线图的相关讨论
 * [ARM64 support progress](https://github.com/microsoft/MixedReality-WebRTC/issues/414)
 
+这里是 HoloLens 2 Research Mode 对 ARM 支持的相关讨论
+* [ARM Support](https://github.com/microsoft/HoloLens2ForCV/issues/22)
+
 持续关注，希望未来能有更多的进度。
 
 放一张在 ARM 构建下成功运行的截图吧
