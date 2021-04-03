@@ -7,7 +7,7 @@
 ## git
 ```bash
 # 更新
-yum install
+yum update
 # 安装
 yum install git
 # 查看
