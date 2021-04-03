@@ -14,6 +14,30 @@ yum install git
 git version
 ```
 
+## nodejs
+```bash
+# 下载
+mkdir /opt/software
+mkdir /opt/module
+cd /opt/software/
+wget https://nodejs.org/dist/v14.16.0/node-v14.16.0-linux-x64.tar.xz
+
+# 解压
+tar xvJf node-v14.16.0-linux-x64.tar.xz /opt/module/nodejs
+
+# 添加环境变量
+vim /etc/profile
+export PATH=$PATH:/opt/module/nodejs/bin
+
+# 重新载入
+source /etc/profile
+
+# 设置淘宝镜像源
+npm config set registry https://registry.npm.taobao.org
+# 查看
+npm config ls -l
+```
+
 ## python配置
 ```bash
 # 更新
