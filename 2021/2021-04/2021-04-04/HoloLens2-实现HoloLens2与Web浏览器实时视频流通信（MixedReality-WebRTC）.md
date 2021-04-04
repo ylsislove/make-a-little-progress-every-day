@@ -88,7 +88,7 @@ var settings = new TransceiverInitSettings
 {
     Name = $"mrsw#{index}",
     InitialDesiredDirection = wantsDir,
-    StreamIDs = new List<string>() { "hololens2_stream" }
+    StreamIDs = new List<string>() { "86181edf-1c7a-4f5d-ba0d-80021fcf7036" }
 };
 tr = _nativePeer.AddTransceiver(mediaLine.MediaKind, settings);
 ```
