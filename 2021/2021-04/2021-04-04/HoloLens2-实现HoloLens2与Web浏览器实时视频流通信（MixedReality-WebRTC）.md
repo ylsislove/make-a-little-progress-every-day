@@ -72,7 +72,7 @@ a=msid:egMOeAUXRITlOTOaE3PRZZoftadyBOOhMNxy c30fc5ed-e915-43d5-b189-4326ef006e91
 a=ssrc:144003280 cname:Sqg5iBI1faqe3I0w
 ```
 
-可以发送，Offer 的 `a=msid-semantic` 属性有一些不对劲，缺少一个流 ID，导致音频轨和视频轨没有绑定到流上，所以浏览器端无法获取到 HoloLens 端的视频流。
+可以发现，Offer 的 `a=msid-semantic` 属性有一些不对劲，缺少一个流 ID，导致音频轨和视频轨没有绑定到流上，所以浏览器端无法获取到 HoloLens 端的视频流。
 
 看了 MixedReality-WebRTC 的 [Issue](https://github.com/microsoft/MixedReality-WebRTC/issues/695)，问题确实就是出在这，如下：
 
