@@ -18,5 +18,9 @@
 * [CentOS-使用yum提示Error：rpmdb open failed的解决方案](./2021-04-03/CentOS-使用yum提示Error：rpmdb%20open%20failed的解决方案.md)
 
 ### 2021-04-04
+* [英语-4月4日打卡](./2021-04-04/英语-4月4日打卡.md)
 * [nodejs-服务端解决跨域问题](./2021-04-04/nodejs-服务端解决跨域问题.md)
 * [HoloLens2-实现HoloLens2与Web浏览器实时视频流通信（MixedReality-WebRTC）](./2021-04-04/HoloLens2-实现HoloLens2与Web浏览器实时视频流通信（MixedReality-WebRTC）.md)
+
+### 2021-04-05
+* [英语-4月5日打卡](./2021-04-05/英语-4月5日打卡.md)
