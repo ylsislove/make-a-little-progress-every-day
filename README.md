@@ -18,6 +18,12 @@
 ### [2020 学习清单](./2020/README.md)
 * [2020年个人总结](./2020/2020年个人总结.md)
 
+### 目前状态
+* 毕业论文赶稿中（预计完成时间4.20）
+
+### 下一阶段最想干的事
+- [ ] 基于 HoloLens2 实现一个 跑步状态实时监控App（源于跑步时的灵感哈哈）
+
 ## 📝 后记
 <div align="center">
 	<a href="http://systemcall.gitee.io/keep-thinking"> 我的博客 </a> / <a href="./resume.md"> 我的简历 </a> / <a href="https://space.bilibili.com/106491836"> 我的bilibili </a>
