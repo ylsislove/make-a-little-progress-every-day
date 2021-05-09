@@ -29,3 +29,6 @@
 
 ### 2021-05-08
 * [英语-5月8日打卡](./2021-05-08/英语-5月8日打卡.md)
+
+### 2021-05-09
+* [HoloLens2-使用UWP原生MediaCapture解决图像捕获与WebRTC视频流冲突问题](./2021-05-09/HoloLens2-使用UWP原生MediaCapture解决图像捕获与WebRTC视频流冲突问题.md)
