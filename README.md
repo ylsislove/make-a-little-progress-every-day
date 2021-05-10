@@ -22,11 +22,3 @@
 <div align="center">
 	<a href="http://systemcall.gitee.io/keep-thinking"> 我的博客 </a> / <a href="./Resume.md"> 我的简历 </a> / <a href="https://space.bilibili.com/106491836"> 我的bilibili </a>
 </div>
-
-## 🙏 致谢
-本项目的部分知识点总结来自
-* [每天 30 秒系列之前端面试](https://hacpai.com/article/1544793046274)
-* [CS-Notes](https://github.com/CyC2018/CS-Notes)
-* [Maaaxter English](https://www.youtube.com/channel/UCO8GewbsHFFmJn4kLLq1WXQ)
-* [微信公众号-LearnAndRecord](https://mp.weixin.qq.com/s/N7L5tUm_lGvZbgaOOWZuvQ)
-* [知识星球-OpenCV研习社](https://mp.weixin.qq.com/s/61kCgN5hQoXZSBzdP4Ufhw)
