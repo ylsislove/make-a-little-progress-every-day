@@ -20,7 +20,7 @@
 
 ## 📝 后记
 <div align="center">
-	<a href="http://systemcall.gitee.io/keep-thinking"> 我的博客 </a> / <a href="./resume.md"> 我的简历 </a> / <a href="https://space.bilibili.com/106491836"> 我的bilibili </a>
+	<a href="http://systemcall.gitee.io/keep-thinking"> 我的博客 </a> / <a href="./Resume.md"> 我的简历 </a> / <a href="https://space.bilibili.com/106491836"> 我的bilibili </a>
 </div>
 
 ## 🙏 致谢

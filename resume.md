@@ -35,11 +35,6 @@
 ### 技术文章
 - [如何用Qt绘制一颗好看的二叉树](https://blog.csdn.net/Apple_Coco/article/details/83501851)
 - [灰度图像压缩 DP算法 位运算详解](https://blog.csdn.net/Apple_Coco/article/details/89078798)
-
-### 求职意向
-北京、上海、杭州等，可商讨。
-
-###  致谢
-感谢您花时间阅读我的简历，期待有机会在您公司实习。
+- [HoloLens2开发笔记-使用UWP原生MediaCapture解决图像捕获与WebRTC视频流冲突问题](https://github.com/ylsislove/make-a-little-progress-every-day/blob/master/2021/2021-05/2021-05-09/HoloLens2-使用UWP原生MediaCapture解决图像捕获与WebRTC视频流冲突问题.md)
 
 [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210123224911.jpg)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210123224911.jpg)
