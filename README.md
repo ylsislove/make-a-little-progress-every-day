@@ -26,8 +26,6 @@
 	<a href="http://systemcall.gitee.io/keep-thinking"> 我的博客 </a> / <a href="./Resume.md"> 我的简历 </a> / <a href="https://space.bilibili.com/106491836"> 我的bilibili </a>
 </div>
 
-<br>
-
 - 🌱 I’m currently learning **WebRTC + OpenCV + YOLO5**
 
 - 💬 Ask me about **HoloLens 2**
