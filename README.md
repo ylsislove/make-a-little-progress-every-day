@@ -18,7 +18,18 @@
 ### [2020 学习清单](./2020/README.md)
 * [2020年个人总结](./2020/2020年个人总结.md)
 
+## 📚 最新技术文章
+* [HoloLens2开发笔记-使用UWP原生MediaCapture解决图像捕获与WebRTC视频流冲突问题](./2021/2021-05/2021-05-09/HoloLens2-使用UWP原生MediaCapture解决图像捕获与WebRTC视频流冲突问题.md)
+
 ## 📝 后记
 <div align="center">
 	<a href="http://systemcall.gitee.io/keep-thinking"> 我的博客 </a> / <a href="./Resume.md"> 我的简历 </a> / <a href="https://space.bilibili.com/106491836"> 我的bilibili </a>
 </div>
+
+<br>
+
+- 🌱 I’m currently learning **WebRTC + OpenCV + YOLO5**
+
+- 💬 Ask me about **HoloLens 2**
+
+- 📫 How to reach me **916491013@qq.com**
