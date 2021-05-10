@@ -22,7 +22,12 @@ cd nginx-1.18.0
 make && make install
 ```
 
+## 配置静态资源文件目录
+* [nginx学习：搭建静态资源服务器](https://blog.csdn.net/happysong8783/article/details/80665530)
+* [nginx静态资源文件无法访问，403 forbidden错误](https://blog.csdn.net/ngcsnow/article/details/39394991)
+* [Nginx静态文件路径配置](https://www.cnblogs.com/azhqiang/p/9772089.html)
+
 ## 参考链接
 * [Centos7安装Nginx详细步骤](https://www.cnblogs.com/huny/p/13702929.html)
-* [centos7 安装nginx并启动](https://blog.csdn.net/fishineye/article/details/106457533)
+* [centos7安装nginx并启动](https://blog.csdn.net/fishineye/article/details/106457533)
 * [Nginx使用教程](https://blog.csdn.net/duguyuyun12345/article/details/83471821)
