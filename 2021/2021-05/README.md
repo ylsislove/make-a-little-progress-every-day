@@ -82,3 +82,4 @@
 ### 2021-05-23
 * [LearningArchive-v0.0.4版本发布](./2021-05-23/LearningArchive-v0.0.4版本发布.md)
 * [LearningArchive-v0.0.5版本发布](./2021-05-23/LearningArchive-v0.0.5版本发布.md)
+* [LearningArchive-v0.0.6版本发布](./2021-05-23/LearningArchive-v0.0.6版本发布.md)
