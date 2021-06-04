@@ -1,6 +1,7 @@
 # VOLOv5-环境安装配置
 
-## 下载安装 OpenVINO
+## OpenVINO 安装配置
+### 下载安装 OpenVINO
 官网地址：[OpenVINO](https://docs.openvinotoolkit.org/latest/index.html)
 
 选择 windows 版本下载和安装，默认路径尽量不要更改
@@ -17,7 +18,7 @@
 
 [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210604210014.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210604210014.png)
 
-## OpenVINO VS2019 配置
+### OpenVINO VS2019 配置
 创建一个 C++ 控制台的空项目，编译配置改为 `Release x64`
 
 打开 `Release x64` 的属性管理器，貌似 VS2019 没有默认的用户属性表了，所有直接右击创建一个就好，如下图
@@ -71,3 +72,27 @@ int main() {
 ```
 
 成功显示出图片表示 VS2019 配置成功
+
+### Python 配置
+在环境变量里新建 PYTHONPATH，添加如下两条路径
+
+[![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210604233435.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210604233435.png)
+
+确定保存。重启命令行，启动 Python，测试如下
+
+```python
+from openvino.inference_engine import IECore
+
+ie = IECore()
+for device in ie.available_devices:
+	print(device)
+```
+
+## VOLOv5 安装配置
+克隆 [yolov5](https://github.com/ultralytics/yolov5) 仓库
+
+```
+git clone https://github.com/ultralytics/yolov5.git
+```
+
+按照 GitHub 教程走就好啦
