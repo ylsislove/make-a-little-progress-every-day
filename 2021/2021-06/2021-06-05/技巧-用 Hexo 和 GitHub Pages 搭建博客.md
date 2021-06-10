@@ -65,7 +65,7 @@ zh-CN:
     links: 友链
 ```
 
-## 添加自定义图表（Bilibili）
+## 添加自定义图标（Bilibili）
 参考：[Custom Icon Image](https://theme-next.js.org/docs/advanced-settings/custom-files.html#Custom-Icon-Image)
 
 样式编辑如下：
@@ -83,6 +83,67 @@ zh-CN:
 	margin-right: 3px !important;
 }
 ```
+
+## 添加标签云
+文档地址：[Hexo Tag Cloud](https://github.com/D0n9X1n/hexo-tag-cloud/blob/master/README.ZH.md)
+1. 安装 `npm i hexo-tag-cloud -S`
+2. 在 `source/_data/sidebar.njk` 文件中添加
+```js
+{% if site.tags.length > 1 %}
+<script type="text/javascript" charset="utf-8" src="{{ url_for('/js/tagcloud.js') }}"></script>
+<script type="text/javascript" charset="utf-8" src="{{ url_for('/js/tagcanvas.js') }}"></script>
+<div class="widget-wrap">
+    <div id="myCanvasContainer" class="widget tagcloud">
+        <canvas width="250" height="250" id="resCanvas" style="width:100%">
+            {{ list_tags() }}
+        </canvas>
+    </div>
+</div>
+{% endif %}
+```
+3. 修改 `_config.next.yml`，放开 `custom_file_path` 中的 `sidebar` 注释
+4. 在 `_config.yml` 添加
+```yml
+# hexo-tag-cloud
+tag_cloud:
+  textFont: Trebuchet MS, Helvetica
+  textColor: '#333'
+  textHeight: 15
+  outlineColor: '#E2E1D1'
+  maxSpeed: 0.05
+  pauseOnSelected: true # true 意味着当选中对应 tag 时,停止转动
+```
+5. 然后使用 `hexo clean && hexo g && hexo s` 来享受属于你自己的独一无二的标签云吧。
+
+## 添加看板娘
+参考：[Hexo -5- 添加 live2d 看板动画](https://www.zywvvd.com/2020/03/09/hexo/5_hexo_add_live2d/add-live2d/)
+
+## 文章置顶
+1. `npm uninstall hexo-generator-index --save`
+2. `npm install hexo-generator-index-pin-top --save`
+3. 在需要置顶的文章的`Front-matter`中加上 `top: true` 或者 `top: 任意数字`，比如：（top中数字越大，文章越靠前）
+```yml
+---
+reward_settings:
+  enable: true
+  comment: Buy me a coffee
+top: 10
+---
+```
+4. 在 `layout\_partials\post\post-meta.njk` 文件中编辑如下
+```js
+{% if post.top %}
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-thumbtack" style="color: #EB6D39"></i>
+    </span>
+    <span class="post-meta-item-text"><font color=EB6D39>置顶</font></span>
+  </span>
+{% endif %}
+```
+
+## 目前的缺陷
+修改了 NexT 的源码，主要是 `changyan.js`、`footer.njk` 和 `post-mate.njk`，后面会用 inject 技术解决这个问题。
 
 ## 参考链接
 * [用 Hexo 和 GitHub Pages 搭建博客](https://ryanluoxu.github.io/2017/11/24/%E7%94%A8-Hexo-%E5%92%8C-GitHub-Pages-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/)
