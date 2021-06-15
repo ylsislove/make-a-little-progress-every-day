@@ -142,6 +142,47 @@ top: 10
 {% endif %}
 ```
 
+## 音乐播放器
+参考：[Hexo NexT主题中添加网页音乐播放器功能](https://asdfv1929.github.io/posts/2018/05/26/next-add-music.html)
+
+1. 点击访问Aplayer源码：[GitHub Aplayer](https://github.com/MoePlayer/APlayer)。下载到本地，解压后将 `dist` 文件夹复制到 `themes\next\source` 文件夹下。
+2. 新建 `themes\next\source\dist\music.js` 文件，添加内容：
+```js
+const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    fixed: true,
+    autoplay: false,
+    audio: [
+      {
+        name: "PDD洪荒之力",
+        artist: '徐梦圆',
+        url: 'http://up.mcyt.net/?down/39868.mp3',
+        cover: 'http://oeff2vktt.bkt.clouddn.com/image/84.jpg',
+      },
+      {
+        name: '9420',
+        artist: '麦小兜',
+        url: 'http://up.mcyt.net/?down/45967.mp3',
+        cover: 'http://oeff2vktt.bkt.clouddn.com/image/8.jpg',
+      },
+      {
+        name: '风筝误',
+        artist: '刘珂矣',
+        url: 'http://up.mcyt.net/?down/46644.mp3',
+        cover: 'http://oeff2vktt.bkt.clouddn.com/image/96.jpg',
+      }
+    ]
+});
+```
+3. 在 `layout\_partials\post\body-end.njk` 文件中编辑如下：
+```html
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+```
+4. 为了解决切换页面播放中断问题，只需要在 `_config.next.yml` 中，将 `pjax: false` 改为 `pjax: true` 即可~
+
 ## 目前的缺陷
 修改了 NexT 的源码，主要是 `changyan.js`、`footer.njk` 和 `post-mate.njk`，后面会用 inject 技术解决这个问题。
 
