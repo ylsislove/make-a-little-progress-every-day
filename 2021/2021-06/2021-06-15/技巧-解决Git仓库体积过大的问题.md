@@ -8,16 +8,17 @@
 ## 解决办法
 1. 在项目根目录下运行
 ```bash
-git rev-list --all | xargs -rL1 git ls-tree -r --long | sort -uk3 | sort -rnk4 | head -10
-```
-或
-```bash
 git rev-list --objects --all | grep -E `git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -10 | awk '{print$1}' | sed ':a;N;$!ba;s/\n/|/g'`
 ```
 或
 ```bash
 git rev-list --objects --all | grep "$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -15 | awk '{print$1}')"
 ```
+或
+```bash
+git rev-list --all | xargs -rL1 git ls-tree -r --long | sort -uk3 | sort -rnk4 | head -10
+```
+
 
 2. 改写历史，去除大文件
 > 注意：下方命令中的 `path/to/large/files` 是大文件所在的路径，千万不要弄错！
