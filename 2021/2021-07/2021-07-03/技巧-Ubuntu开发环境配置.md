@@ -120,7 +120,7 @@ sudo npm i forever -g
 ```
 
 ## 配置 Python
-```
+```bash
 # 更新 pip
 python3 -m pip install --upgrade pip
 
@@ -140,3 +140,24 @@ python3 -m pip install torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio==0.7.2
 ```
 
 如果 `import cv2` 报 `Segmentation fault (core dumped)` 错的话，运行 `sudo apt install python3-opencv` 应该能解决。
+
+## 配置 Nginx
+```bash
+# 安装
+sudo apt update
+sudo apt install nginx
+
+# 查看版本
+nginx -v
+```
+
+常用命令：
+* 启动 Nginx 服务：sudo systemctl start nginx
+* 停止 Nginx 服务：sudo systemctl stop nginx
+* 重启 Nginx 服务：sudo systemctl restart nginx
+* 在进行一些配置更改后重新加载 Nginx 服务：sudo systemctl reload nginx
+* 开启自启：sudo systemctl enable nginx
+* 关闭开启：sudo systemctl disable nginx
+* 检查状态：sudo systemctl status nginx
+
+在 `/etc/nginx/sites-available/default` 文件中配置 server，在 `/etc/nginx/nginx.conf` 文件中配置 `user root;`
