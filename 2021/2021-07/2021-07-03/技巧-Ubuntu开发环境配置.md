@@ -97,25 +97,18 @@ vim
 sudo apt-get update
 sudo apt-get upgrade
 
-# 下载
-mkdir ~/software
-mkdir ~/module
-cd ~/software/
-wget https://nodejs.org/dist/v14.16.0/node-v14.16.0-linux-x64.tar.xz
-
-# 解压
-tar xvJf node-v14.16.0-linux-x64.tar.xz -C ~/module/
-cd ../module
-mv node-v14.16.0-linux-x64/ nodejs
-
-# 添加环境变量
-sudo vim /etc/profile
-export PATH=$PATH:~/module/nodejs/bin
-
-# 重新载入
-source /etc/profile
+# 安装
+sudo apt install nodejs
+sudo apt install npm
+# 安装n模块
+sudo npm install -g n
+# 升级 nodejs 到最新 stable 版本
+sudo n stable
+# 升级最新npm
+sudo npm install npm@latest -g
 
 # 查看版本
+node --version
 npm --version
 # 设置淘宝镜像源
 npm config set registry https://registry.npm.taobao.org
@@ -123,7 +116,7 @@ npm config set registry https://registry.npm.taobao.org
 npm config ls -l
 
 # 全局安装 forever
-npm i forever -g
+sudo npm i forever -g
 ```
 
 ## 配置 Python
