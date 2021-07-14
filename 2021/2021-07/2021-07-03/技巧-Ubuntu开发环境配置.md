@@ -161,3 +161,11 @@ nginx -v
 * 检查状态：sudo systemctl status nginx
 
 在 `/etc/nginx/sites-available/default` 文件中配置 server，在 `/etc/nginx/nginx.conf` 文件中配置 `user root;`
+
+## 配置 Docker
+```bash
+# 安装
+sudo apt install docker.io
+# 运行
+sudo docker run hello-world
+```
