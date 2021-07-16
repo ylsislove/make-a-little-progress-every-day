@@ -19,3 +19,6 @@
 
 ### 2021-07-15
 * [Ubuntu-Ubuntu系统中创建新用户](./2021-07-15/Ubuntu-Ubuntu系统中创建新用户.md)
+
+### 2021-07-16
+* [ALGLIB-VS2019配置ALGLIB教程](./2021-07-16/ALGLIB-VS2019配置ALGLIB教程.md)
