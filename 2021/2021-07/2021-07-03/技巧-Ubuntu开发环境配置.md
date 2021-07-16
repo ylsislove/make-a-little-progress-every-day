@@ -117,6 +117,7 @@ npm config ls -l
 
 # 全局安装 forever
 sudo npm i forever -g
+sudo npm i anywhere
 ```
 
 ## 配置 Python
