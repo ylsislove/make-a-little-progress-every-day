@@ -57,3 +57,6 @@ root@ubuntu:/home/peng# su csdn
 csdn@ubuntu:/home/peng$ sudo su
 ```
 可以看到，用户 csdn 就可以用 sudo 命令以管理员身份执行指令了。
+
+## 参考链接
+* [Ubuntu16.04系统中创建新用户](https://blog.csdn.net/timothy93bp/article/details/77679000)
