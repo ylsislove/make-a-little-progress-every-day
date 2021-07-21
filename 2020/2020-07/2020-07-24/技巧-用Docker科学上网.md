@@ -3,6 +3,16 @@
 ## 2021-07-21 更新
 shadowsocks Windows 和 安卓版的客户端都可以通过 [https://github.com/shadowsocks](https://github.com/shadowsocks) 这个网址下载，如果有小伙伴无法上 GitHub 的话，也可以联系我的邮箱，给你们发送这两个客户端软件~
 
+可能有些小伙伴碰到开启小飞机后，用 `git push` 命令后依然提交失败的情况，这个可能就是由于没有给 git 设置代理导致的，可以按照如下命令设置
+```
+git config --global http.proxy 'socks5://127.0.0.1:54285'
+git config --global https.proxy 'socks5://127.0.0.1:54285'
+```
+
+这样就可以在 `~/.gitconfig` 文件中添加上对应的代理设置，再次使用 `git push` 命令时只要打开小飞机，就可以让 git 走代理的道路啦，再也不用担心道路不同了嘿嘿~
+
+Git 设置代理参考：[git设置代理和一些git常用命令](https://www.cnblogs.com/johnzhu/p/6582538.html)
+
 ## 2021-01-24 更新
 目前腾讯云的轻量应用服务器已经有香港地区的了，通过香港来访问外网还是要比硅谷的快很多哦，所以地域选择香港是最好的~
 最近想抽个时间把手机科学上网的教程也更新下，敬请期待吧~
