@@ -170,3 +170,9 @@ sudo apt install docker.io
 # 运行
 sudo docker run hello-world
 ```
+
+## 安装JDK
+```bash
+sudo apt-get update
+sudo apt-get install openjdk-8-jdk
+```
