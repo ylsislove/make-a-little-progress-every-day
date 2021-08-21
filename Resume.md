@@ -11,6 +11,11 @@
 * 正在学习：HoloLens 2 开发和 WebRTC。
 
 ### 项目经历
+#### 本科毕业设计（2021年3月 ~ 2021年6月）
+1. 论文名称《耦合头戴式AR设备和高性能计算平台的ARGIS实时空间分析计算框架研究》被评为校级优秀论文。
+2. 本研究通过引入 HoloLens2 研究模式和 WebRTC 实时音视频通讯技术，解决了以往 AR 框架缺乏对实时数据采集和 AR 端实时画面展示的问题。整个框架分为 AR 端、云端和 Web 端，AR 负责数据的采集和可视化，云端负责数据的计算和存储，Web 端负责以旁观者视角展示 AR 端的实时画面。
+3. 视频演示地址：[本科毕设展示：戴着AR眼镜度量城市的每一个角落](https://www.bilibili.com/video/BV1qN411o7Ev)
+
 #### 基于卷积神经网络的城市感知评估（2019年10月 ~ 2020年1月）
 1. 负责：从数据采集、数据处理到模型训练，以及最后的结果可视化等整个项目流程，具体情况如下：
 	- 开发手机App采集街景图片，同时记录采集的时间，经纬度等信息
@@ -36,5 +41,9 @@
 - [如何用Qt绘制一颗好看的二叉树](https://blog.csdn.net/Apple_Coco/article/details/83501851)
 - [灰度图像压缩 DP算法 位运算详解](https://blog.csdn.net/Apple_Coco/article/details/89078798)
 - [HoloLens2开发笔记-使用UWP原生MediaCapture解决图像捕获与WebRTC视频流冲突问题](https://github.com/ylsislove/make-a-little-progress-every-day/blob/master/2021/2021-05/2021-05-09/HoloLens2-使用UWP原生MediaCapture解决图像捕获与WebRTC视频流冲突问题.md)
+
+### 已发表的论文
+- [1] Wang, R. , Ren, S. , Zhang, J. , Yao, Y. , **Wang, Y**. , & Guan, Q. . (2021). A comparison of two deep-learning-based urban perception models: which one is better?. Computational Urban Science, 1(1), 1-13.
+- [2] Yao, Y. , Zhang, J. , Qian, C. , **Wang, Y**. , & Guan, Q. . (2021). Delineating urban job-housing patterns at a parcel scale with street view imagery. International Journal of Geographical Information Science(8).
 
 [![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210123224911.jpg)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210123224911.jpg)
