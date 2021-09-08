@@ -57,13 +57,23 @@ for f in files:
 创建一个 main.cpp，编写一个测试代码
 
 ```c++
-#include <opencv2/opencv.hpp>
+#include <opencv2\opencv.hpp>
+#include <inference_engine.hpp>
 
 using namespace cv;
 using namespace std;
+using namespace InferenceEngine;
 
-int main() {
-	Mat src = imread("E:\\_image\\OpenCVTest\\lena.jpg");
+int main(int argc, char** argv) {
+
+	// 创建IE插件, 查询支持硬件设备
+	Core ie;
+	vector<string> availableDevices = ie.GetAvailableDevices();
+	for (int i = 0; i < availableDevices.size(); i++) {
+		printf("supported device name : %s \n", availableDevices[i].c_str());
+	}
+
+	Mat src = imread("E:\\images\\background\\1.jpg");
 	imshow("input", src);
 	waitKey(0);
 	destroyAllWindows();
