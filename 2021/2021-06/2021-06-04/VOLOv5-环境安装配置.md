@@ -84,9 +84,9 @@ int main(int argc, char** argv) {
 成功显示出图片表示 VS2019 配置成功
 
 ### Python 配置
-在环境变量里新建 PYTHONPATH，添加如下两条路径
+在环境变量里新建 PYTHONPATH，添加如下三条路径
 
-[![图片可能因为网络原因掉线了，请刷新或直接点我查看图片~](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210604233435.png)](https://cdn.jsdelivr.net/gh/ylsislove/image-home/test/20210604233435.png)
+![Python 配置](https://blog-1258402410.cos.ap-chengdu.myqcloud.com/blog0803/20210908234043.png)
 
 确定保存。重启命令行，启动 Python，测试如下
 
@@ -106,3 +106,5 @@ git clone https://github.com/ultralytics/yolov5.git
 ```
 
 按照 GitHub 教程走就好啦
+
+运行测试命令：`python .\detect.py --source .\data\images\zidane.jpg --weights yolov5s.pt --conf 0.25`
