@@ -1,0 +1,121 @@
+# 树莓派-PCF8591（AD DA）实验
+
+## 原理图
+![原理图](https://blog-1258402410.cos.ap-chengdu.myqcloud.com/blog0803/20210911001409.png)
+
+## 接线图
+![接线图](https://blog-1258402410.cos.ap-chengdu.myqcloud.com/blog0803/20210911000909.jpg)
+
+## 树莓派管脚图
+![树莓派管脚图](https://blog-1258402410.cos.ap-chengdu.myqcloud.com/blog0803/20210902230444.png)
+
+## 代码
+### C
+```c
+#include <stdio.h>
+#include <wiringPi.h>
+#include <pcf8591.h>
+
+#define PCF       120
+
+int main (void)
+{
+	int value ;
+	wiringPiSetup () ;
+	// Setup pcf8591 on base pin 120, and address 0x48
+	pcf8591Setup (PCF, 0x48) ;
+	while(1) // loop forever
+	{
+		value = analogRead  (PCF + 3) ;
+		printf("%d\n", value);
+		analogWrite (PCF + 0, value) ;
+		delay (10) ;
+	}
+	return 0 ;
+}
+```
+
+编译命令：`gcc pcf8591.c -o pcf8591 -lwiringPi`
+
+### Python
+```python
+#!/usr/bin/env python
+import PCF8591 as ADC
+
+def setup():
+	ADC.setup(0x48)
+
+def loop():
+	while True:
+		print ADC.read(0)
+		ADC.write(ADC.read(3))
+
+def destroy():
+	ADC.write(0)
+
+if __name__ == "__main__":
+	try:
+		setup()
+		loop()
+	except KeyboardInterrupt:
+		destroy()
+```
+
+```python
+#!/usr/bin/env python
+#------------------------------------------------------
+#
+#		This is a program for PCF8591 Module.
+#
+#		Warnng! The Analog input MUST NOT be over 3.3V!
+#    
+#		In this script, we use a poteniometer for analog
+#   input, and a LED on AO for analog output.
+#
+#		you can import this script to another by:
+#	import PCF8591 as ADC
+#	
+#	ADC.Setup(Address)  # Check it by sudo i2cdetect -y -1
+#	ADC.read(channal)	# Channal range from 0 to 3
+#	ADC.write(Value)	# Value range from 0 to 255		
+#
+#------------------------------------------------------
+import smbus
+import time
+
+# for RPI version 1, use "bus = smbus.SMBus(0)"
+bus = smbus.SMBus(1)
+
+#check your PCF8591 address by type in 'sudo i2cdetect -y -1' in terminal.
+def setup(Addr):
+	global address
+	address = Addr
+
+def read(chn): #channel
+	if chn == 0:
+		bus.write_byte(address,0x40)
+	if chn == 1:
+		bus.write_byte(address,0x41)
+	if chn == 2:
+		bus.write_byte(address,0x42)
+	if chn == 3:
+		bus.write_byte(address,0x43)
+	bus.read_byte(address) # dummy read to start conversion
+	return bus.read_byte(address)
+
+def write(val):
+	temp = val # move string value to temp
+	temp = int(temp) # change string to integer
+	# print temp to see on terminal else comment out
+	bus.write_byte_data(address, 0x40, temp)
+
+if __name__ == "__main__":
+	setup(0x48)
+	while True:
+		print 'AIN0 = ', read(0)
+		print 'AIN1 = ', read(1)
+		tmp = read(0)
+		tmp = tmp*(255-125)/255+125 # LED won't light up below 125, so convert '0-255' to '125-255'
+		write(tmp)
+#		time.sleep(0.3)
+```
