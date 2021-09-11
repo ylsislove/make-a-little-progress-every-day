@@ -12,3 +12,4 @@
 
 ## Ubuntu
 * [Ubuntu-Ubuntu系统中创建新用户](./2021/2021-07/2021-07-15/Ubuntu-Ubuntu系统中创建新用户.md)
+* [Ubuntu-使用sslocal连接Shadowsocks](./2021/2021-09/2021-09-11/Ubuntu-使用sslocal连接Shadowsocks.md)

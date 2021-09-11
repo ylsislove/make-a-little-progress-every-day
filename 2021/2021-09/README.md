@@ -26,3 +26,6 @@
 ### 2021-09-10
 * [树莓派-U型光电传感器实验](./2021-09-10/树莓派-U型光电传感器实验.md)
 * [树莓派-PCF8591（AD DA）实验](./2021-09-10/树莓派-PCF8591（AD%20DA）实验.md)
+
+### 2021-09-11
+* [Ubuntu-使用sslocal连接Shadowsocks](./2021-09-11/Ubuntu-使用sslocal连接Shadowsocks.md)
