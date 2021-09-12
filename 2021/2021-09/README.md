@@ -29,3 +29,6 @@
 
 ### 2021-09-11
 * [Ubuntu-使用sslocal连接Shadowsocks](./2021-09-11/Ubuntu-使用sslocal连接Shadowsocks.md)
+
+### 2021-09-12
+* [YOLOv5-模型训练与检测](./2021-09-12/YOLOv5-模型训练与检测.md)
