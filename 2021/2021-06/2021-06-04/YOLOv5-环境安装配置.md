@@ -1,4 +1,4 @@
-# VOLOv5-环境安装配置
+# YOLOv5-环境安装配置
 
 ## OpenVINO 安装配置
 ### 下载安装 OpenVINO
@@ -98,7 +98,7 @@ for device in ie.available_devices:
 	print(device)
 ```
 
-## VOLOv5 安装配置
+## YOLOv5 安装配置
 克隆 [yolov5](https://github.com/ultralytics/yolov5) 仓库
 
 ```
