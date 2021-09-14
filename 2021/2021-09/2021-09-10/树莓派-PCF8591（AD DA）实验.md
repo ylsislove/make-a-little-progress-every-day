@@ -35,6 +35,8 @@ int main (void)
 }
 ```
 
+编译前注意需要先把树莓派的 I2C 接口打开~
+
 编译命令：`gcc pcf8591.c -o pcf8591 -lwiringPi`
 
 ### Python
