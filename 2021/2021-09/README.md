@@ -36,3 +36,6 @@
 
 ### 2021-09-13
 * [PostgreSQL-Docker创建PostgreSQL数据库并导入矢量数据](./2021-09-13/PostgreSQL-Docker创建PostgreSQL数据库并导入矢量数据.md)
+
+### 2021-09-14
+* [树莓派-雨滴检测实验](./2021-09-14/树莓派-雨滴检测实验.md)
