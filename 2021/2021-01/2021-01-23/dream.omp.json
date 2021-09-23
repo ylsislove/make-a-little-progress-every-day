@@ -44,9 +44,10 @@
           {
             "type": "git",
             "style": "plain",
-            "foreground": "cyan",
+            "foreground": "#C678DD",
             "properties": {
-              "prefix": "<darkGray>on</> <cyan>git: </>"
+              "prefix": "<darkGray>on</> <#C678DD>git: </>",
+              "display_status": true
             }
           },
           {
@@ -90,4 +91,4 @@
       }
     ],
     "final_space": true
-  }
+}
