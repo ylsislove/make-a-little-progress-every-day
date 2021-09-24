@@ -27,10 +27,43 @@ Note：实际上，第二个 `-v` 不是必要的，我这里添加只是因为�
 
 然后点击添加新服务，输入别名，在 Connection 中输入 ip 地址和其他信息，点击保存，不报错表示连接成功
 
-## 安装 PostGIS Shapefile Import/Export Manager
+## 通过 PostGIS Shapefile Import/Export Manager 导入矢量数据
 这个工具是矢量 Shapefile 文件的导入工具。下载链接：[PostGIS](http://download.osgeo.org/postgis/windows/pg10/)，可以下载最新版本的 3.1.4
 
-安装过程参考：[PostGIS 2.5.0 安装详细步骤](https://blog.csdn.net/antma/article/details/83580859)
+安装 PostGIS Shapefile Import/Export Manager 这个工具之前需要在本地安装 PostgreSQL 10，安装过程参考：[PostgreSQL 10 安装详细步骤](https://blog.csdn.net/antma/article/details/83579920)
+
+因为我们并不需要本地的数据库，所以安装时可以只勾选 server 和 command line 这两项即可。
+
+安装完成后，就可以安装刚刚下载的 Shapefile 文件导入工具了，安装过程可以参考 [PostGIS 2.5.0 安装详细步骤](https://blog.csdn.net/antma/article/details/83580859)
+
+同理，因为我们不使用本地的 PostgreSQL 数据库，所以安装过程中可以选择不安装 spatial database 空间数据库。最后安装完成
+
+打开 PostGIS Shapefile Import/Export Manager，点击 `view connection detail`，输入连接信息，如下图
+
+![连接docker数据库](https://blog-1258402410.cos.ap-chengdu.myqcloud.com/blog0803/20210924103213.png)
+
+点击 OK 后，下面输出 success，表示连接成功
+
+![docker数据库连接成功](https://blog-1258402410.cos.ap-chengdu.myqcloud.com/blog0803/20210924103344.png)
+
+接下来就是导入矢量数据了，我们从网上下载一份全国 62 个城市建筑物的矢量数据，下载链接：[全国62个城市建筑物轮廓矢量数据](https://www.sohu.com/a/324288814_100020239)，我们解压个武汉的建筑物数据，然后把解压出来的数据放到一个没有中文字符的路径下，路径也不要过长，同时全部选中，按 F2 将中文名称改成英文的，如下图
+
+![规范路径和名称](https://blog-1258402410.cos.ap-chengdu.myqcloud.com/blog0803/20210924110802.png)
+
+然后在导入工具中点击 Add File，选择刚刚解压出来的 `wuhan.shp`，就可以看到在 Import List 里出现了我们选择的文件，可以在这里更改表名等信息，确定无误后点击下方的 Import 按钮，如下图
+
+![Import](https://blog-1258402410.cos.ap-chengdu.myqcloud.com/blog0803/20210924111102.png)
+
+可以看到下方的输出框中出现 import completed，表示导入成功。
+
+我们还可以在 pgAdmin 中查看到刚刚导入的数据，如下图
+
+![pgAdmin查看导入的数据](https://blog-1258402410.cos.ap-chengdu.myqcloud.com/blog0803/20210924111720.png)
+
+## 通过 QGIS 导入矢量数据
+上面那个方法必须要在本机上安装 PostgreSQL 数据库，才能安装 PostGIS 导入工具，即使我们用不到本机的数据库，所以第二种导入方式就是通过 QGIS 连接 Docker 容器内的 PostgreSQL 数据库并导入数据，这样就不需要在本机上安装 PostgreSQL 和 PostGIS 了。
+
+后续待更~
 
 ## 相关链接
 - [PostgreSQL中文社区](http://www.postgres.cn/v2/document)
