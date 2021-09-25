@@ -11,7 +11,9 @@
 深夜踩坑真艰难，但获得的成就感也是最开心的~
 
 ## 从 GitHub 上 Clone 下源码后运行 Mavan 报错
-如果运行 `mvn clean install -DskipTests --settings D:\scoop\apps\maven\current\conf\thingsboardSettings.xml` 命令后编译报错，最大的可能就是 jdk 的版本和仓库的版本不符，目前仓库最新的代码（thingsboard-3.3.1）用的 jdk 是 jdk11，而我电脑上安装的是 jdk8，所以这肯定就编译不过了。解决办法就是去 [GitHub Release](https://github.com/thingsboard/thingsboard/releases) 找到 `ThingsBoard 3.2.1 Release` 下载，3.2.1 版本的 thingsboard 是用的 jdk8，然后在运行 mvn 命令就不会报编译错误了。
+如果运行 `mvn clean install -DskipTests --settings D:\scoop\apps\maven\current\conf\thingsboardSettings.xml` 命令后编译报错，最大的可能就是 jdk 的版本和仓库的版本不符，目前仓库最新的代码（thingsboard-3.3.1）用的 jdk 是 jdk11，而我电脑上安装的是 jdk8，所以这肯定就编译不过了。解决办法就是去 [GitHub Release](https://github.com/thingsboard/thingsboard/releases) 找到 `ThingsBoard 3.2.1 Release` 下载，注意选择源码版本下载，如下图。3.2.1 版本的 thingsboard 是用的 jdk8，然后在运行 mvn 命令就不会报编译错误了。
+
+![ThingsBoard 3.2.1 Release](https://blog-1258402410.cos.ap-chengdu.myqcloud.com/blog0803/20210926012001.png)
 
 thingsboardSettings.xml 文件内容放到文章附录，需要的自取。注意将文件中的 `<localRepository>D:\RepMaven</localRepository>` 改成自己的路径
 
@@ -56,6 +58,7 @@ host    all             all             ::1/128                 trust
 ## 参考链接
 * [ThingsBoard开源物联网平台学习记录](https://www.bilibili.com/video/BV12f4y147UX)
 * [pgsql在连接的时候报：不支援 10 验证类型。请核对您已经组态。。。](https://blog.csdn.net/qq_35377323/article/details/112979532)
+* [Thingsboard入门教程：本地环境搭建和源码编译安装，献给thingsboard编译失败的同学，教程不断优化](https://www.iotschool.com/wiki/tbinstall)
 
 ## 附录
 ```xml
