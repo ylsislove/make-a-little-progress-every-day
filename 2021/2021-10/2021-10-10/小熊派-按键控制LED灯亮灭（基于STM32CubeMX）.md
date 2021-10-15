@@ -60,7 +60,7 @@
 
 ![生成工程设置](https://blog-1258402410.cos.ap-chengdu.myqcloud.com/blog0803/20211010153559.png)
 
-![代码生成设置](https://blog-1258402410.cos.ap-chengdu.myqcloud.com/b
+![代码生成设置](https://blog-1258402410.cos.ap-chengdu.myqcloud.com/blog0803/20211010154022.png)
 
 最后选择右上角的 `GENERATE CODE`，即可完成工程的创建
 
