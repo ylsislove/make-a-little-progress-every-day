@@ -29,7 +29,7 @@
 	<a href="http://systemcall.gitee.io/keep-thinking"> OpenCV实验室 </a> / <a href="https://www.yaindream.com/"> 博客 </a> / <a href="./Resume.md"> 简历 </a> / <a href="https://space.bilibili.com/106491836"> 我的bilibili </a>
 </div>
 
-- 🌱 I’m currently learning **WebRTC + OpenCV + YOLO5**
+- 🌱 I’m currently learning **STM32 + SolidWorks + PCB**
 
 - 💬 Ask me about **HoloLens 2**
 
