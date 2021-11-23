@@ -12,8 +12,8 @@
 
 ## 📃 学习清单
 ### [2021 学习清单](./2021/README.md)
-#### [2021-10-16](./2021/2021-10/README.md)
-* [R-R语言和RStudio开发环境的下载与安装](./2021/2021-10/2021-10-16/R-R语言和RStudio开发环境的下载与安装.md)
+#### [2021-11-23](./2021/2021-11/README.md)
+* [物联网-基于docker部署thingsboard+tb-gateway+emqx详细教程](./2021/2021-11/2021-11-23/物联网-基于docker部署thingsboard+tb-gateway+emqx详细教程.md)
 
 ### [2020 学习清单](./2020/README.md)
 * [2020年个人总结](./2020/2020年个人总结.md)
@@ -21,10 +21,12 @@
 ## 📝 最新技术文章
 * [GIS-Google地图3D模型下载最新实践](./2021/2021-07/2021-07-05/GIS-Google地图3D模型下载最新实践.md)
 * [HoloLens2开发笔记-使用UWP原生MediaCapture解决图像捕获与WebRTC视频流冲突问题](./2021/2021-05/2021-05-09/HoloLens2-使用UWP原生MediaCapture解决图像捕获与WebRTC视频流冲突问题.md)
+* [小熊派-串口读取RS485输出的土壤七合一传感器数据（基于STM32CubeMX）](./2021/2021-10/2021-10-14/小熊派-串口读取RS485输出的土壤七合一传感器数据（基于STM32CubeMX）.md)
+* [物联网-基于docker部署thingsboard+tb-gateway+emqx详细教程](./2021/2021-11/2021-11-23/物联网-基于docker部署thingsboard+tb-gateway+emqx详细教程.md)
 
 ## ✨ 后记
 <div align="center">
-	<a href="http://systemcall.gitee.io/keep-thinking"> OpenCV实验室 </a> / <a href="https://ylsislove.github.io/"> 博客 </a> / <a href="./Resume.md"> 简历 </a> / <a href="https://space.bilibili.com/106491836"> 我的bilibili </a>
+	<a href="http://systemcall.gitee.io/keep-thinking"> OpenCV实验室 </a> / <a href="https://www.yaindream.com/"> 博客 </a> / <a href="./Resume.md"> 简历 </a> / <a href="https://space.bilibili.com/106491836"> 我的bilibili </a>
 </div>
 
 - 🌱 I’m currently learning **WebRTC + OpenCV + YOLO5**
