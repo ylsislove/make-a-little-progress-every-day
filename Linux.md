@@ -13,3 +13,6 @@
 ## Ubuntu
 * [Ubuntu-Ubuntu系统中创建新用户](./2021/2021-07/2021-07-15/Ubuntu-Ubuntu系统中创建新用户.md)
 * [Ubuntu-使用sslocal连接Shadowsocks](./2021/2021-09/2021-09-11/Ubuntu-使用sslocal连接Shadowsocks.md)
+* [Ubuntu-解决2.5G网卡驱动问题](./2022/2022-03/2022-03-12/Ubuntu-解决2.5G网卡驱动问题.md)
+* [Ubuntu-更换国内源](./2022/2022-03/2022-03-12/Ubuntu-更换国内源.md)
+* [Ubuntu-挂载WebDAV](./2022/2022-03/2022-03-12/Ubuntu-挂载WebDAV.md)
