@@ -1,5 +1,10 @@
 # Pytorch-Pytorch安装
 
+## 一些参考链接
+* [windows10下安装GPU版pytorch简明教程](https://zhuanlan.zhihu.com/p/54350088)
+* [GPU版本的PyTorch安装与环境配置](https://blog.csdn.net/ke996/article/details/112761228)
+
+## 安装教程
 1. 进入官网 [https://pytorch.org/](https://pytorch.org/)
 
 2. 找到[安装文档](https://pytorch.org/get-started/locally/)
