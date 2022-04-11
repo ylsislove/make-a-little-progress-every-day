@@ -17,6 +17,26 @@
 
 thingsboardSettings.xml 文件内容放到文章附录，需要的自取。注意将文件中的 `<localRepository>D:\RepMaven</localRepository>` 改成自己的路径
 
+## 报错 The unauthenticated git protocol on port 9418 is no longer supported.
+报错如下图
+
+![](http://image.aayu.today/2022/04/11/3eadd16f755fe.png)
+
+哎，这个就是由于[最新版本的 git 提升安全性加入了新特性（2022.1.11）](https://github.blog/2021-09-01-improving-git-protocol-security-github/#no-more-unauthenticated-git)导致的
+
+解决办法就是在 `.gitconfig` 文件中加入如下语句 
+
+```xml
+[url "https://"]
+  insteadOf = ssh://
+[url "https://"]
+  insteadOf = git://
+```
+
+然后重新进行编译即可~~
+
+参考链接：[The unauthenticated git protocol on port 9418 is no longer supported. ](https://www.cnblogs.com/procorosso/p/16121047.html)
+
 ## Cannot resolve com.sun:tools:1.4.2
 ![报错图](https://blog-1258402410.cos.ap-chengdu.myqcloud.com/blog0803/20210925231719.png)
 
