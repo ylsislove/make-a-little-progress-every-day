@@ -8,3 +8,4 @@ user.*
 # temporary/
 
 *.drawio.png
+.history/

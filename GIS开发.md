@@ -36,6 +36,7 @@
 * [Cesium-通过Shader添加雨雪天气效果](./2020/2020-10/2020-10-30/Cesium-通过Shader添加雨雪天气效果.md)
 * [Cesium-通过Shader添加圆形扩散效果](./2020/2020-10/2020-10-30/Cesium-通过Shader添加圆形扩散效果.md)
 * [Cesium-Vue3整合Cesium最简教程](./2021/2021-07/2021-07-01/Cesium-Vue3整合Cesium最简教程.md)
+* [Cesium-Vue3.2配置Cesium踩坑笔记](./2022/2022-04/2022-04-21/Cesium-Vue3.2配置Cesium踩坑笔记.md)
 
 #### 源码剖析
 * [Cesium源码剖析-Post Processing之物体描边（Silhouette）](./2020/2020-10/2020-10-29/Cesium源码剖析-PostProcessing之物体描边（Silhouette）.md)
