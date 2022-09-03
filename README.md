@@ -38,11 +38,11 @@
 * [极空间上常用Docker应用推荐-可玩性+++](./2022/2022-09/2022-09-02/极空间上常用Docker应用推荐-可玩性+++.md)
 
 ## ✨ 后记
-<div align="center">
-	<a href="http://systemcall.gitee.io/keep-thinking"> OpenCV实验室 </a> / <a href="https://blog.aayu.today/"> 博客 </a> / <a href="./Resume.md"> 简历 </a> / <a href="https://space.bilibili.com/106491836"> 我的bilibili </a>
-</div>
-<br/>
-
+- <a href="http://systemcall.gitee.io/keep-thinking"> OpenCV实验室 </a> / <a href="https://blog.aayu.today/"> 博客 </a> / <a href="./Resume.md"> 简历 </a> / <a href="https://space.bilibili.com/106491836"> 我的bilibili </a>
 - 🌱 I’m currently learning **PCB，Unity3D**
 - 💬 Ask me about **HoloLens 2**
 - 📫 How to reach me **916491013@qq.com**
+
+<!-- <div align="center">
+	<a href="http://systemcall.gitee.io/keep-thinking"> OpenCV实验室 </a> / <a href="https://blog.aayu.today/"> 博客 </a> / <a href="./Resume.md"> 简历 </a> / <a href="https://space.bilibili.com/106491836"> 我的bilibili </a>
+</div> -->
