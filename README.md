@@ -16,6 +16,9 @@
 
 ## 📃 学习清单
 ### [2022 学习清单](./2022/README.md)
+#### [2022-08-22](./2022/2022-08/README.md)
+* [手拉手教你在极空间Docker宝塔上搭建兰空图床（Lsky）](./2022/2022-08/2022-08-22/手拉手教你在极空间Docker宝塔上搭建兰空图床（Lsky）.md)
+
 #### [2022-07-30](./2022/2022-07/README.md)
 * [动态规划-乘积为正数的最长子数组长度](./2022/2022-07/2022-07-30/动态规划-乘积为正数的最长子数组长度.md)
 
@@ -35,8 +38,6 @@
 	<a href="http://systemcall.gitee.io/keep-thinking"> OpenCV实验室 </a> / <a href="https://blog.aayu.today/"> 博客 </a> / <a href="./Resume.md"> 简历 </a> / <a href="https://space.bilibili.com/106491836"> 我的bilibili </a>
 </div>
 
-- 🌱 I’m currently learning **HarmonyOS**
-
+- 🌱 I’m currently learning **PCB，Unity3D**
 - 💬 Ask me about **HoloLens 2**
-
 - 📫 How to reach me **916491013@qq.com**
