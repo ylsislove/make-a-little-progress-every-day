@@ -75,6 +75,7 @@ AT+QMTCFG="version",0
 * [为什么NB-IOT模组在华为云平台一直显示未激活？](https://bbs.huaweicloud.com/forum/thread-195600-1-1.html)
 * [BC28_MQTT调试笔记](https://cxymm.net/article/qq_41298245/106803298)
 * [移远BC20连接MQTT服务器小记](https://blog.csdn.net/helpinfo/article/details/119341951)
+* [物联网-移远M26模块MQTT开发（AT命令）](https://blog.csdn.net/u014754841/article/details/84573178)
 * [【BC28】【注册网络】AT+NMSTATUS查询出现的状态分别代表什么意思](https://bbs.huaweicloud.com/forum/thread-190154-1-1.html)
 
 ## 低功耗模式相关问题链接
