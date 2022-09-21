@@ -71,6 +71,7 @@ AT+QMTCFG="version",0
 ## 参考链接
 * [BC35/BC28无法入网的原因及排错方法](https://bbs.huaweicloud.com/blogs/191706)
 * [BC26 MQTT OK BC28 Fail](https://forums.quectel.com/t/bc26-mqtt-ok-bc28-fail/4148)
+* [BC26 之MQTT协议 AT命令](https://www.cnblogs.com/asnail/p/12810359.html)
 * [BC28使用MQTT协议 连接OneNET平台的流程解析](https://blog.csdn.net/tiantangmoke/article/details/92789801)
 * [为什么NB-IOT模组在华为云平台一直显示未激活？](https://bbs.huaweicloud.com/forum/thread-195600-1-1.html)
 * [BC28_MQTT调试笔记](https://cxymm.net/article/qq_41298245/106803298)
