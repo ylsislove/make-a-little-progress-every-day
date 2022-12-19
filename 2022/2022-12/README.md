@@ -5,3 +5,6 @@
 
 ### 2022-12-10
 * [VSCode配置C++和Python编译和调试环境](./2022-12-10/VSCode配置C++和Python编译和调试环境.md)
+
+### 2022-12-17
+* [Win11安装WSL2和Nvidia驱动](./2022-12-17/Win11安装WSL2和Nvidia驱动.md)
