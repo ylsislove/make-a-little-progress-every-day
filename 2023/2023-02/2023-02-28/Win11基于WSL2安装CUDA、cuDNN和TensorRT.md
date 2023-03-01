@@ -29,7 +29,7 @@ tags:
 ## 前言
 之前我写了一篇博客：[Win11安装WSL2和Nvidia驱动](https://blog.aayu.today/artificial-intelligence/basic/20221217/)，记录了在WSL2里安装CUDA，当时我选择了第二种安装方式，即用WSL2里的MiniConda去安装的PyTorch和CUDA等相关库，最近在使用中发现了这种方式的不足，即使用`cuda`和`nvcc`等命令时都要切换到conda相关环境下才能使用。比如我之前在`py38`环境下安装的，当我进入终端处于`base`环境下，nvcc命令是不能使用哒
 
-最近也在跟着恩培老师学TensorRT，担忧用MiniConda安装的CUDA等库导致TensorRT安装失败，所以这次就试试直接在`base`环境下用上一篇博客的第一种方式安装`cuda`、`cudnn`和`tensorrt`吧~
+最近也在跟着恩培老师学TensorRT，担忧用MiniConda安装的CUDA等库可能导致TensorRT安装失败，所以这次就试试直接在`base`环境下用上一篇博客的第一种方式安装`cuda`、`cudnn`和`tensorrt`吧~
 
 结果也是很顺利的安装成功啦，便在此记录下来哈哈~
 
