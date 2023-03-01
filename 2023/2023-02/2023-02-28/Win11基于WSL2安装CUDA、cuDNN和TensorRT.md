@@ -18,13 +18,13 @@ tags:
   - [CUDA Driver](#cuda-driver)
     - [检查安装](#检查安装)
   - [安装CUDA](#安装cuda)
-  - [安装`nvcc`](#安装nvcc)
+  - [安装nvcc](#安装nvcc)
   - [安装cuDNN](#安装cudnn)
     - [安装](#安装)
     - [验证](#验证)
   - [安装TensorRT](#安装tensorrt)
-    - [安装：](#安装-1)
-    - [验证：](#验证-1)
+    - [安装](#安装-1)
+    - [验证](#验证-1)
 
 ## 前言
 之前我写了一篇博客：[Win11安装WSL2和Nvidia驱动](https://blog.aayu.today/artificial-intelligence/basic/20221217/)，记录了在WSL2里安装CUDA，当时我选择了第二种安装方式，即用WSL2里的MiniConda去安装的PyTorch和CUDA等相关库，最近在使用中发现了这种方式的不足，即使用`cuda`和`nvcc`等命令时都要切换到conda相关环境下才能使用。比如我之前在`py38`环境下安装的，当我进入终端处于`base`环境下，nvcc命令是不能使用哒
@@ -50,34 +50,33 @@ tags:
 安装可以参考我之前的WSL2博客吖：[Win11安装WSL2和Nvidia驱动](https://blog.aayu.today/artificial-intelligence/basic/20221217/)
 
 #### 检查安装
+输入`nvidia-smi`命令，查看GPU驱动版本
 
-  输入`nvidia-smi`命令，查看GPU驱动版本
+```bash
+(base) aayu@AayuComputer-Pro:~$ nvidia-smi
+Tue Feb 28 00:58:02 2023
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.65       Driver Version: 527.56       CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  On   | 00000000:01:00.0  On |                  N/A |
+| N/A   40C    P8    13W / 139W |   1668MiB /  6144MiB |      6%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
 
-  ```bash
-  (base) aayu@AayuComputer-Pro:~$ nvidia-smi
-  Tue Feb 28 00:58:02 2023
-  +-----------------------------------------------------------------------------+
-  | NVIDIA-SMI 525.65       Driver Version: 527.56       CUDA Version: 12.0     |
-  |-------------------------------+----------------------+----------------------+
-  | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-  | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-  |                               |                      |               MIG M. |
-  |===============================+======================+======================|
-  |   0  NVIDIA GeForce ...  On   | 00000000:01:00.0  On |                  N/A |
-  | N/A   40C    P8    13W / 139W |   1668MiB /  6144MiB |      6%      Default |
-  |                               |                      |                  N/A |
-  +-------------------------------+----------------------+----------------------+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A        23      G   /Xwayland                       N/A      |
++-----------------------------------------------------------------------------+
+```
 
-  +-----------------------------------------------------------------------------+
-  | Processes:                                                                  |
-  |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
-  |        ID   ID                                                   Usage      |
-  |=============================================================================|
-  |    0   N/A  N/A        23      G   /Xwayland                       N/A      |
-  +-----------------------------------------------------------------------------+
-  ```
-
-  可以看到当前安装的驱动版本是`527.56`，后面的`CUDA Version: 12.0`是指当前驱动支持的最高CUDA版本~
+可以看到当前安装的驱动版本是`527.56`，后面的`CUDA Version: 12.0`是指当前驱动支持的最高CUDA版本~
 
 ### 安装CUDA
 在Nvidia官网选择对应版本：https://developer.nvidia.com/cuda-toolkit-archive
@@ -104,7 +103,7 @@ sudo apt-get -y install cuda
 
 ![](https://image.aayu.today/uploads/2023/03/01/202303012250963.png){width="800px"}
 
-### 安装`nvcc`
+### 安装nvcc
 ```bash
 sudo apt install nvidia-cuda-toolkit
 ```
@@ -175,7 +174,7 @@ make clean && make
 
 比如我选择的是 8.5.3版本，下载完文件名为：`nv-tensorrt-local-repo-ubuntu2004-8.5.3-cuda-11.8_1.0-1_amd64.deb`
 
-#### 安装：
+#### 安装
 > 参考地址：https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html#installing-debian
 >
 
@@ -193,7 +192,7 @@ sudo apt-get update
 sudo apt-get install tensorrt
 ```
 
-#### 验证：
+#### 验证
 输入`dpkg -l | grep TensorRT`
 
 ```bash
