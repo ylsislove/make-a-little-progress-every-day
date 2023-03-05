@@ -12,19 +12,38 @@ tags:
  - tensorrt
 ---
 
+- [2023-03-05 更新](#2023-03-05-更新)
 - [前言](#前言)
 - [TensorRT介绍](#tensorrt介绍)
 - [环境配置](#环境配置)
   - [CUDA Driver](#cuda-driver)
     - [检查安装](#检查安装)
   - [安装CUDA](#安装cuda)
-  - [安装nvcc](#安装nvcc)
+  - [安装nvcc（此步骤不需要，配置下环境变量即可，看2023-03-05更新）](#安装nvcc此步骤不需要配置下环境变量即可看2023-03-05更新)
   - [安装cuDNN](#安装cudnn)
     - [安装](#安装)
     - [验证](#验证)
   - [安装TensorRT](#安装tensorrt)
     - [安装](#安装-1)
     - [验证](#验证-1)
+
+## 2023-03-05 更新
+:::info
+有小伙伴反映，按照NVIDIA官网命令安装完CUDA后，nvcc实际上也是被成功安装啦，且nvcc的版本和我们选择CUDA的版本是保持一致的。但如果再运行`sudo apt install nvidia-cuda-toolkit`命令，就会导致nvcc的版本被覆盖为低版本。
+
+比如，我们选择CUDA的版本是11.8，那安装完CUDA后，我们是可以在`/usr/local/cuda/bin`目录下找到nvcc可执行文件的，在那个目录下运行`./nvcc -V`就可以看到版本和CUDA保持一致，也是11.8。所以实际上我们`不需要`再运行`sudo apt install nvidia-cuda-toolkit`命令安装nvcc啦，只需要再安装完CUDA后，配置下环境变量即可，如下
+
+```bash
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}} 
+```
+
+当然，如果你运行了`sudo apt install nvidia-cuda-toolkit`命令，从我博客里记录的图片可以看到nvcc的版本被覆盖为10.1啦，在我的WSL2环境里，10.1的nvcc版本并没有什么问题，后面用`./mnistCUDNN`测试也是成功哒~
+
+但小伙伴测试说会报`CUDA driver version is insufficient for CUDA runtime version`版本不匹配的错误，所以后面的小伙伴可以参考下，先不要运行`sudo apt install nvidia-cuda-toolkit`命令，直接根据NVIDIA官网安装完CUDA，然后配置下环境变量即可~
+
+如果已经用`sudo apt install nvidia-cuda-toolkit`命令安装完了，测试也真报错了，就卸载掉nvidia-cuda-toolkit，然后再配置下环境变量，再测试下看看吧~
+:::
 
 ## 前言
 之前我写了一篇博客：[Win11安装WSL2和Nvidia驱动](https://blog.aayu.today/artificial-intelligence/basic/20221217/)，记录了在WSL2里安装CUDA，当时我选择了第二种安装方式，即用WSL2里的MiniConda去安装的PyTorch和CUDA等相关库，最近在使用中发现了这种方式的不足，即使用`cuda`和`nvcc`等命令时都要切换到conda相关环境下才能使用。比如我之前在`py38`环境下安装的，当我进入终端处于`base`环境下，nvcc命令是不能使用哒
@@ -103,7 +122,7 @@ sudo apt-get -y install cuda
 
 ![](https://image.aayu.today/uploads/2023/03/01/202303012250963.png){width="800px"}
 
-### 安装nvcc
+### 安装nvcc（此步骤不需要，配置下环境变量即可，看2023-03-05更新）
 ```bash
 sudo apt install nvidia-cuda-toolkit
 ```
