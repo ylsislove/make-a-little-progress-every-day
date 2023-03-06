@@ -34,8 +34,10 @@ tags:
 比如，我们选择CUDA的版本是11.8，那安装完CUDA后，我们是可以在`/usr/local/cuda/bin`目录下找到nvcc可执行文件的，在那个目录下运行`./nvcc -V`就可以看到版本和CUDA保持一致，也是11.8。所以实际上我们`不需要`再运行`sudo apt install nvidia-cuda-toolkit`命令安装nvcc啦，只需要再安装完CUDA后，配置下环境变量即可，如下
 
 ```bash
-export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}} 
+export CPATH=/usr/local/cuda-11.8/include:$CPATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda-11.8/bin:$PATH
+export CUDA_ROOT=/usr/local/cuda-11.8
 ```
 
 当然，如果你运行了`sudo apt install nvidia-cuda-toolkit`命令，从我博客里记录的图片可以看到nvcc的版本被覆盖为10.1啦，在我的WSL2环境里，10.1的nvcc版本并没有什么问题，后面用`./mnistCUDNN`测试也是成功哒~
