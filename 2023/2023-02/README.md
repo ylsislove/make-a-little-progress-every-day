@@ -11,3 +11,6 @@
 
 ### 2023-02-27
 * [WSL2通过OpenCV调用并展示本机摄像头的RTSP视频流](./2023-02-27/WSL2通过OpenCV调用并展示本机摄像头的RTSP视频流.md)
+
+### 2023-02-28
+* [Win11基于WSL2安装CUDA、cuDNN和TensorRT](./2023-02-28/Win11基于WSL2安装CUDA、cuDNN和TensorRT.md)
