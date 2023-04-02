@@ -6,3 +6,5 @@
 ### 2023-04-01
 * [思源笔记源码解析之kernel篇（一）api](./2023-04-01/思源笔记源码解析之kernel篇（一）api.md)
 
+### 2023-04-02
+* [Docker + ChatGPT + 微信](./2023-04-02/Docker%20%2B%20ChatGPT%20%2B%20%E5%BE%AE%E4%BF%A1.md)
