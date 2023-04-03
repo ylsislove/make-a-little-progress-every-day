@@ -10,6 +10,13 @@ tags:
 ## 前言
 终于捣鼓成功啦，项目地址：[ylsislove/wechatbot](https://github.com/ylsislove/wechatbot)，欢迎 star ~
 
+:::warning
+最新消息：https://mp.weixin.qq.com/s/1M8JFbq9Ea29EzE9QqocPQ
+如果账号是从第三方手上购买过来的，不要尝试了，OpenAI最近在封这类账号。以及自己的代理域名也不要分享给他人使用了，像评论里有人评论的，保护好自己的账号最重要~
+如果是自己亲手注册的，也绑定了信用卡（向OpenAI表明自己不是白嫖党/滑稽），同时也有一个自己搭建的稳定的代理域名，那么就可以捣鼓一下啦~
+实在担心的话，就先收藏一下本帖子，等最近风头过去了在尝试吧
+:::
+
 ## 极空间部署
 ### 下载镜像
 在仓库中搜索我的用户名`ylsislove`，选择`wechatbot`，下载最新版本即可
@@ -41,6 +48,11 @@ tags:
 ```
 
 参数含义参见：[配置文件说明](https://github.com/ylsislove/wechatbot#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
+
+:::info
+国内用户注意设置好base_url，base_url设置稳定再访问，API账户就不会出问题，我用了很长时间了都还在稳定使用~
+base_url可以参考https://github.com/Ice-Hazymoon/openai-scf-proxy这个教程，设置一个稳定的代理域名即可。挂到腾讯云香港地区的轻量应用服务器上都行，我用的就是这个
+:::
 
 ### 创建容器
 双击刚才下载的镜像，配置极其简单，像网络、端口、别名、环境都不用管，只需配置好`文件夹路径`和`启动命令`即可，如下
