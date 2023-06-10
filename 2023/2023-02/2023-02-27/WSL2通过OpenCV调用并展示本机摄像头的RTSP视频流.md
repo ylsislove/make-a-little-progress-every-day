@@ -49,6 +49,17 @@ sudo apt install ffmpeg
 ```
 
 ## 启动 Windows 本机的 RTSP 视频流
+### 下载解压 EasyDarwin
+[Easydarwin](https://github.com/EasyDarwin/EasyDarwin)是国内团队开发的开源流媒体框架。它是基于Go语言研发，从2012年12月创建并发展至今，从原有的单服务的流媒体服务器形式，扩展成现在的云平台架构开源项目，属于高性能开源RTSP流媒体服务器，在Github上受到广大欢迎。
+
+特点：RTSP推模式转发、RTSP拉模式转发、录像、检索、回放、关键帧缓存、秒开画面、RESTful接口、WEB后台管理、分布式负载均衡。
+
+[下载解压 release 包](https://github.com/EasyDarwin/EasyDarwin/releases)
+
+直接运行 EasyDarwin.exe
+
+以 Ctrl + C 停止服务。打开浏览器输入 http://localhost:10008, 进入控制页面,默认用户名密码是admin/admin
+
 ### 查看本机摄像头设备
 Windows 本机安装 ffmpeg 这里不再赘述啦，网上教程很多~
 
@@ -62,7 +73,7 @@ ffmpeg -list_devices true -f dshow -i dummy
 
 ### 开始推流
 ```bash
-ffmpeg -f dshow -i video="USB2.0 Camera" -vcodec libx264 -preset:v ultrafast -tune:v zerolatency -rtsp_transport tcp -f rtsp rtsp://172.27.148.34/test
+ffmpeg -f dshow -i video="USB2.0 Camera" -vcodec libx264 -preset:v ultrafast -tune:v zerolatency -rtsp_transport tcp -f rtsp rtsp://192.168.1.101/test
 ```
 
 参数解释
@@ -77,7 +88,7 @@ ffmpeg -f dshow -i video="USB2.0 Camera" -vcodec libx264 -preset:v ultrafast -tu
 
 ![](https://image.aayu.today/uploads/2023/03/01/202303012139056.png){width="800px"}
 
-## 开放本机防火墙
+## 开放本机防火墙（可选）
 因为我们要在 WSL2 里访问本机的 RTSP 视频流，所以需要打开本机的防火墙，如下图
 
 ![](https://image.aayu.today/uploads/2023/03/01/202303012140033.png){width="800px"}
