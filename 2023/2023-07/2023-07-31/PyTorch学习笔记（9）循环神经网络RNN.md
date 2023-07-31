@@ -1,5 +1,6 @@
 ---
 title: PyTorch学习笔记（9）循环神经网络RNN
+math: true
 date: 2023-07-31 23:52:08
 categories:
  - [人工智能, 机器学习修炼之PyTorch]

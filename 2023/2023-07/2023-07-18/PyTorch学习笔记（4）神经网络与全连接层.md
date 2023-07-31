@@ -1,5 +1,6 @@
 ---
 title: PyTorch学习笔记（4）神经网络与全连接层
+math: true
 date: 2023-07-18 15:59:22
 categories:
  - [人工智能, 机器学习修炼之PyTorch]

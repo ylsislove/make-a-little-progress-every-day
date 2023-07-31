@@ -1,5 +1,6 @@
 ---
 title: PyTorch学习笔记（6）卷积神经网络
+math: true
 date: 2023-07-19 21:39:52
 categories:
  - [人工智能, 机器学习修炼之PyTorch]

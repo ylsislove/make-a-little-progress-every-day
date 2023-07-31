@@ -1,5 +1,6 @@
 ---
 title: PyTorch学习笔记（7）ResNet实战
+math: true
 date: 2023-07-19 21:52:53
 categories:
  - [人工智能, 机器学习修炼之PyTorch]

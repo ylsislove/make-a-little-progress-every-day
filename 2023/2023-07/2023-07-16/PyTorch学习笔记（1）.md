@@ -1,5 +1,6 @@
 ---
 title: PyTorch学习笔记（1）
+math: true
 date: 2023-07-16 21:30:26
 categories:
  - [人工智能, 机器学习修炼之PyTorch]

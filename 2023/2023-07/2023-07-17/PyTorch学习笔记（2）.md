@@ -1,5 +1,6 @@
 ---
 title: PyTorch学习笔记（2）
+math: true
 date: 2023-07-17 15:47:29
 categories:
  - [人工智能, 机器学习修炼之PyTorch]

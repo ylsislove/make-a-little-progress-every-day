@@ -1,5 +1,6 @@
 ---
 title: PyTorch学习笔记（8）迁移学习实战
+math: true
 date: 2023-07-19 21:53:00
 categories:
  - [人工智能, 机器学习修炼之PyTorch]

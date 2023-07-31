@@ -1,5 +1,6 @@
 ---
 title: PyTorch学习笔记（3）随机梯度下降
+math: true
 date: 2023-07-17 21:50:02
 categories:
  - [人工智能, 机器学习修炼之PyTorch]

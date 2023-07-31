@@ -1,5 +1,6 @@
 ---
 title: PyTorch学习笔记（5）过拟合问题
+math: true
 date: 2023-07-18 16:11:33
 categories:
  - [人工智能, 机器学习修炼之PyTorch]
