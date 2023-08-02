@@ -6,3 +6,5 @@
 ### 2023-08-01
 * [PyTorch学习笔记（11）自编码器Auto-Encoders](./2023-08-01/PyTorch学习笔记（11）自编码器Auto-Encoders.md)
 
+### 2023-08-02
+* [PyTorch学习笔记（12）对抗生成网络GAN](./2023-08-02/PyTorch学习笔记（12）对抗生成网络GAN.md)
