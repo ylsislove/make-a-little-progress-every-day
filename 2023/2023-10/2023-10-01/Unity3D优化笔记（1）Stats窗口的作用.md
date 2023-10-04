@@ -16,6 +16,18 @@ Stats 是英文单词 Statistics 的缩写，意思是“统计数据”。
 
 打开方法：Game 窗口右上角，找到 Stats，点击它。
 
+## Unity 绘制调用（Draw Call）、批次（Batch）
+
+要将游戏中的物体显示到屏幕上，就需要绘制它们。绘制之前，会先由 CPU 计算出它们的位置、颜色等信息，然后发送绘制指令给 GPU。GPU 接受到 CPU 发过来的绘制指令，就会按照要求绘制东西在屏幕上。
+
+Draw Call 是指 CPU 向 GPU 发送绘制指令的过程，==一个 Draw Call 就是 CPU 向 GPU 发送的一组绘制指令==，可以绘制出一个或多个物体。
+
+Draw Call 有时也被简称为 DC
+
+Draw Call 太多会使游戏变卡，优化的时候可以想办法降低 Draw Call。
+
+要降低 Draw Call，可以使用合批技术，例如动态合批和静态合批。将多个 Draw Call 合批成一个批次（Batch），再由 CPU 发送给 GPU，这样可以提升游戏性能。
+
 ## Audio 表示音频的数据
 
 * Level 表示==声音强度==，单位是分贝，也就是 dB。声音太大或太小都会影响玩家体验。
