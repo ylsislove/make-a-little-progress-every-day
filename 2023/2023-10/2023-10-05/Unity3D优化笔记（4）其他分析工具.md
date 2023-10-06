@@ -172,3 +172,55 @@ Rendering
 * Clear History，清空 History Location 路径中的所有历史记录。
 * Generate from Last，根据上一次测试的数据，在 Results Location 的路径生成报告。
 * Start Recording，开始测试。
+
+## Unity Profile Analyzer 窗口
+
+Profile Analyzer 配合 Profiler 使用。当我们使用 Profiler 收集了数据之后，不要关闭 Profiler，并且打开 Profile Analyzer，把 Profiler 收集的数据导入到 Profile Analyzer，==使用 Profile Analyzer 可以帮助我们选出一段数据中最具有代表性的一帧，方便我们进行性能分析。也能看出收集的数据整体的一些情况，例如中位数、平均值、最大值、最小值等==。
+
+Profile Analyzer 也可以比较两段数据的性能开销。
+
+打开方法：Window——Analysis——Profile Analyzer
+
+官方文档：https://docs.unity3d.com/Packages/com.unity.performance.profile-analyzer@1.2/manual/index.html
+
+Profile Analyzer 要配合 Profiler 使用，点击 Open Profiler Window 可以打开 Profiler，此时 Open Profiler Window 会变成 Close Profiler Window，点击 Close Profiler Window 会关闭打开的 Profiler
+
+==左上方的 Mode 有两种模式，选择 Single 会分析一段数据，选择 Compare 会分析两段数据，可以对这两段数据作对比。==
+
+左上方的 Export 可以把分析的结果导出到本地，以便我们查看。
+
+在 Profiler 收集了一段数据之后，可以点击 Profile Analyzer 中的 Pull Data，这样就会导入那段数据到 Profile Analyzer，方便我们分析。点击 Save，则会把数据保存到本地，点击 Load，则可以从本地载入数据。
+
+在上方的图表中，我们可以拖选其中的一段数据，然后在下方的 Top 10 markers on median frame 下看到最具有代表性的一帧，==点击它，则 profiler 窗口中也会自动选中那一帧==。
+
+Top 10 markers on median frame 下方右侧是 10 个最具有代表性的 Marker。
+
+==Marker 表示代码的标记==。Unity 执行的一些关键的方法或者一段关键的代码会被标记，方便我们查看这些方法和代码的性能。
+
+此时在下方的 Marker Details for current selected range 下方可以看到选中的这段数据的信息。
+
+* Filters 的选项用于对数据进行筛选。
+* Name Filter 表示筛选含有指定字符串的结果。
+* Exclude Names 表示筛选不含有指定字符串的结果。
+* Thread 表示筛选指定线程的结果
+* Depth Slice 表示筛选指定调用栈的深度。
+* 点击 Analyze，则会根据 Filters 的选项的设置重新进行分析，可以在下方的 Marker Details for currently selected range 的下方看到结果。
+
+## Unity IMGUI Debugger 窗口
+
+==IMGUI Debugger 窗口用于查看 Unity 编辑器中的 IMGUI 控件的信息==。例如 Scene 窗口、Game 窗口实际上也是用 IMGUI 写的，我们可以查看其中 IMGUI 控件的信息。
+
+==如果我们在 OnGUI 方法中写了代码来显示 IMGUI 控件，也可以在 IMGUI Debugger 窗口查看这个 IMGUI 控件的信息。==
+
+打开方法：
+
+* Window——Analysis——IMGUI Debugger
+* Alt+5
+
+在 <Please Select> 和它右边的下拉菜单中，可以选择要查看哪些 IMGUI 控件。
+
+Show Overlay。启用 Show Overlay，则选择 IMGUI 控件时，能在 Unity 的编辑器中看到选择了哪个控件。
+
+Force Inspect Optimized GUI Blocks。有时候 Unity 可能会对 IMGUI 进行优化，把多个 IMGUI 控件合并为一个。此时如果我们要查看每一个 IMGUI 控件的信息，则可以启用 Force Inspect Optimized GUI Blocks
+
+Pick Style。按住 Pick Style，然后在 Unity 的编辑器中选择一个 IMGUI 控件，可以看到它的信息。
