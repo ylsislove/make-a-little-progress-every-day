@@ -20,6 +20,7 @@ tags:
 9. siyuan（思源笔记），可以把自己的笔记保存到我们的极空间里，而且可配置项很多，笔记的界面可以美化的很好看~
 10. qinglong（青龙面板），挂载自动化脚本，可以拿来薅羊毛（蛮复杂的），或练练自己写的自动化脚本，还是蛮不错的
 11. komga，一个支持中文，可以看漫画的 Docker 应用
+12. ttnode，甜糖星愿，利用闲置上传带宽和存储空间来为各大视频网站等提供CDN加速，即可获取星愿积分，星愿可用于折现或兑换商品。
 
 以上就是我目前最常使用的docker应用了，我觉得极大丰富了极空间NAS的可玩性~~
 
@@ -231,6 +232,30 @@ proxy_set_header Connection 'Upgrade';
 ![](https://image.aayu.today/uploads/2022/09/03/202209030405788.png)
 ![](https://image.aayu.today/uploads/2022/09/03/202209030405832.png)
 ![](https://image.aayu.today/uploads/2022/09/03/202209030405492.png)
+{.gallery data-height="150"}
+
+### ttnode
+* tiptime/ttnode:latest
+* 甜糖星愿计划是由甜糖公司结合边缘计算云厂商推出的用户激励计划。用户通过贡献闲置带宽，即可获取星愿积分。星愿可用于折现或兑换商品。
+* 就是利用你的闲置上传带宽和存储空间来为各大视频网站等提供CDN加速。
+
+![](https://image.aayu.today/uploads/2023/02/08/202302080035331.png)
+![](https://image.aayu.today/uploads/2023/02/08/202302080035865.png)
+![](https://image.aayu.today/uploads/2023/02/08/202302080036867.png)
+{.gallery data-height="150"}
+
+### Clash & Yacd
+* dreamacro/clash:latest
+* haishanh/yacd:latest
+
+![](https://image.aayu.today/uploads/2023/10/10/202310101522146.png)
+![](https://image.aayu.today/uploads/2023/10/10/202310101522308.png)
+![](https://image.aayu.today/uploads/2023/10/10/202310101522000.png)
+![](https://image.aayu.today/uploads/2023/10/10/202310101522342.png)
+![](https://image.aayu.today/uploads/2023/10/10/202310101522362.png)
+![](https://image.aayu.today/uploads/2023/10/10/202310101522106.png)
+![](https://image.aayu.today/uploads/2023/10/10/202310101523395.png)
+![](https://image.aayu.today/uploads/2023/10/10/202310101523910.png)
 {.gallery data-height="150"}
 
 ## 尾记
