@@ -8,6 +8,9 @@ tags:
  - Unity3D
 ---
 
+## 效果展示
+![](https://image.aayu.today/uploads/2024/01/07/202401072310971.gif)
+
 ## 创建项目
 ![](https://image.aayu.today/uploads/2024/01/01/202401012208061.png)
 
