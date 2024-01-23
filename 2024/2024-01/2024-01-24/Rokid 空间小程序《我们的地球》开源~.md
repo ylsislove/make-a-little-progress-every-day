@@ -1,6 +1,5 @@
 ---
-title: 空间小程序《我们的地球》开源~
-math: true
+title: Rokid 空间小程序《我们的地球》开源~
 date: 2024-01-24 01:46:51
 categories:
  - [Rokid]
