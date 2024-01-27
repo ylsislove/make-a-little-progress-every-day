@@ -21,6 +21,9 @@ tags:
 10. qinglong（青龙面板），挂载自动化脚本，可以拿来薅羊毛（蛮复杂的），或练练自己写的自动化脚本，还是蛮不错的
 11. komga，一个支持中文，可以看漫画的 Docker 应用
 12. ttnode，甜糖星愿，利用闲置上传带宽和存储空间来为各大视频网站等提供CDN加速，即可获取星愿积分，星愿可用于折现或兑换商品。
+13. wechatbot，微信ChatGPT机器人，可以实现微信自动回复，还可以实现微信自动发消息，可以用来做微信群机器人，也可以用来做微信自动发消息的工具
+14. webhook-git，配合 GitHub Action 实现自动拉取构建后的静态博客文件到 NAS 上，实现自动部署博客。
+15. clash && yacd，代理，懂的都懂~
 
 以上就是我目前最常使用的docker应用了，我觉得极大丰富了极空间NAS的可玩性~~
 
@@ -243,6 +246,71 @@ proxy_set_header Connection 'Upgrade';
 ![](https://image.aayu.today/uploads/2023/02/08/202302080035865.png)
 ![](https://image.aayu.today/uploads/2023/02/08/202302080036867.png)
 {.gallery data-height="150"}
+
+### wechatbot
+* ylsislove_wechatbot:latest
+
+![](https://image.aayu.today/uploads/2024/01/28/202401280045203.png)
+![](https://image.aayu.today/uploads/2024/01/28/202401280046294.png)
+{.gallery data-height="150"}
+
+### webhook-git
+* ylsislove/webhook-git:latest
+
+![](https://image.aayu.today/uploads/2024/01/28/202401280125301.png)
+![](https://image.aayu.today/uploads/2024/01/28/202401280125430.png)
+![](https://image.aayu.today/uploads/2024/01/28/202401280125229.png)
+{.gallery data-height="150"}
+
+在 `/高速存储/Docker/WebHooks/conf` 目录下新建一个 hooks.json文件，参考内容如下
+```
+[
+  {
+    "id": "blog-webhook",
+    "execute-command": "/home/aayu/scripts/redeploy.sh",
+    "command-working-directory": "/home/aayu/blog",
+    "trigger-rule":
+    {
+      "and":
+      [
+        {
+          "match":
+          {
+            "type": "payload-hash-sha1",
+            "secret": "这里填入 GitHub Webhooks 的 Secret",
+            "parameter":
+            {
+              "source": "header",
+              "name": "X-Hub-Signature"
+            }
+          }
+        },
+        {
+          "match":
+          {
+            "type": "value",
+            "value": "refs/heads/main",
+            "parameter":
+            {
+              "source": "payload",
+              "name": "ref"
+            }
+          }
+        }
+      ]
+    }
+  }
+]
+```
+
+在 `/高速存储/Docker/WebHooks/scripts` 目录下新建一个 redeploy.sh 文件，参考内容如下
+```
+#!/bin/sh
+
+cd /home/aayu/blog && git pull
+```
+
+这样，当 GitHub 仓库的 main 分支有更新时，就会触发钩子，NAS 就会执行 `redeploy.sh` 脚本，从而实现自动更新博客啦~
 
 ### Clash & Yacd
 * dreamacro/clash:latest
