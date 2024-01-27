@@ -263,7 +263,8 @@ proxy_set_header Connection 'Upgrade';
 {.gallery data-height="150"}
 
 在 `/高速存储/Docker/WebHooks/conf` 目录下新建一个 hooks.json文件，参考内容如下
-```
+
+```json
 [
   {
     "id": "blog-webhook",
@@ -304,7 +305,8 @@ proxy_set_header Connection 'Upgrade';
 ```
 
 在 `/高速存储/Docker/WebHooks/scripts` 目录下新建一个 redeploy.sh 文件，参考内容如下
-```
+
+```sh
 #!/bin/sh
 
 cd /home/aayu/blog && git pull
