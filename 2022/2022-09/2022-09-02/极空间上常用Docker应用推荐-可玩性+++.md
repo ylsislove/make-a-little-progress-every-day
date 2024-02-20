@@ -248,7 +248,7 @@ proxy_set_header Connection 'Upgrade';
 {.gallery data-height="150"}
 
 ### wechatbot
-* ylsislove_wechatbot:latest
+* ylsislove/wechatbot:latest
 
 ![](https://image.aayu.today/uploads/2024/01/28/202401280045203.png)
 ![](https://image.aayu.today/uploads/2024/01/28/202401280046294.png)
